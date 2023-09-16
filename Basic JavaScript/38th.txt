@@ -7,4 +7,5 @@ const myAdverb = "quickly";
 const wordBlanks = "The " + myAdjective + " " + myNoun + " " + myVerb + " " + myAdverb + "."; // Change this line
 // Only change code above this line
 
-//Def:- Word Blanks: You are provided sentences with some missing words, like nouns, verbs, adjectives and adverbs. You then fill in the missing pieces with words of your choice in a way that the completed sentence makes sense.
+/*Def:- Word Blanks: You are provided sentences with some missing words, like nouns, verbs, adjectives and adverbs.
+You then fill in the missing pieces with words of your choice in a way that the completed sentence makes sense.*/
