@@ -1,0 +1,17 @@
+/*Def: An easy way to append data to the end of an array is via the push() method.
+The push() method takes one or more arguments and appends them to the end of the array, in the order in which they appear.*/
+//ex:-
+const arr1 = [1, 2, 3];
+arr1.push(4, 5);
+
+const arr2 = ["Stimpson", "J", "cat"];
+arr2.push(["happy", "joy"]);
+/*arr1 now has the value [1, 2, 3, 4, 5] and arr2 has the value ["Stimpson", "J", "cat", ["happy", "joy"]].*/
+
+
+//Ex:- Push ["dog", 3] onto the end of the myArray variable.
+const myArray = [["John", 23], ["cat", 2]];
+myArray.push(["dog",3]);
+
+//myArray should now equal [["John", 23], ["cat", 2], ["dog", 3]].
+
