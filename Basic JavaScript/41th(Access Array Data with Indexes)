@@ -1,0 +1,6 @@
+/*def:We can access the data inside arrays using indexes.*/
+const myArray = [50, 10, 20];
+const myData = myArray[0];
+
+/* :The variable myData should equal the first value of myArray.
+:The data in variable myArray should be accessed using bracket notation.*/
