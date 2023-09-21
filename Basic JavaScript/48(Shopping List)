@@ -1,0 +1,9 @@
+/**Create a shopping list in the variable myList. The list should be a multi-dimensional array containing several sub-arrays.*/
+//Ex:-
+const myList = [
+  ["Old munk", 100],
+  ["Mansion house", 220],
+  ["Imperial blue", 180],
+  ["Black and white", 600],
+  ["MC whiskey", 460]
+];
