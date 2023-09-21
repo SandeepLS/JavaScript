@@ -1,0 +1,6 @@
+/**In JavaScript, we can divide up our code into reusable parts called functions.*/
+//Ex:-
+function reusableFunction(){
+  console.log("Hi World");
+}
+reusableFunction()
