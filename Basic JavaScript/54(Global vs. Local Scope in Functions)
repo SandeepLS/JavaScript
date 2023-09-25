@@ -12,3 +12,9 @@ function myOutfit() {
 
 }
 myOutfit();
+
+
+O/P:- sweter
+The function myOutfit will return the string sweter because the local version of the variable is present.
+
+
