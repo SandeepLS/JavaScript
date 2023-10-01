@@ -13,22 +13,3 @@ var someVariable;
 var anotherVariableName;
 var thisVariableNameIsSoLong;
 */
-//Ex:2
-function testEqual(val) {
-  if (val==12) { // Change this line
-    return "Equal";
-  }
-  return "Not Equal";
-}
-
-testEqual(10);
-testEqual(12);
-testEqual("12");
-
-/*
-Task:- 
-testEqual(10) should return the string Not Equal
-Passed:testEqual(12) should return the string Equal
-Passed:testEqual("12") should return the string Equal
-Passed:You should use the == operator
-*/
