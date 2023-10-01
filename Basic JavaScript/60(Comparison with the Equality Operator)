@@ -30,6 +30,9 @@ function testEqual(val) {
 }
 
 testEqual(10);
+testEqual(12);
+testEqual("12");
+
 /*
 Task:-Add the equality operator to the indicated line so that the function will return the string Equal when val is equivalent to 12.
 Test:-
