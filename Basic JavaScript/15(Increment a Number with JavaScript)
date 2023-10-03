@@ -1,0 +1,9 @@
+/*
+You can easily increment or add one to a variable with the ++ operator.
+*/
+
+//Ex:-Change the code to use the ++ operator on myVar.
+let myVar = 87;
+
+// Only change code below this line
+myVar++;
