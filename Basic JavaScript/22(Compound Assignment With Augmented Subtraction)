@@ -1,0 +1,26 @@
+/*
+Like the += operator, -= subtracts a number from a variable.
+
+myVar = myVar - 5;
+will subtract 5 from myVar. This can be rewritten as:
+
+myVar -= 5;
+*/
+//Ex:-Convert the assignments for a, b, and c to use the -= operator.
+let a = 11;
+let b = 9;
+let c = 3;
+
+// Only change code below this line
+a -=6;
+b -= 15;
+c -= 1;
+
+/*
+Task:
+a should equal 5.
+Passed:b should equal -6.
+Passed:c should equal 2.
+Passed:You should use the -= operator for each variable.
+Passed:You should not modify the code above the specified comment.
+*/
