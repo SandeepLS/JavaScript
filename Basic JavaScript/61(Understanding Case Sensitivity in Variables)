@@ -1,15 +1,30 @@
 /*
-In JavaScript all variables and function names are case sensitive. This means that capitalization matters.
+Strict equality (===) is the counterpart to the equality operator (==). However, unlike the equality operator,
+which attempts to convert both values being compared to a common type, the strict equality operator does not perform a type conversion.
 
-MYVAR is not the same as MyVar nor myvar. It is possible to have multiple distinct variables with the same name but different casing.
-It is strongly recommended that for the sake of clarity, you do not use this language feature.
+If the values being compared have different types, they are considered unequal, and the strict equality operator will return false.
 
-Best Practice
-Write variable names in JavaScript in camelCase.
-In camelCase, multi-word variable names have the first word in lowercase and the first letter of each subsequent word is capitalized.
+Examples
 
-Examples:
-var someVariable;
-var anotherVariableName;
-var thisVariableNameIsSoLong;
+3 ===  3  // true
+3 === '3' // false
+In the second example, 3 is a Number type and '3' is a String type.
+*/
+//Ex:- Use the strict equality operator in the if statement so the function will return the string Equal when val is strictly equal to 7.
+
+function testStrict(val) {
+  if (val===7) { // Change this line
+    return "Equal";
+  }
+  return "Not Equal";
+}
+testStrict(10);
+testStrict(7);
+
+/*
+Task:
+Passed:testStrict(10) should return the string Not Equal
+Passed:testStrict(7) should return the string Equal
+Passed:testStrict("7") should return the string Not Equal
+Passed:You should use the === operator
 */
