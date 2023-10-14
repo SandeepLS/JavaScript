@@ -1,0 +1,37 @@
+/*
+The less than operator (<) compares the values of two numbers.
+If the number to the left is less than the number to the right, it returns true. Otherwise, it returns false.
+Like the equality operator, the less than operator converts data types while comparing.
+
+Examples
+2   < 5 // true
+'3' < 7 // true
+5   < 5 // false
+3   < 2 // false
+'8' < 4 // false
+*/
+Ex:-
+function testLessThan(val) {
+  if (val < 25) {  // Change this line
+    return "Under 25";
+  }
+
+  if (val < 55) {  // Change this line
+    return "Under 55";
+  }
+
+  return "55 or Over";
+}
+
+testLessThan(10);
+
+/*
+Task:-
+testLessThan(0) should return the string Under 25
+Passed:testLessThan(24) should return the string Under 25
+Passed:testLessThan(25) should return the string Under 55
+Passed:testLessThan(54) should return the string Under 55
+Passed:testLessThan(55) should return the string 55 or Over
+Passed:testLessThan(99) should return the string 55 or Over
+Passed:You should use the < operator at least twice
+*/
