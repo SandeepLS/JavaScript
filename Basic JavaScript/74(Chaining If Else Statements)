@@ -1,0 +1,52 @@
+/*
+if/else statements can be chained together for complex logic. Here is pseudocode of multiple chained if / else if statements:
+
+if (condition1) {
+  statement1
+} else if (condition2) {
+  statement2
+} else if (condition3) {
+  statement3
+. . .
+} else {
+  statementN
+}
+*/
+Ex:-
+function testSize(num) {
+  // Only change code below this line
+if(num<5){
+  return "Tiny";
+}
+else if(num<10){
+  return "Small";
+}
+else if(num<15){
+  return "Medium";
+}
+else if(num<20){
+  return "Large";
+}
+else{
+  return "Huge";
+}
+}
+console.log(testSize(7));
+
+
+/*
+Task:-
+Passed:You should have at least four else statements
+Passed:You should have at least four if statements
+Passed:You should have at least one return statement
+Passed:testSize(0) should return the string Tiny
+Passed:testSize(4) should return the string Tiny
+Passed:testSize(5) should return the string Small
+Passed:testSize(8) should return the string Small
+Passed:testSize(10) should return the string Medium
+Passed:testSize(14) should return the string Medium
+Passed:testSize(15) should return the string Large
+Passed:testSize(17) should return the string Large
+Passed:testSize(20) should return the string Huge
+Passed:testSize(25) should return the string Huge
+*/
