@@ -1,3 +1,7 @@
+JavaScript:- is make it more Interactive for Web application.
+JavaScript Engine:- JavaScript as a language, as a developer write a code for web application, which will work on the browser.
+                    The Browser as to interpret, the browser as converted that code into Machine code.
+
 /*
 In computer science, data is anything that is meaningful to the computer.
 JavaScript provides eight different data types which are undefined, null, boolean, string, symbol, bigint, number, and object.
