@@ -9,3 +9,5 @@ const myDog = {
 
 // Only change code below this line
 delete myDog['tails'];
+OR
+delete myDog.tails;
