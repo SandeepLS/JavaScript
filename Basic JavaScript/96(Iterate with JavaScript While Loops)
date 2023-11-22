@@ -26,9 +26,18 @@ while(i>=0)
   myArray.push(i);
   i--;
 }
-
+console.log(myArray)
 /*
 Test:-
 Passed:You should be using a while loop for this.
 Passed:myArray should equal [5, 4, 3, 2, 1, 0].
+*/
+
+/*
+Use this one also:-
+console.log(myArray);
+const reversedArray = myArray.reverse();
+
+// Print the reversed array
+console.log(reversedArray);
 */
