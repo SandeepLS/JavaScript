@@ -1,0 +1,21 @@
+/*
+JavaScript Change event gets trigerred when user modifies the written or chosen value of a form element. 
+For example: Changing input field's value, changing selection of dropdown list or, changing radio button selection. 
+The onchange event handler is used to handle this event.
+*/
+Ex:-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title>JavaScript OnChange Event</title>
+</head>
+<body>
+    <select onchange="alert('You have changed the selection!');">
+        <option>Select</option>
+        <option>OnePlus</option>
+        <option>Samsung</option>
+    </select>
+	<p><strong>Note:</strong> Select any option in select box to see how it works.</p>
+</body>
+</html>  
