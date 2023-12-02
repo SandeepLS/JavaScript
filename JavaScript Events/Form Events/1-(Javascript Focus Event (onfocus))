@@ -1,0 +1,19 @@
+JavaScript Form events:- are those events that get trigerred when a user interacts with a form in a website.
+onfocus:-Focus Event in JavaScript triggers when user focuses, i.e., clicks on an element. Using onfocus event handler, you can change element's style like change color, add shadow, etc.
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title> JavaScript Handling the Focus Event </title>
+</head>
+<body>
+    <script>
+        function highlightInput(elm){
+            elm.style.background = "lightgreen";
+        }    
+    </script>
+    <input type="text" onfocus="highlightInput(this)">
+    <button type="button">Button</button>
+</body>
+</html>  
