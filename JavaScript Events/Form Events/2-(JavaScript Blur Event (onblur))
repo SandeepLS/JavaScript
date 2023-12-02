@@ -1,0 +1,24 @@
+/*
+JavaScript Blur event is opposite of Focus event, it triggers when an element looses its focus.
+So, blur is a situation when an element gets unfocused after getting focused. The onblur event handler is used to handle this event.
+
+Example of onblur form event
+In the example of onblur event, an alert box gets displayed to inform the user that the input field has loses its focus.
+Notice that in this example the event handler is not calling any user-defined function.
+It is calling JS's in-built alert() function because we just want to give textual information to the user.
+
+You are free to experiment with the code. Make your functions and try different styles.
+*/
+Ex:-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <title> JavaScript Handling the Blur Event </title>
+</head>
+<body>
+    <input type="text" onblur="alert('Text input loses focus!')">
+    <button type="button">Submit</button>
+	<p><strong>Note:</strong> First click inside the text input box then click outside to see how it works.</p>
+</body>
+</html>  
