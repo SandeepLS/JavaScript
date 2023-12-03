@@ -1,0 +1,16 @@
+Def:-The onresize attribute fires when the browser window is resized.
+<!DOCTYPE html>
+<html>
+
+<body onresize="myFunction()">
+
+<p>Try to resize the browser window.</p>
+
+<script>
+function myFunction() {
+  alert("You have changed the size of the browser window!");
+}
+</script>
+
+</body>
+</html>
