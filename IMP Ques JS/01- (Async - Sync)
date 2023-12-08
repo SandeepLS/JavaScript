@@ -7,5 +7,30 @@ b) Async is non-blocking, which means it will send multiple requests to a server
    Sync is blocking — it will only send the server one request at a time and wait for that request to be answered by the server.
 
 c) Async increases throughput because multiple operations can run at the same time.
-   Sync is slower and more methodical.
+   Sync is slower and more methodica
+d)Synchronous happens to, execute code in sequential manner.(that line after the other).
+  Ex:- var a = 1;
+       var b = 2;
+       console.log(a);
+       console.log(b); 
+
+  Asynchronous code follow, non sequential manner and unexpected execution time of code.
+   genral ex:- it's take call back function, An print out in console loded the page.
+       fetch("/", function(){
+         console.log("loadded the page");
+       })
+  Ex:- it's a callback function(setimeout), it's take a callback function to be executed.
+      in that case we console log in the helloworld.
+      And second argument is the, How many mili second we want to wait,
+      it will have the dely of 1 sec, and the it simple printed on helloworld.
+        var a = 1;
+        setTimeout(function(){
+           console.log("Hello World");
+        },1000)
+        console.log(a);
+      O/P:-
+      1
+      Hello world
+      (:-In Synchronous should print first Hello world, after 1,
+         In Asynchronous print 1 after Hello World )
 
