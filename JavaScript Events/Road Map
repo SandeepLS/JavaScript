@@ -1,0 +1,49 @@
+A) MouseEvent:-
+  1:-onclick
+  2:-ondblclick
+  3:-onmouseover and onmouseout
+  4:-onmousedown and onmouseup
+  5:-onmousemove and onmouseout
+  6:-onmouseenter and onmouseleave
+
+B)Key Board Events:-
+  1:-onkeydown:-Call a function when the user presses a key
+  2:-onkeypress:- popup the alertbox
+  3:-onkeyup:-it will Give uppercase
+
+C)Form Events:-
+  1:-onfocus:-when user interacts with a form in website.
+  2:-onblur:-is opposite of Focus event, it triggers when an element looses its focus.
+  3:-onchange
+  4:-onsubmit
+
+D)Windows Event:-
+  1:-onload:-The onload attribute, fires when an object has been loaded.
+  2:-onunload
+  3:-onresize
+
+E)Drag Event
+  1:-ondrag
+  2:-ondragstart
+  3:-ondragover
+
+F)Touch Event
+  1:-ontouchstart
+  2:-ontouchmove
+  3:-ontouchend
+  4:-ontouchcancel
+
+G)Media Events:-
+  1:-play
+  2:-pause
+  3:-ended
+  4:-timeupdate
+
+H)Other Events:-
+  1:-error
+  2:-contextmenu
+  3:-focusin
+  4:-focusout
+
+
+
