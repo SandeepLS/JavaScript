@@ -16,19 +16,48 @@ Ex:-Modify function multiplyAll so that it returns the product of all the number
 function multiplyAll(arr) {
   let product = 1;
 
-   for(var i=0;i<arr.length;i++){
-     for(var j=0;j<arr[i].length;j++){
+   for(var i=0;i<arr.length;i++){       //iterates over the outer array.
+     for(var j=0;j<arr[i].length;j++){  //iterates over the inner array.
        product *= arr[i][j];
+       //console.log( product *= arr[i][j];);
      }
    }
   
   return product;
 }
+multiplyAll([[1, 2], [3, 4], [5, 6, 7]]);
+O/P:-5040
+-------------------------------------OR----------------------------------------------
+function multiplyAll(arr) {
+  let product = 1;
 
+   for(var i=0;i<arr.length;i++){       //iterates over the outer array.
+     for(var j=0;j<arr[i].length;j++){  //iterates over the inner array.
+       product *= arr[i][j];
+       //console.log( product *= arr[i][j];);
+     }
+   }
+  
+  return product;
+}
 var product = multiplyAll([[1, 2], [3, 4], [5, 6, 7]]);
-
 console.log(product);
+O/P:-5040
+---------------------------------------OR-----------------------------------------------
+const arr = [ [1, 2], [3, 4], [5, 6, 7] ];
+  let product =1;
+  for (let i = 0; i < arr.length; i++) {
+    for (let j = 0; j < arr[i].length; j++) {
+     product *= arr[i][j];
+    }
+  }
+  console.log(product);
 
+/*
+j < arr[i].length;: This is the loop condition. 
+It checks whether the current value of j is less than the length of the inner array at index i in the outer array arr[i]. 
+The goal is to iterate over all the elements of the inner array.
+*/
 
 /*
 Test:-
