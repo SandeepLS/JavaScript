@@ -1,0 +1,66 @@
+1)Iterate with JS While loop:-
+ // Ex1:-order wise.
+  const myArray = [];
+  let i=0;
+  while(i<5){
+      myArray.push(i)
+      i++;
+  }
+  console.log(myArray);
+  O/P:-[ 0, 1, 2, 3, 4 ]
+  
+ // Ex2:-Dedending order.
+  const myArray = [];
+  let i=5;
+  while(i>=0){
+      myArray.push(i)
+      i--;
+  }
+  console.log(myArray);
+  O/P:-[ 5, 4, 3, 2, 1, 0 ]
+---------------------------------------------------------------------------
+2)Iterate with JS Do..While loop:-
+  //Ex:-order wise.
+  const myArray = [];
+  let i=0;
+  do{
+      myArray.push(i)
+      i++;
+  }while(i<5);
+  console.log(myArray);
+  O/P;-[ 0, 1, 2, 3, 4 ]
+  -----------------------------------------------
+ // Ex2:-Reverse order.
+  const arr = [];
+  let i=5;
+  do{
+      arr.push(i);
+      i--;
+  }while(i>=0);
+  console.log(arr);
+  O/P:-[ 5, 4, 3, 2, 1, 0 ]
+  -----------------------------------------------
+ // Ex3:-it will continue to add the number in array, from 5 to 9.
+  const ourArray = []; 
+  let i = 5;
+  do {
+    ourArray.push(i);
+    i++;
+  } while (i < 10);
+  console.log(ourArray);
+  O/P:-[ 5, 6, 7, 8, 9 ]
+  ------------------------------------------------
+ // Ex4:-(1)You should be using a do...while loop for this exercise.
+       (2)Passed:myArray should equal [10].
+       (3)Passed:i should equal 11.
+  const arr = [];
+  let i=10;
+  do{
+      arr.push(i);
+      i++;
+  }while(i<5);
+  console.log(arr);
+  console.log(i);
+  O/P:-
+  [ 10 ]
+  11
