@@ -1,0 +1,75 @@
+Recursion:-Recursion is the concept that a function can be expressed in terms of itself. 
+Factorial:-the product of all the numbers, from 1 to that number. For example, factorial of 5 is equal to 1 * 2 * 3 * 4 * 5 = 120. 
+
+  5!=5*4*3*2*1
+    =120
+  Formula:- n! = n * (n-1) * (n-2) * (n-3) * ....(n-n)                                                    :-(n-n)=0
+            n! = n * (n-1)!                                                                                :-0! = 1
+            5! = 5 * 4!
+
+Ex:-
+  function factorial(n){
+      return n* factorial(n-1);
+  } 
+  let num = 5;
+  const result = factorial(num);
+  console.log(result);
+  O/P: Error:- RangeError: Maximum call stack size exceeded.
+  ---------------------------------------------------------
+  function factorial(n){
+      if(n==0)        //it will check each step(Maximum call stack size exceeded).
+      return 1;
+      else
+      return n* factorial(n-1);
+  } 
+  let num = 5;
+  const result = factorial(num);
+  console.log(result);
+  O/P:-120
+
+/*
+  Explaination:-When we the Factorial 5, it is going to stack.
+  When we call the factorial of 4, it will create one more entry in the stack.
+  Again it will new call factorial of 3,....so on.
+  like:-
+  factorial(1) -> it will return 1.
+  factorial(2) -> it will return 2.            :-It's recursion, function calling itself.
+  factorial(3) -> It will return 6.
+  factorial(4) -> It will return 24.
+  factorial(5) -> It will return 120.
+*/
+--------------------------------------------------------------------------------------------------
+Ex2:-
+/*
+Write a recursive function, sum(arr, n), that returns the sum of the first n elements of an array arr.
+Task:-
+sum([1], 0) should equal 0.
+Waiting:sum([2, 3, 4], 1) should equal 2.
+Waiting:sum([2, 3, 4, 5], 3) should equal 9.
+Waiting:Your code should not rely on any kind of loops (for or while or higher order functions such as forEach, map, filter, or reduce.).
+Waiting:You should use recursion to solve this problem.
+
+Npte:-
+function sum(arr, n) {
+  // Only change code below this line
+
+  // Only change code above this line
+}
+*/
+sol:-
+function sum(arr, n) {
+  // Base case: If n is 0, the sum is 0
+  if (n === 0) {
+    return 0;
+  } else {
+    // Recursive case: Return the sum of the first n-1 elements plus the nth element
+    return sum(arr, n - 1) + arr[n - 1];
+  }
+}
+
+// Test cases
+console.log(sum([1], 0));          // Output: 0
+console.log(sum([2, 3, 4], 1));    // Output: 2
+console.log(sum([2, 3, 4, 5], 3)); // Output: 9
+
+
