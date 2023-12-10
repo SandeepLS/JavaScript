@@ -15,3 +15,5 @@ function randomFraction() {
   return Math.random();
 }
 console.log(randomFraction());
+
+//O/P:- 0.5661416624802806
