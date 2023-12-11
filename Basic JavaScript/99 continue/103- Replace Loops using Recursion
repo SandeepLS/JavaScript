@@ -72,4 +72,22 @@ console.log(sum([1], 0));          // Output: 0
 console.log(sum([2, 3, 4], 1));    // Output: 2
 console.log(sum([2, 3, 4, 5], 3)); // Output: 9
 
+/*Explain:-
+1. Base case:-
+  if (n === 0) {
+    return 0;
+  }
+  This is the base case of the recursive function. If n is equal to 0, it means there are no elements to sum, so the function returns 0.
+2. Recursive case:-
+  return sum(arr, n - 1) + arr[n - 1];
+  If n is not 0, it's a recursive case. 
+  The function recursively calls itself with n - 1 to sum the first n - 1 elements and then adds the n-th element (arr[n - 1]) to the result.
+3.Test case:-
+  console.log(sum([1], 0));          // Output: 0
+  console.log(sum([2, 3, 4], 1));    // Output: 2
+  console.log(sum([2, 3, 4, 5], 3)); // Output: 9
+  The first test case ([1], 0) has only one element, and since n is 0, the output is 0.
+  The second test case ([2, 3, 4], 1) sums the first 1 element, which is 2.
+  The third test case ([2, 3, 4, 5], 3) sums the first 3 elements, resulting in 2 + 3 + 4 = 9.
+*/
 
