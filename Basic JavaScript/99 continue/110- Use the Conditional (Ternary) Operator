@@ -1,0 +1,33 @@
+/*Def:-
+The conditional operator, also called the ternary operator, can be used as a one line if-else expression.
+
+The syntax is a ? b : c, where a is the condition, b is the code to run when the condition returns true, and c is the code to run when the condition returns false.
+
+The following function uses an if/else statement to check a condition:
+forEx:-
+function findGreater(a, b) {
+  if(a > b) {
+    return "a is greater";
+  }
+  else {
+    return "b is greater or equal";
+  }
+}
+forex:-
+This can be re-written using the conditional operator:
+function findGreater(a, b) {
+  return a > b ? "a is greater" : "b is greater or equal";
+}
+
+Test:-
+checkEqual should use the conditional operator
+Passed:checkEqual(1, 2) should return the string Not Equal
+Passed:checkEqual(1, 1) should return the string Equal
+Passed:checkEqual(1, -1) should return the string Not Equal
+*/
+Ex:-
+function checkEqual(a, b) {
+   return a===b ? "Equal" : "Not Equal";
+}
+checkEqual(1, 2);
+O/P:- Not Equal
