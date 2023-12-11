@@ -42,7 +42,7 @@ O/P:- 0.6243604806485343
 
 Ex:-
 function randomNumber(){
-  return Math.random() * 10;  //Generate Random number between 0 and 9.
+  return Math.random() * 10;  //Generate Random number between 0 and 10.
 }
 console.log(randomNumber());
 O/P:-7.95777273693969
@@ -50,15 +50,14 @@ O/P:-7.95777273693969
 B)Generate Random Whole Number:-
 Ex:-
 function randomNumber(){
-  // return Math.random() * 10;
-  return Math.floor(Math.random());  //Generate Random Whole number between 0 and 1.
+  return Math.floor(Math.random());  //Generate Random Whole number between 0 and 10.
 }
 console.log(randomNumber());
 O/P:- 0
 
 Ex:-
 function randomNumber(){
-  return Math.floor(Math.random() * 10);  //Generate Random Whole number between 0 and 9.
+  return Math.floor(Math.random() * 10);  //Generate Random Whole number between 0 and 10.
 }
 console.log(randomNumber());
 O/P:- 4
