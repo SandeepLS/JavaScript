@@ -1,4 +1,6 @@
-JavaScript:- is make it more Interactive for Web application.
+JavaScript:- JavaScript is a scripting language, you can use to make web pages more interactive. 
+It is one of the core technologies of the web, along with HTML and CSS, and is supported by all modern browsers.
+
 JavaScript Engine:- JavaScript as a language, as a developer write a code for web application, which will work on the browser.
                     The Browser as to interpret, the browser as converted that code into Machine code.
                     JavaScript engine convert your Js code, and will put it into machine code.
