@@ -17,7 +17,8 @@ fun2 is ending
 ------------------------------------------------------------------------------------------------------------------------------
 2)Asynchronous:- Asynchronous code follow, non sequential manner and unexpected execution time of code.
                  Async is a AJAX Web Application Model.
-                 Async request doesn't block the client,...ie Browser responsive.
+                 Async request doesn't block the client,...ie Browser responsive. 
+                 (Javascript has to wait for an operation to comp[lete, It will execute the rest of the code while waiting.)
 
 Ex:-
 const fun2 = () => {
