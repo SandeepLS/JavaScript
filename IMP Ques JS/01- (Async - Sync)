@@ -14,7 +14,7 @@ d)Synchronous happens to, execute code in sequential manner.(that line after the
        console.log(a);
        console.log(b); 
 
-  Asynchronous code follow, non sequential manner and unexpected execution time of code.
+  Asynchronous happens to, execute code in non sequential manner and unexpected execution time of code.
    genral ex:- it's take call back function, An print out in console loded the page.
        fetch("/", function(){
          console.log("loadded the page");
