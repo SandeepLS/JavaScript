@@ -1,0 +1,7 @@
+Life cycle method of component:-
+-class component
+
+Life cycle methods Phases:- there are three phases
+-Mounting phase
+-Updating phase
+-UnMounting phase
