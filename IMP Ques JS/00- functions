@@ -1,0 +1,93 @@
+1)Function Declerations:-
+  function greet(name){
+    console.log("Hello, "+name+"!");
+  }
+  greet("Alice");
+  O/P:- Hello, Alice!
+
+2)Function Expression:- greet is a variable, that holds an anonymous function expression. 
+  const greet = function(name){
+    return "Hello ,"+name+"!";
+  }
+  console.log(greet("Alice")); //Hello, Alice!
+
+3)Arrow Function:-It's equivalent to the traditional function expression.
+  const add = (a,b) => {
+    return a+b;
+  }
+  console.log(add(5, 3));
+
+4)Named Function Expression:-it same it has Function Expression that holds a named function (square).
+  const calcSquare = function square(num){
+     return num*num;
+  }
+  console.log(calcSquare(5));
+
+5)Immediate Invoke Function Expression:- It's a common pattern used to create a private scope for variables,
+  (function(){
+     console.log("IIFE");
+  })();
+
+6)Generator Function:-it allow you to define iterator, usinf the 'yield' keyword.
+  function* countUpTo(limit){
+     let i = 1;
+     while(i <= limit){
+        yield i;
+        i++;
+     }
+  }
+  const itterator = countUpTo(5);
+  console.log(itterator.next().value);//1
+  console.log(itterator.next().value);//2
+  console.log(itterator.next().value);//3
+  console.log(itterator.next().value);//4
+  console.log(itterator.next().value);//5
+  console.log(itterator.next().value);//undefined
+
+
+**)Invoke function:-
+  var n =2;
+  function square(num){
+     var ans = num*num;
+     return ans;
+  }
+  console.log(square(n));
+  -----------------------OR---------------------
+  var x =7;
+  function fun1(){
+     console.log("Hello");
+  }
+  console.log(x);
+  fun1();
+  O/P:-7
+       Hello
+  -----------------------OR---------------------
+  console.log(x);
+  fun1();
+  var x =7;
+  function fun1(){
+     console.log("Hello");
+  }
+  O/P:-undefined
+       Hello
+  -----------------------OR---------------------
+  Ex:-The functions fun1 and fun2 are invoked functions. The invocation starts with the fun1() call at the end of the script.
+  const fun2 = () =>{                  //call back function
+      console.log("fun2 is starting");
+  }
+  const fun1 = () => {                 //call back function
+      console.log("fun1 is starting");
+      fun2();
+      console.log("fun2 is ending");
+  }
+  fun1(); //call the function
+
+
+2)Call Back function:-
+  var a = 1;
+  setTimeout(function(){
+      console.log("Hello World");
+  },1000)
+  console.log(a);
+  O/P:- 1
+        Hello World
