@@ -1,3 +1,4 @@
+Hooks:-
 1)Use State
 2)Use Effect
 3)Use Contect
@@ -7,3 +8,7 @@
 6)Use Ref
 
 Note:-usestate-> u should know how the dependency arrays work.
+
+Custom Hooks:- its make ur code clean, Maintainable, Readable, Reuseable
+-when, why, How ?
+-code
