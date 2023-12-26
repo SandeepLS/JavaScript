@@ -1,0 +1,9 @@
+1)Use State
+2)Use Effect
+3)Use Contect
+4)Use Reducer
+5)Use Memo
+5)Use Call back
+6)Use Ref
+
+Note:-usestate-> u should know how the dependency arrays work.
