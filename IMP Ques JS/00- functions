@@ -44,9 +44,67 @@
   console.log(itterator.next().value);//5
   console.log(itterator.next().value);//undefined
 
+7)CallBack Function:- Function that are passed as argument, to other function And are invoked latter.
+  Ex:-
+  function callbackFunction(){
+     console.log("callback function is executed");
+  }
+  
+  function higherOrderFunction(callback){
+     console.log("higherOrderFunction is start");
+     callback();
+     console.log("higherOrderFunction is end");
+  }
+  higherOrderFunction(callbackFunction);
+
+8)Async Function:-these function simply working with asynchronous code, using Promise and await/async.
+  Ex:-
+  function fetchData(){
+     return new Promise(resolve => {
+        setTimeout(() =>{
+           resolve("Data Fetched");
+        }, 2000);
+     });
+  }
+  
+  async function asyncFunction(){
+     console.log("async fun started");
+  
+     try{
+        const result = await fetchData();
+        console.log(result);
+     }catch(error){
+        console.log("Error:", error);
+     }
+  
+     console.log("async fun completed");
+  }
+  asyncFunction();
+
+9)Constructor Function:- Used for creating object and are typically called with the 'new' keyword.
+  Ex:-
+  function Person(name){
+    this.name = name;
+  }
+  const person = new Person("Sandeep");
+  console.log(person.name);
+
+10)Recurcive Function:-function that call themself.
+  Ex:-
+  function factorial(n){
+    if(n <= 0){
+      return 1;
+    }else{
+      return n* factorial(n-1);  //n! = n * (n-1)!
+    }
+  }
+  const result = factorial(5);
+  console.log(result);
+
+
 
 **)Invoke function:-
-  var n =2;
+  var n =2
   function square(num){
      var ans = num*num;
      return ans;
@@ -81,9 +139,7 @@
       console.log("fun2 is ending");
   }
   fun1(); //call the function
-
-
-2)Call Back function:-
+------------------------------------------------
   var a = 1;
   setTimeout(function(){
       console.log("Hello World");
