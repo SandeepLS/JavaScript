@@ -1,0 +1,89 @@
+Scope:- is a certain region of program, where define variable exist, and can be recognize. 
+        / be on that it can not be recognize.
+        Multiple scope:- Global scope, Block scope(let, const) introduction in ES6, Functional scope(var)
+
+var a;
+var a; //(we can redecler, has many times, as you want.)
+
+let a;
+let a; //(we can not redeclear, a variable, by using let.)
+
+const a;
+const a; //(we can not redeclear, a variable, by using let.)
+
+var can be redeclear in the same scope. but
+let and const we can not redeclear in the same scope.
+
+1)Global scope:-We can access anywhere in our js code.
+  var a = 10;
+  console.log(a);
+
+2)Function variable:-
+  {
+        var a =10;
+  }
+    console.log(a);
+
+3)Block scope:-We can access only with in the block.
+  {
+      let a =10;
+      console.log(a);
+  }
+  -------OR---------
+  {
+      const a =10;
+      console.log(a);
+  }
+
+4)Shadow Variable:-Ex:- In a fun, we can declear variable name-> let a,
+                        same as, we can declear in Block scope variable name-> let a,
+                        it will execute the statement.
+  function test(){
+      let a = "hi";
+      if(true){
+          let a = "Hello";
+          console.log(a);
+      }
+      console.log(a);
+  }
+  test(); //Hello hi
+
+-----------------Leggal shadow(var after let)---------------------
+  In a fun, we should declear Global variable name-> var a, & same as
+  in a block, we can declear block variable name-> let a,
+  is known as----.
+  Ex:-
+  function test(){
+      var a = "hi"; 
+      if(true){
+          let a = "Hello";
+          console.log(a);
+      }
+      console.log(a);   
+  }
+  test(); // Hello hi
+
+---------------Illeggal shadow(let after var)---------------------
+  it will reverse order the leggal shadow.
+  Ex:-
+  function test(){
+      let a = "hi";
+      if(true){
+          var a = "Hello";
+          console.log(a);
+      }
+      console.log(a);
+  }
+  test();
+
+ii)Decleration without initialization:-
+   In var and let variable, we can Decleration without initialization.
+   it will be fine.
+   Ex:-
+        1)var a;
+        2)let a;
+
+   But, in const variable, without initialization, it will not be execute.
+   Ex:-
+      1)const a;      //Wrong
+      2)const a = 10; //right
