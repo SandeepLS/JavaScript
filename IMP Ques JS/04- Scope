@@ -1,30 +1,60 @@
-Scope:- is a certain region of program, where define variable exist, and can be recognize. 
+A)Scope:- is a certain region of program, where define variable exist, and can be recognize. 
         / be on that it can not be recognize.
         Multiple scope:- Global scope, Block scope(let, const) introduction in ES6, Functional scope(var)
 
-var a;
-var a; //(we can redecler, has many times, as you want.)
+        var a;
+        var a; //(we can redecler, has many times, as you want.)
+        
+        let a;
+        let a; //(we can not redeclear, a variable, by using let.)
+        
+        const a;
+        const a; //(we can not redeclear, a variable, by using let.)
+        
+        var can be redeclear in the same scope. but
+        let and const we can not redeclear in the same scope.
 
-let a;
-let a; //(we can not redeclear, a variable, by using let.)
+ 1)Global scope:-
+        We can access anywhere in our js code.
+        Variable declared outside a function, becomes GLOBAL scpoe.
+        Variables declared with var, let and const are quite similar when declared outside a block.
+        Ex:-1
+        let carName = "Volvo";
+        myFunction();
+        
+        function myFunction() {
+          document.getElementById("demo").innerHTML = "I can display " + carName;
+        }
 
-const a;
-const a; //(we can not redeclear, a variable, by using let.)
-
-var can be redeclear in the same scope. but
-let and const we can not redeclear in the same scope.
-
-1)Global scope:-We can access anywhere in our js code.
-  var a = 10;
-  console.log(a);
+        Ex:-2
+        var a = 10;
+        console.log(a);
+        
+        Ex:-3
+        var x = 2;       // Global scope
+        let x = 2;       // Global scope
+        const x = 2;       // Global scope
 
 2)Function variable:-
-  {
-        var a =10;
-  }
-    console.log(a);
+        Variables defined inside a function, are not accessible (visible) from outside the function.
+        Variables declared with var, let and const are quite similar when declared inside a function.
+        They all have Function Scope:-
+ function myFunction() {
+  var carName = "Volvo";   // Function Scope
+ }
+ function myFunction() {
+  let carName = "Volvo";   // Function Scope
+ }
+ function myFunction() {
+  const carName = "Volvo";   // Function Scope
+ }
 
-3)Block scope:-We can access only with in the block.
+3)Block scope:-
+        Before ES6 (2015), JavaScript variables had only Global Scope and Function Scope.
+        ES6 introduced two important new JavaScript keywords: let and const.
+        These two keywords provide Block Scope in JavaScript.
+        Variables declared inside a { } block cannot be accessed from outside the block:
+  Ex:-1
   {
       let a =10;
       console.log(a);
@@ -34,6 +64,18 @@ let and const we can not redeclear in the same scope.
       const a =10;
       console.log(a);
   }
+
+  Local scope:- 
+        Variables declared within a JavaScript function, are LOCAL to the function.
+        Ex:-
+        function myFunction() {
+          let carName = "Volvo";
+          // code here CAN use carName
+        }
+        // code here can NOT use carName
+        
+        Local variables have Function Scope:
+        They can only be accessed from within the function.
 
 4)Shadow Variable:-Ex:- In a fun, we can declear variable name-> let a,
                         same as, we can declear in Block scope variable name-> let a,
@@ -87,3 +129,42 @@ ii)Decleration without initialization:-
    Ex:-
       1)const a;      //Wrong
       2)const a = 10; //right
+
+iii)Re-Initialization
+       a) If reinitialize the var & let variable, it will be executed.
+        Ex:-var a = 10;
+            a = 11;
+        
+        Ex:-let a = 10;
+            a = 11;
+         
+       b) If reinitialize the const variable, it won't be executed.
+        Ex:-const a = 10;
+            a = 10; //Uncaught error
+
+B) Hosting:-first we should understand the "Execution context".
+        Ex:-
+        var a = 10;
+        console.log(a);
+        O/P:-10
+        
+        Ex:-
+        console.log(a);
+        var a = 10;
+        O/P:-undefine
+        
+        Ex:-let a = 10;
+        console.log(a);
+        O/P:-10
+        
+        Ex:-console.log(a);
+        let a = 10;
+        O/P:-Erroe:- cannot access a, before initializing
+        
+        Ex:-const a = 10;
+        console.log(a);
+        O/P:-10
+        
+        Ex:-console.log(a);
+        const a = 10;
+        O/P:-Erroe:- cannot access a, before initializing
