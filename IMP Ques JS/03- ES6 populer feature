@@ -11,3 +11,19 @@ Modules
 Collections
 Supports Map/Set & Weak-map/Weak-Set
 Localization, meta-programming, internationalization
+
+
+Imp ques:-
+console.log("9" > "11"); //9>1, 9>1  //true
+
+console.log("9" > 11); // 9 > 11  //false
+
+console.log("9" > 8); // 9 > 8   //true
+
+console.log("" > -1); //0 > -1   //true
+
+console.log("San" > 1); //false
+
+console.log(1 > "san"); //false
+
+console.log(1 < "san"); //false
