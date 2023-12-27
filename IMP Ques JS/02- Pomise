@@ -2,7 +2,29 @@ Def:-
 In JavaScript, a Promise is an object, that will produce a single value some time in the future. 
 If the promise is successful, it will produce a resolved value, 
 but if the promise is unsuccessflu/something goes wrong, then it will produce a reason why the promise failed.
-
+Ex:-
+function fetchData(){
+     return new Promise(resolve => {
+        setTimeout(() =>{
+           resolve("Data Fetched");
+        }, 2000);
+     });
+  }
+  
+  async function asyncFunction(){
+     console.log("async fun started");
+  
+     try{
+        const result = await fetchData();
+        console.log(result);
+     }catch(error){
+        console.log("Error:", error);
+     }
+  
+     console.log("async fun completed");
+  }
+  asyncFunction();
+---------------------------------------------------------------------------------------------
 we typically use a promise to manage situations,
 where you must wait for the outcome of an operation. 
 For example, uploading files to the server and awaiting the response of an API call, or just asking the user to choose a file from their computer.
@@ -11,3 +33,4 @@ What are the 3 promises in JavaScript?
 Promise.prototype.then() , Promise.prototype.catch() , and Promise.prototype.finally() 
 
 Essentially, a promise is a returned object to which you attach callbacks, instead of passing callbacks into a function.
+
