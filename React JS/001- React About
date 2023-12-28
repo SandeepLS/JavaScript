@@ -1,0 +1,61 @@
+Def:- Reactjs is a Javascript library, for building Fast &
+  interactive user interface. for Web as well as Mobile application.
+  It is a open-source, Reusable component based front=end library.
+  In a Model View Controller, React is a View,-
+  which means is responsible for, how the app looks like & fell.
+
+Ex:- Let's see the react works in real-time.
+  Take an example of Instagram page.
+  The entire of UI designed into an 5 component,
+  -Search component
+  -Profile description component
+  -Status component
+  -Post list component
+  -Single post component
+  Which is make, code easier to debug &
+  each component has it's own property & function.
+
+Why:-
+  Easy creation of Dynamic web application.
+  Performance Enhancement.
+  Reusable component.
+  Unidirectional data flow.
+  Small learning curve.
+  It can be allow use mobile application.
+  Dedicated tools for easy debugging.
+
+Features:-
+(a)JSX:- is a syntax extention to Javascript.
+  It is used with React, What the user interface should looks like.
+  By using JSX, we can write HTML structure,
+  in that same file, contains Javascript code.
+  JSX is the combination of HTML & JS, HTML + JS = JSX.
+
+(b)Virtual DOM:- Data Object Model.
+  It define, How document can be access/How manipulating on web pages.
+  DOM treats an XML/HTML document, as tree structure.
+  Note:-That Virtual DOM, is the exact copy of Real DOM.
+  Manipulating the Real DOM is much slower, Then manipulating Virtual DOM,-
+  because nothing gets drown onscreen.
+
+(c)Performance:- React is a Virtual Component.
+
+(d)One-way data binding:- Keeps everything Moduler & Fast.
+  A unidirectional data flow, means When design a react app,
+  you need often, child component within parent component.
+
+(e)Extention:- React has many ecxtention, that we can use to create 
+  Full flex content application.
+  It provide server side rendering, means the application are render on the server,-
+  rather then browser.
+  Extention:-
+  React Native:- It builds mobile apps, using only Javascript.
+                 React native app is a, Real Mobile app.
+  Flux:- is a application architecture, that facebook uses.
+         it unidirectional flow.
+
+(f)Debugging:- React application are extremly easy to test.
+  due to large developer community.
+
+
+
