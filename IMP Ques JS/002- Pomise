@@ -26,11 +26,104 @@ function fetchData(){
   asyncFunction();
 ---------------------------------------------------------------------------------------------
 we typically use a promise to manage situations,
-where you must wait for the outcome of an operation. 
+where you must wait for the, outcome of an operation. 
 For example, uploading files to the server and awaiting the response of an API call, or just asking the user to choose a file from their computer.
-
-What are the 3 promises in JavaScript?
-Promise.prototype.then() , Promise.prototype.catch() , and Promise.prototype.finally() 
-
 Essentially, a promise is a returned object to which you attach callbacks, instead of passing callbacks into a function.
 
+What are the 3 promises in JavaScript?
+1) Promise.prototype.then() :- promise.then((result) =>{}) //Handle fulfilled(resolved) promises
+2) Promise.prototype.catch():- promise.catch((result) =>{}) //Handle failed(rejected) promises
+3) Promise.prototype.finally() 
+
+Ex:-1:- npm install axios .
+const axios = require('axios')
+axios
+    .get('https://www.boredapi.com/api/activity')
+    .then(response => {                
+        console.log(`You have ${response.data.activity}`)
+    })
+    .catch(error => {
+        console.log(`Erroe! ${error}`)
+    })
+
+O/P:-You have Paint the first thing you see
+
+Ex:-2
+const axios = require('axios')
+axios
+    .get('https://httpstat.us/500')
+    .then(resolve =>{
+        console.log(`You could ${resolve.data.activity}`)
+    })
+    .catch(error =>{
+        console.log(`Error! ${error}`)
+    })
+O/P:-Error! AxiosError: Request failed with status code 500
+------------------------------------------------------------------------------------------------
+await:- await operator is used to, wait for a Promises.
+It can only be used inside an async function with reguler Javascript code.
+however it can be used, on its own with Javascript modules.
+Ex:-1
+const axios = require('axios')
+async function getActivity(){
+    let response = await axios.get('https://www.boredapi.com/api/activity')
+    console.log(`You Could ${response.data.activity}`)
+}
+getActivity();
+O/P:-You Could Find a charity and donate to it
+
+Ex:-2
+const axios = require('axios')
+async function getActivity(){
+    try{
+    let response = await axios.get('https://www.boredapi.com/api/activity')
+    console.log(`You Could ${response.data.activity}`)
+    }
+    catch(error){
+        console.log(`Error! ${error}`)
+    }
+}
+getActivity();
+
+Ex:-3
+const axios = require('axios')
+async function getActivity(){
+    try{
+    let response = await axios.get('https://httpstat.us/500')
+    console.log(`You Could ${response.data.activity}`)
+    }
+    catch(error){
+        console.log(`Error! ${error}`)
+    }
+}
+getActivity();
+O/P:-Error! AxiosError: Request failed with status code 500
+
+-------------------------------------------------------------------------------------------
+Async Function:-these function simply working with asynchronous code, using Promise and await/async.
+Ex:-
+     function fetchData(){
+          return new Promise(resolve => {
+             setTimeout(() =>{
+                resolve("Data Fetched");
+             }, 2000);
+          });
+       }
+       
+       async function asyncFunction(){
+          console.log("async fun started");
+       
+          try{
+             const result = await fetchData();
+             console.log(result);
+          }catch(error){
+             console.log("Error:", error);
+          }
+       
+          console.log("async fun completed");
+       }
+       asyncFunction();
+O/P:-
+async fun started
+Data Fetched
+async fun completed
