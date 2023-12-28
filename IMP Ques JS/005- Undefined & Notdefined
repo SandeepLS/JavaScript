@@ -1,0 +1,17 @@
+1)Undefined:- Whish is not a empty,
+  You can assume it, like a placeholder,
+  which is get a time, means untill the variable, it's assign some other variable.
+  Ex:-
+  var a = 10;
+  console.log(a);
+  O/P:-10
+  
+  Ex:- 
+  console.log(a);
+  var a = 10;
+  O/P:-Undefined
+
+2)Notdefine:-whish is not allocated memory
+  Ex:-
+  console.log(a);
+  O/P:-not defined
