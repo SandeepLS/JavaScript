@@ -204,22 +204,5 @@ B) Hosting:-first we should understand the "Execution context".
         const a = 10;
         O/P:-Erroe:- cannot access a, before initializing
 
-C):- Lexical Environment:- (Note:-Remember Call Stack.)
-     Wherever Execution Context is created, along with the Lexical Environment also created.
-     Lexival Environment is Local memory, plus refernce to the Lexical environment of it's parent.
-     Lexical term is a, Hirarchy or in a Sequence.
-     Ex:- c() fun, is lexicaly sit in a() fun. OR/ c() is lexiacly inside an a().
-          Then a() is lexicaly inside an Global scope.
-          When i say, lexical environment is local memory, along with lexical environment is parent.
-        function a(){
-           var a = 10;
-           c();
-           function c(){
-                console.log(a);
-           }
-        }
-        a();   //10
-
-     Scope Chain:- Lexical environment of it's parent, refernce to another lexical environment parent.
      
         
