@@ -1,0 +1,18 @@
+React:- Component, State & Props
+(A)Components:- are the building blocks of any React Application,-
+  And single app usually consist of multiple components.
+  Reusability: components can be reused, multiple time accross the application,
+  this reduces the development time.
+  Ex:-
+  class Simple extends React.Component {   //A component is implementing as a JS class, having some state & render method.
+  state = {};    //state is a data, which you want component to render.
+  render(){      //render responsible, How the UI looks & Fell to the user.
+      return(
+          <div>
+            <h1>Hello world</h1>
+          </div>
+      );
+  }
+}
+
+(B)State:- of a component, is an object that holds some data. 
