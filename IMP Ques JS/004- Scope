@@ -1,5 +1,6 @@
 A)Scope:- is a certain region of program, where define variable exist, and can be recognize. 
         / be on that it can not be recognize.
+        Scope is directley dependent on Lexiacl Environment.
         Multiple scope:- Global scope, Block scope(let, const) introduction in ES6, Functional scope(var)
 
         var a;
@@ -35,10 +36,27 @@ A)Scope:- is a certain region of program, where define variable exist, and can b
         let x = 2;       // Global scope
         const x = 2;       // Global scope
 
+        Ex:- function san(){
+                console.log(a);
+             }
+             var a = 10;
+             san();        //10
+
+        Ex:-function san(){
+               mas();
+               function mas(){
+                     console.log(a);
+                }
+            }
+            const a = 10;
+            san();        //10
+        
+
 2)Function variable:-
         Variables defined inside a function, are not accessible (visible) from outside the function.
         Variables declared with var, let and const are quite similar when declared inside a function.
         They all have Function Scope:-
+Ex:-1
  function myFunction() {
   var carName = "Volvo";   // Function Scope
  }
@@ -48,6 +66,23 @@ A)Scope:- is a certain region of program, where define variable exist, and can b
  function myFunction() {
   const carName = "Volvo";   // Function Scope
  }
+
+Ex:-2:- Variables defined inside a function, are not accessible (visible) from outside the function.
+function san(){
+    const a = 10;
+}
+console.log(a);
+san();            //Not define
+
+Ex:-3
+function san(){
+    const a = 10;
+    mas();
+    function mas(){
+        console.log(a);
+    }
+}
+san();   //10
 
 3)Block scope:-
         Before ES6 (2015), JavaScript variables had only Global Scope and Function Scope.
@@ -168,3 +203,23 @@ B) Hosting:-first we should understand the "Execution context".
         Ex:-console.log(a);
         const a = 10;
         O/P:-Erroe:- cannot access a, before initializing
+
+C):- Lexical Environment:- (Note:-Remember Call Stack.)
+     Wherever Execution Context is created, along with the Lexical Environment also created.
+     Lexival Environment is Local memory, plus refernce to the Lexical environment of it's parent.
+     Lexical term is a, Hirarchy or in a Sequence.
+     Ex:- c() fun, is lexicaly sit in a() fun. OR/ c() is lexiacly inside an a().
+          Then a() is lexicaly inside an Global scope.
+          When i say, lexical environment is local memory, along with lexical environment is parent.
+        function a(){
+           var a = 10;
+           c();
+           function c(){
+                console.log(a);
+           }
+        }
+        a();   //10
+
+     Scope Chain:- Lexical environment of it's parent, refernce to another lexical environment parent.
+     
+        
