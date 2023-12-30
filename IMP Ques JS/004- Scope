@@ -172,6 +172,11 @@ iii)Re-Initialization
         
         Ex:-let a = 10;
             a = 11;
+
+        Ex:-SyntaxError: Identifier 'b' has already been declared 
+        let b = 20;
+        let b=30;
+        console.log(b)
          
        b) If reinitialize the const variable, it won't be executed.
         Ex:-const a = 10;
