@@ -3,7 +3,7 @@ Higher order component:- is a Function,
   It facilites reusing of component logic.
   Ex:- const NewComponent = higherOrderComponent(OriginalComponent);
 
-  For Example:-
+  For Example:-1
   (i)Evertime we click the button, the value gets increment. (type:- rce).
     import React, { Component } from 'react'
     export class Click extends Component {
@@ -77,8 +77,52 @@ function App() {
   );
 }
 export default App;
+-----------------------------------------------------------------------------------------------
 
-  
+For Example:-2
+When ever the mouse over on the button, it will increment a value.
+
+MouseEnter.js:-
+import React, { Component } from 'react'
+
+export class Click extends Component {
+   constructor(props) {
+     super(props);
+   
+     this.state = {
+        count: 0
+     };
+   }
+
+   UpdateMouseEnter = () =>{
+        this.setState({count: this.state.count + 1});
+   };
+
+  render() {
+    const { count } = this.state;
+    return (
+      <div>
+        <button onMouseEnter={this.UpdateMouseEnter}>Clicked {count} item</button>
+      </div>
+    );
+  }
+}
+export default Click
+
+App.js:-
+import React from 'react';
+import MouseEnter from './Components/MouseEnter';
+
+function App() {
+  return (
+    <div>
+      <h1>Hello world</h1>
+      <Click />
+      <MouseEnter />
+   </div>
+  );
+}
+export default App;
   
   
   
