@@ -1,0 +1,104 @@
+Folder:- Components
+Ex:-
+FunctionalComp.js:-
+import React from 'react';
+
+function FunctioanalComp(){
+    return <p>This is Functional Component</p>
+}
+
+ClassComponent.js:-
+import React from 'react';
+class ClassComp extends React.Component{
+    render(){
+      return <p>This is a Class Component</P>
+    }
+}
+
+Components have Nested into the Main component, Using import and export keyword.
+Export:- feature is used to export, a particular module(file), & use it to another module(file).
+import:- feature is used to import, a particular module(file), & use it to existing module(file).
+Consider a folder, contains a multiple components, with a .jsx extension.
+
+2 types of exports:-
+(i)default export:-is used to export only one object(function, variable, class) from the file.
+                There can only be one, default export per file.
+                Ex:- export default class ClassComp extends React.Component
+
+                When u can impoert it:-
+                In order to import, the default export from a file, we can use only the address.
+                Ex:- import Comp1 from './Component/Comp1';
+    Ex:-
+    FunctionalComp.js:-
+    import React from 'react';
+    function FunctioanalComp(){
+        return <p>This is Functional Component</p>
+    }
+    export default FunctionalComp;
+
+    ClassComp.js:-
+    import React from "react";
+    class ClassComp extends React.Component{
+      render(){
+         return <p>This is a ClassComp</p>;
+      }
+    }
+    export default ClassComp;
+    
+    App.js:-
+    imort React from 'react';
+    import FC from './Components/FunctionalComp';
+    import CC from './Components/ClassComp';
+    
+    function App() {
+      return (
+        <div>
+          <h1>Hello world</h1>
+          <h1>Hello India</h1>
+          <FC />
+          <CC />
+       </div>
+      );
+    }
+    export default App;
+------------------------------------------------------------------------------------
+(ii)named/just exports:- is used to export, multiple object from a file.
+                         there can be several named, exports from the single file.
+                         Ex:- export class Class1 extends React.Component
+                         Importing named value allows, the user to import multiple object from a file.
+                         However the names of the object, can not be changed while importing.
+                         Ex:- import {Class1, Class2} from './Components';
+
+      Ex:-
+      ClassComp.js:-
+      import React from "react";
+      
+      export class ClassComp extends React.Component{
+          render(){
+             return <p>This is a ClassComp</p>;
+          }
+      }
+      
+      export class ClassComp2 extends React.Component{
+          render(){
+             return <p>This is a Another ClassComp</p>;
+          }
+      }
+      
+      App.js:-
+      import './App.css';
+      import FC from './Components/FunctionalComp';
+      import {ClassComp, ClassComp2} from './Components/ClassComp';
+      
+      function App() {
+        return (
+          <div>
+            <h1>Hello world</h1>
+            <h1>Hello India</h1>
+            <FC />
+            <ClassComp />
+            <ClassComp2 />
+         </div>
+        );
+      }
+      export default App;
