@@ -1,0 +1,84 @@
+Higher order component:- is a Function, 
+  that takes a component, and returns a new component.
+  It facilites reusing of component logic.
+  Ex:- const NewComponent = higherOrderComponent(OriginalComponent);
+
+  For Example:-
+  (i)Evertime we click the button, the value gets increment. (type:- rce).
+    import React, { Component } from 'react'
+    export class Click extends Component {
+      render() {
+        return (
+          <div>
+            <button>Clicked 1 item</button>
+          </div>
+        )
+      }
+    }
+    export default Click
+  
+  (ii)And this am using variable count, here am using to consept of state.(type:- rconst)
+      lets define a variable count, and initialize it to 0.
+      constructor(props) {
+      super(props)
+    
+      this.state = {
+         count: 0;
+      }
+    }
+    
+  (iii)Lets define the count variable, in render method.
+      const {count} = this.state;
+      
+  (iv)Update:- <button onClick={this.UpdateClick}>Clicked 1 item</button>
+      UpdateClick is another method, lets define in state.
+      UpdateClick = () =>{
+        this.setState({ count: this.state.count + 1 });
+      };
+
+  (v)Final O/P:-
+Click.js:-
+import React, { Component } from 'react'
+
+export class Click extends Component {
+   constructor(props) {
+     super(props);
+   
+     this.state = {
+        count: 0
+     };
+   }
+
+   UpdateClick = () =>{
+        this.setState({count: this.state.count + 1});
+   };
+
+  render() {
+    const { count } = this.state;
+    return (
+      <div>
+        <button onClick={this.UpdateClick}>Clicked {count} item</button>
+      </div>
+    );
+  }
+}
+export default Click
+
+App.js:-
+import React from 'react';
+import Click from './Components/Click';
+
+function App() {
+  return (
+    <div>
+      <h1>Hello world</h1>
+      <Click />
+   </div>
+  );
+}
+export default App;
+
+  
+  
+  
+  
