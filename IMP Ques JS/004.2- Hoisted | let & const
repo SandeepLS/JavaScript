@@ -1,0 +1,71 @@
+A) Hosting:-first we should understand the "Execution context".
+            In the temporal ded zone, for time B.
+        Ex:-
+        var a = 10; //These variable a, was attached to the Global object.
+        console.log(a);
+        O/P:-10
+        
+        Ex:-
+        console.log(a);
+        var a = 10;
+        O/P:-undefine
+
+        Ex:-
+        console.log(b);
+        let b = 20;  //These variable b, is attached to different Memory space the Global, in that case we get a error.(let & const)
+        var a = 10;  //These variable a, is attached to the Global object. But Incase of let & const, they are also allocated memory.that is known as Hosting.
+        O/P:-Cannot access 'b' before initialization
+        
+        Ex:-let a = 10;
+        console.log(a);
+        O/P:-10
+        
+        Ex:-console.log(a);
+        let a = 10;
+        O/P:-Erroe:- cannot access a, before initializing
+        
+        Ex:-const a = 10;
+        console.log(a);
+        O/P:-10
+        
+        Ex:-console.log(a);
+        const a = 10;
+        O/P:-Erroe:- cannot access a, before initializing
+
+B)Refference error:- If i try to access x, in my js code. But it is not declear in JScode.
+                     In that case we will get refference error:- x is not defined at JScode.
+                    Ex:- x is not declear/defined in JS code.
+                    var a = 10;
+                    console.log(x);
+
+                    Ex:-a is in the temporal ded zone.
+                    console.log(a);
+                    let a = 10;
+
+                    Ex:-Undefined
+                    console.log(a);
+                    var a = 10;
+                    
+C)SyntaxError:-If we declear the variable, without initialization.
+              Ex:-
+              const a;
+
+              Ex:- Identifier 'b' has already been declared 
+              let b = 20;
+              let b=30;
+              console.log(b)
+
+D)TypeError:- const b variable is constant. it should be initialize as well as declear together.
+              You cannot assign value, leter on.
+              const b = 100;
+              b = 200;
+              O/P:-typeError
+              
+E)Window Object:- In JS code variable a, attached to the Global object. Note:- let & const variable we can not access.
+                Ex:-
+                var a = 100;
+                var b = 200;
+                O/P:- go to console, type:- window.a / this.a
+                
+
+
