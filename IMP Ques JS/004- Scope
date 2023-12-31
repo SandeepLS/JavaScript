@@ -89,16 +89,30 @@ san();   //10
         ES6 introduced two important new JavaScript keywords: let and const.
         These two keywords provide Block Scope in JavaScript.
         Variables declared inside a { } block cannot be accessed from outside the block:
-  Ex:-1
-  {
-      let a =10;
-      console.log(a);
-  }
-  -------OR---------
-  {
-      const a =10;
-      console.log(a);
-  }
+          Ex:-1
+          {
+              let a =10;
+              console.log(a);
+          }
+          -------OR---------
+          {
+              const a =10;
+              console.log(a);
+          }
+
+        Ex:-2
+        {
+            var a =10;
+            let b = 20;
+            const c = 30;
+        
+            console.log(a); //10
+            console.log(b); //20
+            console.log(c); //30
+        }
+        console.log(a); //10
+        console.log(b); //refference error
+        console.log(c); //refference error
 
   Local scope:- 
         Variables declared within a JavaScript function, are LOCAL to the function.
@@ -111,19 +125,55 @@ san();   //10
         
         Local variables have Function Scope:
         They can only be accessed from within the function.
-
+-----------------------------------------------------------------------------------------
+Block:- We group multiple statement, together in a block,
+        so that we can use it, where JS expects 1 statment.
+        Ex:-{ } //Block
+        Ex:-if(true) //so that we can use it, where JS expects 1 statment.
+            {
+                //We group multiple statement, together in a block
+            }
+-----------------------------------------------------------------------------------------
 4)Shadow Variable:-Ex:- In a fun, we can declear variable name-> let a,
                         same as, we can declear in Block scope variable name-> let a,
                         it will execute the statement.
-  function test(){
-      let a = "hi";
-      if(true){
-          let a = "Hello";
-          console.log(a);
-      }
-      console.log(a);
-  }
-  test(); //Hello hi
+        Ex:-1
+          function test(){
+              let a = "hi";
+              if(true){
+                  let a = "Hello";
+                  console.log(a);
+              }
+              console.log(a);
+          }
+          test(); //Hello hi
+        
+        Ex:-2
+        var a =10;
+        {
+                var a = 11; // a is shadowing
+                let b =  12;
+                const c = 13;
+        
+                 console.log(a); //11
+                 console.log(b); //12
+                 console.log(c); //13
+        }
+        Console.log(a); //11
+
+        Ex:-3 :  for shadowing let a, let a , does not change the variable name & const also.
+                  But in variable var can change the value.
+        let b =10;
+        {
+                var a = 11;
+                let b =  12;
+                const c = 13;
+        
+                 console.log(a); //11
+                 console.log(b); //12
+                 console.log(c); //13
+        }
+        console.log(b); //10
 
 -----------------Leggal shadow(var after let)---------------------
   In a fun, we should declear Global variable name-> var a, & same as
