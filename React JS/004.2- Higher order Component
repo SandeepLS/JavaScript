@@ -123,6 +123,11 @@ function App() {
   );
 }
 export default App;
+
+------------------------------------------------------------------------------------------------
+To learn how Higher order component works, will have to pass Click.js & Counter.js as parameter,
+to gives birth to entire new component.
+
   
   
   
