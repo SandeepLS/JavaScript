@@ -1,0 +1,73 @@
+Pure component:-In other way to create class component, is by extending pure component.
+                React.Pure.Component is a variation of React.Component class And does a shallow comparision of state & props.
+                PC avoid unnecessary rerender, how does that do it, it does not implement should component update method,
+                But the pure component on the other hand, shalow comparision of state and props,
+                and check if the rerender actually necessary, only then does it render it the ReactDOM. 
+
+                A React.Component can be considerd pure, if it renders the same output, for the same state & props.
+Ex:-Components(Folder):-
+(i)PureComp.js:-rpce
+import React, { PureComponent } from 'react'
+class PureComp extends PureComponent {
+  render() {
+    return (
+      <div>I'm PureComp {this.props.name}</div>
+    )
+  }
+}
+export default PureComp
+
+(ii)RegComp.js:-rce
+import React, { Component } from 'react'
+class RegComp extends Component {
+  render() {
+    return (
+      <div>I'm RegComp {this.props.name}</div>
+    )
+  }
+}
+export default RegComp
+
+(iii)ParentComp.js:-rce, To change the state of the component, we will make use of a constructor.(rconst)
+                    Create DidMount life cycle method, to setTimeInterval.
+                    In that we will use Arrow Fun, to set a setState Fun().
+                    Then import PureComp,js & RegComp.js into ParentComp.js, then pass name as a properties.
+import React, { Component } from 'react'
+import PureComp from './PureComp';
+import RegComp from './RegComp';
+
+class ParentComp extends Component {
+    constructor(props) {
+      super(props)
+    
+      this.state = {
+         name:"mashiii"
+      }
+    }
+
+    componentDidMount(){
+        setInterval(()=>{
+            this.setState({
+                name: "Mashiii"
+            });
+        }, 300);
+    }
+  render() {
+    return (
+      <div>I'm ParentComp
+        <PureComp name={this.state.name}/>
+        <RegComp name={this.state.name}/>
+        
+      </div>      
+    )
+  }
+}
+export default ParentComp
+
+Note:- to check the PureComp is actually rerendering or not.
+        it's include simple console.log() statement.(clg)
+        In render() method, {console.log(Pure component render)}
+        In render() method, {console.log(Parent component render)}
+        In render() method, {console.log(Regulare component render)}
+
+(iv)App.js:-import the ParentComp.js to App.js.
