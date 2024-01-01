@@ -1,0 +1,35 @@
+Closures:- is a combination of function, bundle together with-
+           Lexical environment(Reference to its surrounding state.).
+          Ex:-
+          function name(){
+              var name = "Sandeep";  //name is a local variable created by init
+              function displayName(){  //displayName() is the inner function, that forms the closure
+                  console.log(name);  //use variable declared in the parent function
+              }
+              displayName();
+          }
+          name();  //Sandeep  
+
+          Ex:-2
+          function x(){
+                  var name = "san";
+                  function y(){
+                          console.log(name);
+                  }
+                  return y;
+          }
+          var z = x();
+          console.log(z);
+          z();
+
+Uses of clousers:-
+  -Module design pattern
+  -Currying
+  -Functions like once
+  -Memoize
+  -maintaining state in async world
+  -setTimeouts
+  -Iterators
+  -& many more.
+
+
