@@ -32,4 +32,55 @@ Uses of clousers:-
   -Iterators
   -& many more.
 
+-----------------------------------------------------------------------------------------------
+setTimeout closuer:-
+Ex:-
+function x(){
+    var i = 1;
+    setTimeout(function(){
+        console.log(i);
+    }, 3000);
+    console.log("Mashi");
+}
+x(); //mashi 1
 
+Ex:-all of thes setTimeout function refering to the i, same memory space.
+    Javascript is doesnot wait for anything, i will run loop again & again, it store that functions.
+    it doesnot to wait for time-expire. Now the var i is 6.
+    When this callback functions run, the var i 6.
+    that is y it's print 6 6 6 6 6.
+    var:- variable values stored same memory location.
+function x(){
+    for(var i =1;i<=5;i++){
+        setTimeout(function(){
+            console.log(i);
+        }, i * 1000);
+    }
+    console.log("Mashi");
+}
+x(); //6 6 6 6 6 
+
+Ex:- every let variable value stored another memory, so it will print order wise.
+function x(){
+    for(let i =1;i<=5;i++){
+        setTimeout(function(){
+            console.log(i);
+        }, i * 1000);
+    }
+    console.log("Mashi");
+}
+x(); //1 2 3 4 5 //it will print after every one sec.
+
+Ex:-
+function x(){
+    for(let i =1;i<=5;i++){
+        function closure(x){
+            setTimeout(function(){
+                console.log(x);
+            }, x * 1000);
+        }
+        closure(i)
+    }
+    console.log("Mashi");
+}
+x();
