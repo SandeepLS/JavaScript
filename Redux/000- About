@@ -1,0 +1,13 @@
+Redux:-
+  is a open-source Javascript library, That is used to managing state of a web application.
+  And is commanly used with React, for building user interface.
+  although it can be integrated with other libraries & frameworks as well.
+  Redux provide a Predictable state container, that helps managing state of an application. 
+
+Key concept of Redux:-
+  -Store
+  -Action
+  -Reducer
+  -Dispatch
+  -Middleware
+
