@@ -1,0 +1,9 @@
+State:- is an Object. that stores values of properties, belonging to a component.
+        that could change over a period of time.
+        State can be modified, based on the user action/Network changes.
+        Every times state changes, React re-render the component to the browser.
+        The state is initialized, in the constructor.
+        The state can also store, multiple properties.
+        this.setState() is used to update the value, of the state object.
+        setState() function performs a shallow merge, Between-
+        the new and the previous state.
