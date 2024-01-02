@@ -1,0 +1,61 @@
+Props:-allow users, to pass argument or data to component.
+       Propertie help component, make more dynamic.
+       Props are passed to components, in the way similar to that of HTML-tag attributes,
+       Props in a component, are read-only & con not be changed.
+Note:- Props are sent by the Parent component to children components,
+       hence the children component, cannot make any changes to this Props.
+
+Ex:-we pass name, as a property, from the Main component(App.js) to the child component. and render this on to the Browser.
+App.js:-
+import React from 'react';
+import Classprops from './Components/Classprops';
+function App() {
+  return (
+    <div>
+      <Classprops name="Guys"/> //props 
+   </div>
+  );
+}
+
+export default App;
+
+Component(Folder):-
+Classprops.js:-
+import React, { Component } from 'react'
+class Classprops extends Component {
+  render() {
+    return (
+      <div>
+        <h1>Hello {this.props.name} Welcome to India</h1>  //Props are passed to components
+      </div>
+    )
+  }
+}
+export default Classprops
+O/P:-Hello Guys! Welcome to India
+------------------------------------------------------------------------------------------
+Ex2:- Pass multiple props.
+App.js:-
+<Classprops name="Guys" place="AUS"/>
+
+Classprops.js:-
+<h1>Hello {this.props.name}! from {this.props.place} Welcome to India</h1>
+
+O/P:-Hello Guys! from AUS Welcome to India
+------------------------------------------------------------------------------------------
+Ex3:-
+Functionprops.js:-
+import React from "react";
+function Functionprops(props){
+    return (
+        <div>
+            <h2>This is FunProps</h2>
+            <h2>Hello {props.name} !, From {props.place}  welcome to India</h2>
+        </div>
+
+    );
+}
+export default Functionprops;
+
+App.js:-
+<Functionprops name="Guys 2" place="France"/>
