@@ -1,0 +1,36 @@
+Javascript:- is a Front-End programing language, that is mainly used to add Interactice element- to Web pages.
+             Ex:-Search bar, at this top page is good example.
+                            V/S
+ReactJS:-On th other hand ReactJs, is a Javascript library.
+         A library is set of pre-written code, that make programming quicker.
+         And that provides code, for macking Powerfull User interface(UI's).
+
+HTML:-Give Structure Webpage
+CSS:- create the design element.
+Javascript:- Make it more interactive our web pages.
+
+Redux:-is predictable state container, for Javascript apps.
+       That helps you, write application, that behave consistently,
+       run in different environment(client, server & native).
+       and are easy to test.
+
+ReactJs V/S ReduxJS:- Both can be utilized, FrEx:- if we planning to build an application.
+                      ReactHooks feature handle the, local component state. while
+                      Redux handle the, Global state & action that can be dispatch.
+
+AJAX:-Read data from a web server.
+      Update a web page, without reloading the page.
+      Send data to a web server.
+
+JSON:-JavaScript Object Notation
+      It is text formate, for storing and transporting data.
+      JSON os "self-describing' & easy to understand.
+      JSON is lightweight, data-interchange formate.
+
+JQuery:- is a Javascript library.
+         JQuery greatly simple, for Javascript programing.
+         It is easy to learn.
+
+
+
+         
