@@ -1,0 +1,34 @@
+Ex:- A function along with, refernce to outer environment, like together form of closure.
+     Closure is a combination of function, bundel together with Lexical environment.
+
+     Each and every function in JS, has access it outer lexical environment.
+     Even when the function, executed in other scope, not a original scope,
+     It's still remembers the, outer lexical environment, were it was originaly present in the code.so...
+
+     Suppose if we have function we call it as outter(), then nested function, we call it has inner(),
+     In JS inner() has access to outer environment. If i create variable in outer environment
+     Ex:-
+          function outter(){
+              var a = 10;
+             function inner(){    //it will form a clouser
+                  console.log(a);
+              }
+              return inner();
+          }
+          outter();  //10
+     Ex:-
+        function outter(){
+            var a = 10;
+           return function inner(){
+                console.log(a);
+            }
+        }
+        outter()(); //It's calling a inner function. //10
+        OR
+        const close = outter();
+        close();
+        close();
+     
+          
+
+     
