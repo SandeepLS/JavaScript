@@ -7,3 +7,154 @@ State:- is an Object. that stores values of properties, belonging to a component
         this.setState() is used to update the value, of the state object.
         setState() function performs a shallow merge, Between-
         the new and the previous state.
+
+Props v/s State:-
+*Props are used to pass data And event handler        *State is used to store a data of the components,
+ listen to children component.                         That has to be renderd, to the view.
+
+*Props are immutable, Once set, props cannot-         *State holds the data, And can change over time.
+be changed.
+
+*Props can be used in both, Functional and Class      *State can only be used in Class Component.
+Components.
+
+*Props are set by Parent component for the -          *State is genrally Update by event handler.
+Children component.
+
+State Example:-We display a message, asking the user, to subscribe the Mashi platform.
+               Once the user click the subscrib button, we instrupt them bell icon, finaly it displat ThanYou mzg.
+                Now to do all of these, we will use State.
+                We initialized a State object, as a constructor.(rconst)
+App.js:-
+import React from 'react';
+import "./App.css";
+import StateComp from './Components/StateComp';
+
+class App extends React.Component{
+  styles ={
+    fontSize: "bold",
+    color: "Teal"
+  };
+  render(){
+    return(
+      <div className='App'>
+        <h1 style={this.styles}>Welcome</h1>
+        <StateComp />
+      </div>
+    )
+  }
+}
+export default App;
+
+StateComp.js:-
+import React, { Component } from 'react'
+class StateComp extends Component {
+    constructor(props) {
+      super(props)
+    
+      this.state = {
+         message: "Subscribe to Mashi Platform"
+      };
+    }
+
+    styles = {
+        fontStyle: "italic",
+        color: "purple"
+    };
+  render() {
+    return (
+      <div className='App'>
+        <h1 style={this.styles}>{this.state.message}</h1>
+      </div>
+    );
+  }
+}
+export default StateComp
+------------------------------------------------------------------------------------------------
+setState():- state can be updated in response to event handlers, server response or props changes.
+             This is done using setState method.(All the updation done using setState)
+                this.setState({ quantity:value })
+
+        setState():-enques all the updates mode, to the component state And instruct React to re-render the component,
+                    And It's children with the update state.
+
+Example continue:-when user click the sub button, it will change the message.
+StateComp.js:-
+    ButtonChange=()=>{
+        this.setState({
+            message:"Hit the bell icon to never miss an update",
+            sub:"Subscribed"
+        })
+    }
+<div>
+ <button onClick={this.ButtonChange}>{this.state.sub}</button>
+</div>
+
+
+Example continue:-when user click the bell img, it will change the message.
+StateComp.js:-
+imageChange=()=>{
+        this.setState({
+            imageURL: bellB,
+            message:"ThankYou! Happy learning."
+        })
+    }
+
+<div>
+ <img style={{width:'30px', height:'30px'}}
+        src={this.state.imageURL}
+        onClick={this.imageChange}
+         alt='' />
+</div>
+---------------------------------------------------------------------------------------
+StateComp.js:- Final O/P
+import React, { Component } from 'react'
+import bellA from './bellA.svg';
+import bellB from './bellB.svg';
+
+class StateComp extends Component {
+    constructor(props) {
+      super(props)
+    
+      this.state = {
+         message: "Subscribe to Mashi Platform",
+         sub: "Subscribe",
+         imageURL: bellA
+         
+      };
+    }
+
+    styles = {
+        fontStyle: "italic",
+        color: "purple"
+    };
+
+    ButtonChange=()=>{
+        this.setState({
+            message:"Hit the bell icon to never miss an update",
+            sub:"Subscribed"
+        })
+    }
+
+    imageChange=()=>{
+        this.setState({
+            imageURL: bellB,
+            message:"ThankYou! Happy learning."
+        })
+    }
+  render() {
+    return (
+      <div className='App'>
+        <h1 style={this.styles}>{this.state.message}</h1>
+        <button onClick={this.ButtonChange}>{this.state.sub}</button>
+        <p />
+        <img style={{width:'30px', height:'30px'}}
+        src={this.state.imageURL}
+        onClick={this.imageChange}
+         alt='' />
+      </div>
+    );
+  }
+}
+
+export default StateComp
