@@ -1,0 +1,9 @@
+function writeOutput(inputData) {
+  // Start writing code here to consume input and return the result.
+  const numbers = inputData.trim().split(",").map(Number);
+
+  // Find the maximum value in the array
+  const maxValue = Math.max(...numbers);
+
+  // Return the result as a string
+  return ma
