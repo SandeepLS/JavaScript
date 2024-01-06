@@ -28,7 +28,81 @@ Ex:- A function along with, refernce to outer environment, like together form of
         const close = outter();
         close();
         close();
+
+
+     Ex:-b is also part of outter environment, of inner function.
+          function outer(b){
+              var a = 10;
+              return function inner(){
+                  console.log(a, b);
+              }
+          }
+          outer("Hello")(); //10 Hello
+
+     Ex:-inner function still forms of closue, a outter environment a.
+          function outest(){
+              var c = 20;
+              function outer(b){
+                  var a = 10;
+                  function inner(){
+                      console.log(a, b, c);
+                  }
+                  return inner;
+              }
+              return outer;
+          }
+          const res = outest()("hello");
+          res();
+
+Closure Advantage:- we will use in-
+-Module pattern
+-Curry function
+-Higher order function
+-Data hiding encapsulation
+
+Data Hiding:-Suppose if we have a variable, we want to make data privacy here,
+             other function or pices(module), can not access to that particular data.
+
+Ex:-suppose we have count, we have to increment using incrementCounter().
+     wt we does it, just increment the counter++;
+     var count = 0;
+     function incrementCounter(){
+          count++;
+     }     //tis can be access anyone.
+
+     So we can rapit another function.Means we can achive it closure.
+     function counter(){
+         var count = 0;
+         function incrementCounter(){     //count is hidden
+             count++;
+         }  
+     }
+     console.log(count);
+
+     This is how handle the data hidden.
+     function counter(){
+         var count = 0;
+         return function incrementCounter(){     //1
+             count++;
+             console.log(count)
+         }  
+     }
+     var counter1 = counter();
+     counter1();
+
+     if we call again, it will achive 1 more.
+     counter1();     //1 2
+
+     if we create another counter2,
+     var counter2 = counter();     //this will be a fresh counter itself. then it wont touch counter1().
+     counter2();
+          
      
+     
+     
+
+
+
           
 
      
