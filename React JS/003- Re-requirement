@@ -1,6 +1,9 @@
--> client
-  npx create-react-app ./
-  npm start
+1) Browser:- Nodejs instal
+2) command prompt:- npm init reract-app music-app  (it will install react Js library, once the appli is intalled, all we would be required online editor.)
+----------------OR--------------------------------------
+-> music-app:- client:-
+2) npx create-react-app ./
+   npm start
 
   version check:- cmd -> npx create-react-app --version
   Upgrade:- cmd -> npm i react@latest react-dom@latest
