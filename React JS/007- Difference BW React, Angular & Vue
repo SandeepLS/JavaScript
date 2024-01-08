@@ -1,0 +1,83 @@
+React:-
+  Feature:
+    -Is open-source, front end Javascript library.
+    -Library is set of Class & Function, An User complete controll to call them.
+    -React is Used to Mobile & Web Development.
+    -React was develop & maintain by Facebook.
+    -React represents the view part, of the MVC framework.
+  UseCase:
+    -Facebook, Instagram, Netflix
+  Performance:
+    -React uses virtual DOM to fill in data, in the HTML DOM.
+    -DOM(Document Object Model):when a web page is loaded, tthe Browse creates a DOM of the page.
+     DOM is an API, that defines how a document is accessed & manipulated. DOM represents a document with a logical tree.
+    -DOM, :Only the changed Objects, get update in the RealDOM.
+    -Virtual DOM makes, React extremely Fast.(No time-consuming).
+  Data-binding:
+    -React only uses, one-way binding.
+    -First, the model state is Updated. And then it renders the change in the UI element(view).
+    -Model --> View
+  Scripting language:
+    -React combines UI templates and Javascript logic. The result is called JSX.
+    -React only required the knowledge of Javascript.
+  Test:
+    -Jest is used by Facebook, to run tests on React.
+    -It is embedded in every react library And zero configuration.
+
+Anguler:-
+  Feature:
+    -Is open-source, JS Framework.
+    -Framework is like a Module, they have limited choices,-
+     and come with a blue print of their own. As a result User doesn't have much controll.
+     So JS being a Interpreted language, when code is executed line by line, Make all these toll-
+     Very efficient. Mainly is converted code into interpreted code with required Run-time environment.
+    -Anguler is used for Single Page Application & also develop Hybrid application.
+    -Anguler is Build By Google.
+    -Angular is a Full fledged MVC framework.
+  UseCase:
+    -Nike, HBO, SONY 
+  Performance:
+    -Angular uses real DOM.
+    -This will update entire tree structure of HTML tags.
+    -It is Time-Consuming, risky & can attract a lot of bugs.
+  Data-binding:
+    -Angular uses, two-way binding.
+    -Any changes made in the UI element. is is reflected in the coresponding model state And vice versa.
+    -Model <--> View
+  Testing:
+    -Is used to Jasmine.
+
+Vue:-
+  Feature:
+    -Is also open-source, JS Framework.
+    -Framework is like a Module, they have limited choices,-
+     and come with a blue print of their own. As a result User doesn't have much controll.
+     So JS being a Interpreted language, when code is executed line by line, Make all these toll-
+     Very efficient. Mainly is converted code into interpreted code with required Run-time environment.
+    -Vue is used for Single Page Application & User Interface.
+    -Developed by Evan You, ex Google employee.
+    -Vue is focused on the view & model layer of the MVC framework.
+  UseCase:
+    -Alibaba.com, grammarly. 
+  Performance:
+    -Vue uses virtual DOM to fill in data, in the HTML DOM.
+    -Vue updates any alterd HTML. & does not update the entire tree.
+    -This ensure faster & bug free.
+  Data-binding:
+    -Vue uses, two-way binding.
+    - Model <--> View
+  Testing:
+    -unit testing with Jest or Mocha.
+
+
+MVC:- is an architecture pattern, that separated the application layer into Model, View & Controller
+      Model:- is relates to all data related logic.
+      View:- is used for the UI logic of the application.
+      Controller:-is an interface between the Model & View.
+
+Data binding:-is a process, that allows an Internet, User to manipulate Web page elements, Using a Web browser.
+              It is used in web page, that contains interactive components, such as Forms, Calculation, tutorials & games.
+
+
+
+
