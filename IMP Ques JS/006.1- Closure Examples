@@ -95,11 +95,30 @@ Ex:-suppose we have count, we have to increment using incrementCounter().
 
      if we create another counter2,
      var counter2 = counter();     //this will be a fresh counter itself. then it wont touch counter1().
-     counter2();
+     counter2();                    When ever function is run it will create new inded copy.
           
-     
-     
-     
+
+Note:- the above code is not scallable for increment & decrement counting,
+       In that case we use constructor.
+Ex:-Constructor example.
+function Counter(){
+    var count=0;
+    this.incrementCounter = function(){
+        count++;
+        console.log(count);
+    }
+    this.decrementCounter = function(){
+        count--;
+        console.log(count);
+    }
+}
+const result = new Counter(); //for contructor we spesify new operator
+result.incrementCounter();
+result.incrementCounter();
+result.decrementCounter();
+
+Garbage collector:- is automatically identifies And eliminates junk data.
+
 
 
 
