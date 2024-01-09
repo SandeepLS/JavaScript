@@ -118,6 +118,7 @@ result.incrementCounter();
 result.decrementCounter();
 
 Garbage collector:- is automatically identifies And eliminates junk data.
+is a program are in the JS engine, whenever there is unused variable, it's takes out of the JS engine
 
 
 
