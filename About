@@ -34,3 +34,6 @@ JQuery:- is a Javascript library.
 
 
          
+git remote add origin https://github.com/SandeepLS/AuthBank--MERN.git
+git branch -M main
+git push -u origin main
