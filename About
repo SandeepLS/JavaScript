@@ -30,10 +30,3 @@ JSON:-JavaScript Object Notation
 JQuery:- is a Javascript library.
          JQuery greatly simple, for Javascript programing.
          It is easy to learn.
-
-
-
-         
-git remote add origin https://github.com/SandeepLS/AuthBank--MERN.git
-git branch -M main
-git push -u origin main
