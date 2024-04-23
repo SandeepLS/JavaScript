@@ -1,0 +1,43 @@
+Loop:-
+I want to do something repetedley
+Ex:- every day we take bath, eat, work. we do that every day.
+
+//initialize, condition, increment
+While loop:- first check for the condition, then only it will execute the block.
+let i = 0;
+while(i<=5){
+  console.log("hi");
+  i++;
+}
+
+do while:- first execute the statement, then check for the condition leter.
+let i=0;
+do{
+  console.log("hi",i);
+  i++;
+}while(i<=5)
+
+For loop:- we can do everything in in one line.
+for(let i=0;i<=5;i++){
+  console.log("hi",i);
+}
+
+Nested loop:- a loop inside a loop.
+for(let i=0;i<=5;i++){
+  console.log("hi",i);
+  for(let j=0;j<=5;j++)
+    console.log("Hello",j);
+}
+
+Tabel of 3:-
+for(let i=0;i<=100;i++){
+  if(i%3===0)
+    console.log(i);
+}
+
+let num = 56478
+while(num>0){
+  console.log(num%10);
+  num = parseInt(num/10)
+}
+
