@@ -1,0 +1,10 @@
+React is a Javascript library, for building user_interface.
+Not a framework.
+React does not focous on any other aspects of your application, like Routing & http request. It is reponsible only rich building application.
+React has a Rich Ecosystem.
+
+    A traditional website broken down into:-Header, sideNav, MainContent & Footer.
+    React is declerative:-DOM Updates are handles gracefully in React.
+
+  ES6:- let&const, arrow functions,template literals, default parameters, Oject literals, rest & spread operator, destructing assignment.
+  Channel content react:- React Fundamental, Http, Routing, Redux, Utilities.
