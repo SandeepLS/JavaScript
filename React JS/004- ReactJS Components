@@ -6,6 +6,8 @@ Components:- are the building blocks of any react application,
     -signup component
     -image component
     -logo component
+    A traditional website broken down into:-Header, sideNav, MainContent & Footer.
+
   Reusability:- Components can be reused, multiple times across the applicatopn.
   this reduce the development time.
 
