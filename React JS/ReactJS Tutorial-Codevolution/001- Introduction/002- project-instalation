@@ -1,0 +1,12 @@
+Install:- NodeJS, VS code
+Folder:- Codevolution
+(i):- npx
+> npx create-react-app <project_name> 
+> cd <project_name> 
+> nom start
+(npm package runner)
+
+(ii):- npm
+> npm install create-react-app -g
+> create-react-appp <project_name>
+ 
