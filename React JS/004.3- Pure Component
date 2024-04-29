@@ -71,3 +71,5 @@ Note:- to check the PureComp is actually rerendering or not.
         In render() method, {console.log(Regulare component render)}
 
 (iv)App.js:-import the ParentComp.js to App.js.
+
+:-PureComp optimize react code & also improves performance.
