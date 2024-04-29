@@ -1,7 +1,7 @@
 It can be devide into 3 parts:-
 (a)Mounting:-                                                                                    Mounting:-
-    The first thing will invoke, that is componentWillMount()                              componentWillMount()
-    It is invoke write for the, initial rendering occurs.                                           |
+    The first thing will invoked in LifeCycle, that is componentWillMount()                 componentWillMount()
+    It is invoked write to for the, initial rendering occurs.                                       |
     Then we have a rendering method[render()].                                                  render()
     Once the Comp is inserted into the DOM, componentDidMount is invoked.                           |
                                                                                             componentDidMount()
@@ -10,7 +10,7 @@ It can be devide into 3 parts:-
     When a component recive props, componentWillReciveProps() will invoked,                      Updation:-
     setstate(): is called when the state of the properties are changed.                     componentReciveProps()      setState()
     So everytime there is a change, react decides, weather the next Comp state-                       | 
-    should trigger a re-render or not.[shouldComponentUpdate()].                            shouldComponentUpdate()
+    should trigger a re-render or not.To do that[shouldComponentUpdate()],                  shouldComponentUpdate()
     componentWillUpdate(), is invoked before rendering.                                               |
     After the rendering-                                                                      componentWillUpdate()
     componentDidUpdate(), is called that makes update to the DOM.                                     |
