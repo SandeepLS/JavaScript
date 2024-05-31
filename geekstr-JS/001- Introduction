@@ -1,0 +1,12 @@
+JS:- is a programing language, which is use to make Dynamic/Interactive our web page.
+
+How to run JS?
+They are two ways:-
+(i)Inside the Browser(Before 2008):- Inspect, console.
+It has pre environment, Every browser have an Engine(environment(where our js code going to be executed)).
+ex: for Chrome is V8 engine.
+    for moxila firefox is Spidermonkey.
+
+(ii)Outsaide the browser(After):-
+we will use IDE(Integrated Development Environment).VS code editor. We should install Node in our system.
+After comming Reean dall, he merge V8 engine(Open source) + C++, It convert into Node(Run time environment).
