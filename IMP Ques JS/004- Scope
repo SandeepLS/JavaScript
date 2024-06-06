@@ -1,3 +1,12 @@
+Differences between var, let, and const:-
+        Variables declared with var can be reassigned.
+        Variables declared with let can be reassigned.
+        Variables declared with const cannot be reassigned.
+        
+        Variables declared with var are hoisted, which means they can be accessed before they are declared.
+        Variables declared with let & const are not hoisted.
+
+
 A)Scope:- is a certain region of program, where define variable exist, and can be recognize. 
         / be on that it can not be recognize.
         Scope is directley dependent on Lexiacl Environment.
