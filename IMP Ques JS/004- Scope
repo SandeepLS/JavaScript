@@ -1,6 +1,5 @@
 Differences between var, let, and const:-
-        Variables declared with var can be reassigned.
-        Variables declared with let can be reassigned.
+        Variables declared with var & const can be reassigned.
         Variables declared with const cannot be reassigned.
         
         Variables declared with var are hoisted, which means they can be accessed before they are declared.
