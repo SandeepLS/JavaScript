@@ -5,3 +5,13 @@ Through the Internet, people can share information and communicate from anywhere
 The Internet works by:- connecting networks together through a series of routers and switches. 
 A router forwards packets of data between different networks while a switch links devices within a single network. 
 This enables computers to communicate with each other and access content stored on remote servers.
+
+The components of Internet:-
+End_systems, Router, Link_layer switches & Communication link.
+Ex:-I want to watch a video on Youtube, My network should be connected to the Content Provider Network.
+
+The internet connection is provided by National/Local Internet Service Providers(ISPs).
+
+All Communication activities on the internet are governed by protocals.
+Protocals are a set of rules, that desctibe a standard way of doing things on internet. so that the device can communicated with each other.
+Ex:- TCP, IP, HTTP protocals.
