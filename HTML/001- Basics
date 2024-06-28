@@ -1,0 +1,14 @@
+HTML:-
+  HyperText Markup Language,
+  NOT a programing language,
+  Markup language for creating Web-pages/Documents.
+  Building blocks of the Web.
+
+<html>
+  <head>
+      <title> </title>
+  </head>
+  <body>
+
+  </body>
+</html>
