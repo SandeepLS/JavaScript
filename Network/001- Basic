@@ -1,17 +1,44 @@
+https://www.youtube.com/watch?v=G91s61R4qhs&ab_channel=MovIEyes
 What is the Internet:-
-The Internet is a vast network that connects computers all over the world.
-Through the Internet, people can share information and communicate from anywhere with an Internet connection.
+  The Internet is a vast network that connects computers all over the world.
+  Through the Internet, people can share information and communicate from anywhere with an Internet connection.
+  
+  The Internet works by:- connecting networks together through a series of routers and switches. 
+  A router forwards packets of data between different networks while a switch links devices within a single network. 
+  This enables computers to communicate with each other and access content stored on remote servers.
+  
+  The components of Internet:-
+  End_systems, Router, Link_layer switches & Communication link.
+  Ex:-I want to watch a video on Youtube, My network should be connected to the Content Provider Network.
+  
+  The internet connection is provided by National/Local Internet Service Providers(ISPs).
+  
+  All Communication activities on the internet are governed by protocals.
+  Protocals are a set of rules, that desctibe a standard way of doing things on internet. so that the device can communicated with each other.
+  Ex:- TCP, IP, HTTP protocals.
 
-The Internet works by:- connecting networks together through a series of routers and switches. 
-A router forwards packets of data between different networks while a switch links devices within a single network. 
-This enables computers to communicate with each other and access content stored on remote servers.
+At its core, the internet consists of three key components:-
 
-The components of Internet:-
-End_systems, Router, Link_layer switches & Communication link.
-Ex:-I want to watch a video on Youtube, My network should be connected to the Content Provider Network.
+  Clients: Clients are the devices that users interact with to access the internet. 
+    This includes computers, smartphones, tablets, and other internet-enabled devices. 
+    When you open a web browser and type in a website address, your device acts as a client, sending requests to servers and receiving responses in return.
+  
+  Servers: Servers are powerful computers that store, process, and deliver data to clients. 
+    They host websites, applications, databases, and other resources that clients request. 
+    When you visit a website, your client sends a request to the server hosting that site, and the server responds by sending back the requested data.
+  
+  Network Infrastructure: The network infrastructure consists of the physical and virtual components that facilitate communication between clients and servers.
+    This includes routers, switches, cables, and other networking equipment. T
+    he infrastructure ensures that data packets are efficiently routed from their source to their destination, traversing various networks along the way.
 
-The internet connection is provided by National/Local Internet Service Providers(ISPs).
+The Client-Server Model:-
+The interaction between clients and servers on the internet follows a model known as the client-server model. 
+In this model, clients send requests to servers for specific resources or services, and servers respond by providing the requested data or performing the desired actions.
 
-All Communication activities on the internet are governed by protocals.
-Protocals are a set of rules, that desctibe a standard way of doing things on internet. so that the device can communicated with each other.
-Ex:- TCP, IP, HTTP protocals.
+Let's break down the steps involved in a typical client-server interaction:
+
+  The client sends a request to the server, specifying the desired resource or action.
+  The server receives the request and processes it based on the specified parameters.
+  The server generates a response, which may include the requested data or a status code indicating the success or failure of the request.
+  The server sends the response back to the client.
+  The client receives the response and takes appropriate action, such as displaying the received data to the user.
