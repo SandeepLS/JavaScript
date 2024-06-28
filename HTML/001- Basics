@@ -4,6 +4,7 @@ HTML:-
   Markup language for creating Web-pages/Documents.
   Building blocks of the Web.
 
+<!DOCTYPE html>
 <html>
   <head>
       <title> </title>
@@ -12,3 +13,14 @@ HTML:-
 
   </body>
 </html>
+-----------------------------------------------------
+Inline Elements:-
+  -Do not start no a new line
+  -Take only the necessary width
+  ex: <span>, <img>
+
+Blocks Element:-
+  -Start on a new line
+  -Take full available width
+  ex: <div>, <h1>--<h6>, <p>, <form>
+  
