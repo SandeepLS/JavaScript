@@ -17,7 +17,7 @@ HTML:-
 Inline Elements:-
   -Do not start no a new line
   -Take only the necessary width
-  ex: <span>, <img>
+  ex: <span>, <img>, <a href=" "> </a>, <strong>
 
 Blocks Element:-
   -Start on a new line
