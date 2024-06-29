@@ -1,0 +1,24 @@
+TCP/IP:- Allows communication between number of computers, connected on a network.
+    What are the layers of the TCP/IP model?
+    Layer 1: Network Access Layer.
+    Layer 2: Internet Layer.
+    Layer 3: Transport Layer.
+    Layer 4: Application Layer.
+
+Transmission Control Protocol (TCP):-
+    Function: TCP provides reliable, ordered, and error-checked delivery of data between applications running on hosts communicating via an IP network.
+    Connection-oriented Protocol: TCP requires establishing a connection between the sender and receiver before data can be sent. 
+    This is achieved through a process called the TCP handshake.
+
+Internet Protocol (IP):-
+Function: IP is responsible for addressing and routing packets of data so that they can travel across networks and arrive at the correct destination.
+Connectionless Protocol: IP operates in a connectionless manner, meaning each packet is treated independently and can take different paths to the destination.
+
+Common TCP/IP protocols include the following:-
+    Hypertext Transfer Protocol: HTTP handles the communication between a web server and a web browser.
+    HTTP Secure: HTTP Secure handles secure communication between a web server and a web browser.
+    File Transfer Protocol: FTP handles transmission of files between computers.
+    Domain name system: DNS translates domain names into IP addresses.
+    Simple mail transfer protocol: SMTP is used for email communications and is responsible for the transmission of emails between mail servers.
+    User datagram protocols: UDP is a connectionless protocol that offers faster but less dependable data delivery.
+                             It's widely used in real-time applications such as video streaming and online gaming.
