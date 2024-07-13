@@ -1,0 +1,61 @@
+1. Object Literal
+The simplest way to create an object is using an object literal notation {}:
+Ex:-// Object literal
+let person = {
+    firstName: 'John',
+    lastName: 'Doe',
+    age: 30,
+    fullName: function() {
+        return this.firstName + ' ' + this.lastName;
+    }
+};
+
+2. Using the new keyword with Object Constructor
+You can use a constructor function with the new keyword to create an object:
+Ex:-
+// Constructor function
+function Person(firstName, lastName, age) {
+    this.firstName = firstName;
+    this.lastName = lastName;
+    this.age = age;
+    this.fullName = function() {
+        return this.firstName + ' ' + this.lastName;
+    };
+}
+
+// Creating an object using constructor
+let person = new Person('John', 'Doe', 30);
+
+
+3. Using Object.create()
+You can create an object with a specified prototype using Object.create():
+Ex:-// Object with specified prototype
+let personPrototype = {
+    fullName: function() {
+        return this.firstName + ' ' + this.lastName;
+    }
+};
+
+let person = Object.create(personPrototype);
+person.firstName = 'John';
+person.lastName = 'Doe';
+person.age = 30;
+
+
+4. Using ES6 Classes
+ES6 introduced a class syntax which provides a more familiar way to define objects and inheritance:
+Ex:-// ES6 Class
+class Person {
+    constructor(firstName, lastName, age) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.age = age;
+    }
+
+    fullName() {
+        return this.firstName + ' ' + this.lastName;
+    }
+}
+
+// Creating an object using class
+let person = new Person('John', 'Doe', 30);
