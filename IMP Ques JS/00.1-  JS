@@ -1,0 +1,8 @@
+JS:- make it more interactive ourt web-pages.
+ Everything in JavaScript, happens inside an Execution-Context.
+ Execution-Context:- It has 2 component
+   Memory Component(Variable environment):-This is the place, all variables & function are stored. as a Key:Value paire.
+   Code Component(Thread of Execution):- This is the place, where code is executed, one line at a time.
+
+
+   
