@@ -4,5 +4,15 @@ JS:- make it more interactive ourt web-pages.
    Memory Component(Variable environment):-This is the place, all variables & function are stored. as a Key:Value paire.
    Code Component(Thread of Execution):- This is the place, where code is executed, one line at a time.
 
-
-   
+Call Stack:-
+  Whenever E-C is created, it is pushed into the stack,
+  Whenever E-C is deleted, it will move out of the stack.
+  
+  "Call Stack maintains the, order of execution of, Execution-Context"
+  
+  Call-Stack also known as:-
+    Execution-Context Stack.
+    Program Stack.
+    Control Stack.
+    Runtime Stack.
+    Machine Stack.
