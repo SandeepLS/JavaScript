@@ -1,0 +1,24 @@
+Interpreted language:-
+  JavaScript code is typically executed in the browser, where the browser's JavaScript engine interprets the code.
+  Examples of these engines include V8 (Chrome, Node.js), SpiderMonkey (Firefox), and Chakra (Edge).
+  The code is parsed and executed line by line, allowing for dynamic execution.
+
+A scripting language:-
+is designed to automate tasks that could be executed one by one by a human operator.
+
+
+1. Interpreter:
+An interpreter runs instructions directly from the programming language without changing them into machine code first.
+
+2. Compiler: 
+A compiler changes the entire program into object code (or binary code) and saves it. This code can then be run by the machine.
+
+3. JIT Compiler:
+A JIT compiler converts code into byte code first. 
+Then, at runtime, it changes the byte code into machine-readable code, which makes the program run faster.
+
+
+JavaScript is mainly interpreted, 
+but modern JavaScript engines, like V8 in Google Chrome, use JIT (Just-In-Time) compilation to boost performance. 
+They convert JavaScript code into optimized machine code right before it runs.
+This mix of interpretation and JIT compilation makes JavaScript fast and versatile for web applications.
