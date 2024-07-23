@@ -1,0 +1,81 @@
+Non-blocking:- To manage task efficiently, without freezing the execution of the script.
+*Non-blocking operations are typically achieved using asynchronous programming.
+There are several ways to handle asynchronous code:
+
+i)Callbacks:
+A function is passed as an argument to another function and is executed after the completion of a task.
+Ex:
+function fetchData(callback) {
+  setTimeout(() => {
+    callback("Data received");
+  }, 2000);
+}
+
+fetchData((message) => {
+  console.log(message); // "Data received" (after 2 seconds)
+});
+console.log("Fetching data..."); // This is logged immediately
+
+
+ii)Promises:
+let promise = new Promise((resolve, reject) => {
+  setTimeout(() => {
+    resolve("Data received");
+  }, 2000);
+});
+
+promise.then((message) => {
+  console.log(message); // "Data received" (after 2 seconds)
+});
+console.log("Fetching data..."); // This is logged immediately
+
+
+iii)Async/Await:A syntactic sugar over Promises, making asynchronous code look and behave more like synchronous code.
+Ex:
+function fetchData() {
+  return new Promise((resolve, reject) => {
+    setTimeout(() => {
+      resolve("Data received");
+    }, 2000);
+  });
+}
+
+async function getData() {
+  console.log("Fetching data...");
+  let message = await fetchData();
+  console.log(message); // "Data received" (after 2 seconds)
+}
+getData();
+
+
+iv)Event Loop:-
+The non-blocking nature of JavaScript is largely facilitated by the event loop. 
+The event loop is responsible for executing the code, collecting and processing events, and executing queued sub-tasks.
+
+  Call Stack:
+  Where functions are pushed for execution.
+  Synchronous tasks are executed here, one at a time.
+  
+  Callback Queue:
+  Asynchronous tasks (e.g., setTimeout, Promises) are placed here once their operations are completed.
+  
+  Event Loop:
+  Continuously checks the call stack and the callback queue.
+  If the call stack is empty, it pushes the first task from the callback queue to the call stack for execution.
+  
+Ex:
+console.log("Start");
+
+setTimeout(() => {
+  console.log("Callback");
+}, 2000);
+
+console.log("End");
+
+// Output:
+// Start
+// End
+// Callback (after 2 seconds)
+
+In this example, "Start" and "End" are logged immediately.
+The "Callback" message is logged after the setTimeout operation completes without blocking the execution of other code.
