@@ -1,0 +1,118 @@
+In JavaScript, function declarations and variable declarations are "hoisted" to the top of their containing scope,
+during the compilation phase, before the code execution.
+However, the actual assignments or initializations are not hoisted. 
+Ex1:-
+var a = 10;
+function b() {
+    a = 11;
+    return a;
+    
+    function a() {
+        console.log(a);
+    }
+}
+console.log(b()); // Output: 11
+console.log(a);   // Output: 10
+Explanation:-
+(i)Hoisting:
+    >Function declarations are hoisted to the top of their scope.
+    >Variable declarations are also hoisted, but their assignments are not.
+    So, the function `a` inside `b` gets hoisted, which changes the interpretation of the code.
+    
+    After hoisting, the function b looks like this:
+    function b() {
+      function a() {
+          console.log(a);
+      }
+      a = 11; // This assignment is not hoisting the outer variable `a`, but treating `a` as the inner function `a`
+      return a; // This `a` now refers to the number 11
+    }
+(ii)Execution:
+    When b is called, the local a (which is a function) is hoisted to the top of b.
+    The assignment a = 11; is interpreted as changing the local a (which is initially a function) to 11.
+    The return a; returns the value 11.
+    The global a remains 10 because the assignment inside b refers to the local a.
+    O/P:-
+    console.log(b()); // Output: 11
+    console.log(a);   // Output: 10
+-------------------------------------------------------------------------------------------------------------------------
+Ex2:-
+var a = 10;
+function b() {
+    a = 11;
+    return a;
+}
+console.log(b()); // Output: 11
+console.log(a);   // Output: 11
+Explanation:
+  Execution:
+  When b is called, the assignment a = 11; directly modifies the global variable a.
+  The return a; returns the value 11.
+  The global a is now 11 because it was reassigned within the function b.
+-------------------------------------------------------------------------------------------------------------------------
+Examples:- 
+A)Hoisting of Variables(Using var):-
+When a variable is declared using var, the declaration is hoisted to the top of its containing 
+function or to the global scope if it's declared outside of any function.
+However, only the declaration is hoisted, not the initialization. This can lead to unexpected behavior.
+1)
+console.log(x); // Output: undefined
+var x = 5;
+console.log(x); // Output: 5
+
+2)
+var x;
+console.log(x); // Output: undefined
+x = 5;
+console.log(x); // Output: 5
+
+B)Hoisting of Functions:
+Function declarations are also hoisted to the top of their containing scope.
+Unlike variable hoisting, both the declaration and the definition of the function are hoisted.
+1)
+console.log(foo()); // Output: "Hello, world!"
+function foo() {
+    return "Hello, world!";
+}
+
+2)
+function foo() {
+    return "Hello, world!";
+}
+console.log(foo()); // Output: "Hello, world!"
+
+C)Differences Between var, let, and const:-
+Variables declared with `let` and `const` are also hoisted, but they are not initialized. 
+They are placed in a "temporal dead zone" (TDZ) from the start of the block, until the declaration is encountered,
+which means you cannot access them before the declaration.
+
+Example with `let`:-
+1)
+console.log(y); // ReferenceError: Cannot access 'y' before initialization
+let y = 5;
+console.log(y); // Output: 5
+
+2)
+// y is in the temporal dead zone
+let y;
+console.log(y); // ReferenceError: Cannot access 'y' before initialization
+y = 5;
+console.log(y); // Output: 5
+
+Example with `const`
+1)
+console.log(z); // ReferenceError: Cannot access 'z' before initialization
+const z = 10;
+console.log(z); // Output: 10
+
+2)
+// z is in the temporal dead zone
+const z;
+console.log(z); // ReferenceError: Cannot access 'z' before initialization
+z = 10;
+console.log(z); // Output: 10
+
+Key Points to Remember:-
+>Function Declarations: Entire function declarations are hoisted, including the body of the function.
+>var Declarations: Variable declarations are hoisted but not their initializations.
+>let and const Declarations: Declarations are hoisted, but they remain in the temporal dead zone until they are initialized.
