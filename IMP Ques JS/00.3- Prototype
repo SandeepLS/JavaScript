@@ -72,10 +72,44 @@ Ex:-chain prototype
   O/P:-object2.city
        'LKV'
 
-
+-------------------------------------------------------------------------------------------------------------
 Prototype:-
   *JavaScript is prototype-based because it uses prototypes to define the structure and behavior of objects.
   *JavaScript was designed to be highly dynamic and flexible.
    Prototypes allow objects to inherit properties and methods from other objects, 
    facilitating a more flexible and dynamic approach to object-oriented programming.
 
+Example: Creating a Prototype Chain
+Let's create two objects, animal and dog, where dog inherits properties and methods from animal.
+
+Step 1: Define the animal object with a method
+// Create an animal object
+const animal = {
+    type: "Animal",
+    sound: "Generic sound",
+    makeSound: function() {
+        console.log(this.sound);
+    }
+};
+
+Step 2: Create the dog object that inherits from animal
+// Create a dog object that inherits from animal
+const dog = Object.create(animal);
+dog.type = "Dog";
+dog.sound = "Bark";
+
+Step 3: Use the inherited method
+// Call the makeSound method on dog
+dog.makeSound(); // Output: Bark
+
+
+Adding a New Method to the Prototype
+Let's add a new method to the animal object and see how it affects the dog object.
+
+Step 4: Add a new method to the animal prototype
+// Add a new method to the animal object
+animal.describe = function() {
+    console.log(`This is a ${this.type} and it makes a ${this.sound} sound.`);
+};
+// Call the new method on dog
+dog.describe(); // Output: This is a Dog and it makes a Bark sound.
