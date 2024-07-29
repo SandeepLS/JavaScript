@@ -1,0 +1,48 @@
+In JavaScript, this is a keyword that refers to the context,in which a function is called.
+The value of `this` depends on how the function is called.
+
+1:-Global Context (Outside of Any Function):
+  In the global execution context (outside of any function), 
+  this refers to the global object. In a web browser, the global object is window.
+  Ex:-console.log(this); // In a browser, this will log the window object
+
+2:-Function Context:
+  Inside a regular function, the value of this depends on how the function is called
+  Ex:-function showThis() {
+      console.log(this);
+  }
+  showThis(); // In non-strict mode, this will log the global object (window in browsers)
+              // In strict mode, this will be undefined
+
+3:-Object Method Context:
+  When a function is called as a method of an object, `this` refers to the object the method is called on.
+  Ex:-const animal = {
+      sound: "Generic sound",
+      makeSound: function() {
+          console.log(this.sound); // 'this' refers to the animal object
+      }
+  };
+  animal.makeSound(); // Output: Generic sound
+
+4:-Constructor Function Context:
+  When a function is used as a constructor (with the new keyword), this refers to the newly created object.
+  Ex:function Animal(sound) {
+      this.sound = sound;
+  }
+  
+  const dog = new Animal("Bark");
+  console.log(dog.sound); // Output: Bark
+
+5:-Arrow Functions:
+Arrow functions do not have their own this context. Instead, 
+they inherit this from the enclosing lexical context (the surrounding non-arrow function or global scope).
+Ex:const animal = {
+    sound: "Generic sound",
+    makeSound: function() {
+        const innerFunc = () => {
+            console.log(this.sound); // 'this' refers to the animal object
+        };
+        innerFunc();
+    }
+};
+animal.makeSound(); // Output: Generic sound
