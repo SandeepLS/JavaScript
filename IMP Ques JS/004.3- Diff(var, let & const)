@@ -1,0 +1,111 @@
+Differences between var, let, and const:-
+var:-
+       *Scope:
+        var is function-scoped, meaning it is limited to the function within which it is declared.
+        If declared outside any function, it is globally scoped.
+        
+       *Hoisting:
+        var declarations are hoisted to the top of their containing scope. 
+        This means we can access a var variable, before its declaration without getting an error (it will be undefined).
+        Ex:-
+        function exampleVar() {
+            console.log(x); // undefined (hoisting)
+            var x = 10;
+            console.log(x); // 10
+            var x = 20;
+            console.log(x); // 20
+        }
+        exampleVar();
+        
+       *Reassignment:
+        Variables declared with var can be reassigned.
+        Ex:
+        var a = 1;
+        console.log(a); // Output: 1
+        a = 2;
+        console.log(a); // Output: 2
+                
+       *Redeclaration:
+        Variables declared with var can be redeclared within the same scope.
+        Ex:
+        var b = 1;
+        console.log(b); // Output: 1
+        var b = 2;
+        console.log(b); // Output: 2
+
+let:-
+       *Scope:
+        let is block-scoped, meaning it is limited to the block (e.g., {}) within which it is declared.
+        
+       *Hoisting:
+        let declarations are hoisted but are not initialized. 
+        This means they are in a "temporal dead zone" from the start of the block until the declaration is encountered, 
+        and accessing them before the declaration will result in a ReferenceError.
+        Ex:
+        function exampleLet() {
+            // console.log(y); // ReferenceError (temporal dead zone)
+            let y = 10;
+            console.log(y); // 10
+            y = 20;
+            console.log(y); // 20
+            // let y = 30; // SyntaxError (cannot redeclare)
+        }
+        exampleLet();
+        
+       *Reassignment:
+        Variables declared with let can be reassigned.
+        Ex:
+        let c = 1;
+        console.log(c); // Output: 1
+        c = 2;
+        console.log(c); // Output: 2
+        
+       *Redeclaration:
+        Variables declared with let cannot be redeclared within the same scope.
+        Ex:
+        let d = 1;
+        console.log(d); // Output: 1
+        // let d = 2; // SyntaxError: Identifier 'd' has already been declared
+        d = 2; // This is allowed since it's reassignment, not redeclaration
+        console.log(d); // Output: 2
+
+const:-
+       *Scope:
+        const is block-scoped, similar to let.
+        
+       *Hoisting:
+        const declarations are hoisted but are not initialized. 
+        This means they are in a "temporal dead zone" from the start of the block until the declaration is encountered, 
+        and accessing them before the declaration will result in a ReferenceError.
+        Ex:
+        function exampleConst() {
+            // console.log(z); // ReferenceError (temporal dead zone)
+            const z = 10;
+            console.log(z); // 10
+            // z = 20; // TypeError (cannot reassign)
+            const obj = { a: 1 };
+            obj.a = 2; // Allowed (modifying object property)
+            console.log(obj); // { a: 2 }
+            // const obj = { b: 2 }; // SyntaxError (cannot redeclare)
+        }
+        exampleConst();
+        
+       *Reassignment:
+        Variables declared with const cannot be reassigned. 
+        However, if the const variable is an object or array, the contents of the object or array can be modified.
+        Ex:
+        const e = 1;
+        console.log(e); // Output: 1
+        // e = 2; // TypeError: Assignment to constant variable.
+        
+        const obj = { key: 'value' };
+        console.log(obj.key); // Output: value
+        obj.key = 'newValue'; // Allowed because we are not reassigning the constant, just modifying the object it points to
+        console.log(obj.key); // Output: newValue
+        
+       *Redeclaration:
+        Variables declared with const cannot be redeclared within the same scope.
+        Ex:
+        const f = 1;
+        console.log(f); // Output: 1
+        // const f = 2; // SyntaxError: Identifier 'f' has already been declared
