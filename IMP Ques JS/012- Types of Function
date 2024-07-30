@@ -1,0 +1,96 @@
+1)Function Declarations:-
+  A function declared using the function keyword.
+  It is hoisted to the top of its scope, meaning it can be called before its declaration.
+  Ex:
+  function greet() {
+      console.log('Hello!');
+  }
+  greet(); // Output: Hello!
+
+2)Function Expressions:-
+  A function assigned to a variable.
+  It is not hoisted, so it cannot be called before its definition.
+  Ex:
+  const greet = function() {
+      console.log('Hello!');
+  };
+  greet(); // Output: Hello!
+
+3)Arrow Functions:-
+  A shorter syntax for function expressions introduced in ES6.
+  Arrow functions do not have their own 'this' context.
+  Ex:
+  const greet = () => {
+      console.log('Hello!');
+  };
+  greet(); // Output: Hello!
+
+4) Anonymous Functions:-
+  Functions without a name.
+  They are often used as arguments to other functions or assigned to variables.
+  Ex:
+  setTimeout(function() {
+      console.log('Hello after 1 second');
+  }, 1000);
+
+5)Named Functions:-
+  Functions with a name. They can be function declarations or function expressions.
+  Ex:
+  const greet = function sayHello() {
+      console.log('Hello!');
+  };
+  greet(); // Output: Hello!
+  // sayHello(); // ReferenceError: sayHello is not defined (outside the function)
+
+6)Immediately Invoked Function Expressions (IIFE):-
+  Functions that are executed immediately after they are defined. 
+  They create a new scope, helping to avoid polluting the global scope.
+  Ex:
+  (function() {
+      console.log('This is an IIFE!');
+  })(); // Output: This is an IIFE!
+
+7)Higher-Order Functions:-
+  Functions that accept other functions as arguments or return functions as their result.
+  Ex:
+  function greet(name) {
+      return function(message) {
+          console.log(`${message}, ${name}`);
+      };
+  }
+  const greetJohn = greet('John');
+  greetJohn('Hello'); // Output: Hello, John
+
+8)Constructor Functions:-
+  Functions used to create objects.
+  They are called with the 'new' keyword and follow PascalCase naming convention.
+  Ex:
+  function Person(name, age) {
+      this.name = name;
+      this.age = age;
+  }
+  const john = new Person('John', 30);
+  console.log(john.name); // Output: John
+  console.log(john.age);  // Output: 30
+
+9)Generator Functions:-
+  Functions that can be paused and resumed. 
+  They are declared with the 'function*' syntax and use the `yield` keyword to pause execution.
+  Ex:
+  function* generatorFunction() {
+      yield 'Hello';
+      yield 'World';
+  }
+  const generator = generatorFunction();
+  console.log(generator.next().value); // Output: Hello
+  console.log(generator.next().value); // Output: World
+
+10)Async Functions:-
+  Functions that operate asynchronously via the async keyword. They use await to wait for promises.
+  Ex:-
+  async function fetchData() {
+      const response = await fetch('https://api.example.com/data');
+      const data = await response.json();
+      console.log(data);
+  }
+  fetchData();
