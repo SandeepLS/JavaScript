@@ -1,0 +1,112 @@
+JavaScript encompasses eight fundamental data types,
+which are categorized into primitive and non-primitive types.
+
+The primitive data types include Number, String, Boolean, Null, Undefined, Symbol, and BigInt. 
+Each of these types holds a single simple value, thus forming the basis of data representation in JavaScript.
+
+Non-primitive data types, on the other hand, include Object, Array, and Function. 
+These types can hold multiple values and allow for complex data structures essential for building sophisticated applications
+
+1)Primitive types are basic data types that are not objects and have no methods.
+  There are seven primitive data types in JavaScript:
+  a)String:
+    Represents a sequence of characters.
+    Example:
+    let name = "Alice";
+  
+  b)Number:
+    Represents both integer and floating-point numbers.
+    Example:
+    let age = 25;
+    let pi = 3.14;
+  
+  c)Boolean:
+    Represents logical values: true or false.
+    Example:
+    let isActive = true;
+  
+  d)Null:
+    Represents an intentional absence of any object value.
+    Example:
+    let emptyValue = null;
+  
+  e)Undefined:
+    Represents a variable that has been declared but not yet assigned a value.
+    Example:
+    let unassigned;
+    console.log(unassigned); // Output: undefined
+  
+  f)Symbol (introduced in ES6):
+    Represents a unique and immutable value that can be used as an identifier for object properties.
+    Example:
+    let uniqueKey = Symbol("key");
+    
+  g)BigInt (introduced in ES11):
+    Represents integers with arbitrary precision, useful for very large numbers.
+    Example:
+    let bigNumber = 123456789012345678901234567890n;
+
+2)Non-primitive data types/Object Types:-
+  Objects are collections of properties, where each property has a key and a value.
+  The value can be of any type, including other objects or functions.
+  a)Object:
+    A collection of key-value pairs.
+    Example:
+    let person = {
+      name: "Bob",
+      age: 30
+    };
+  
+  b)Array:
+    A special type of object used to store ordered lists of values.
+    Example: let numbers = [1, 2, 3, 4, 5];
+  
+  c)Function:
+    A callable object that executes code when invoked.
+    Example:
+    function greet(name) {
+      return "Hello, " + name + "!";
+    }
+  
+  d)Date:
+    Represents dates and times.
+    Example:
+    let now = new Date();
+  
+  e)RegExp:
+    Represents regular expressions, used for pattern matching within strings.
+    Example:let pattern = /abc/;
+  
+  f)Map:
+    A collection of keyed data items, where keys can be of any type.
+    Example:
+    let map = new Map();
+    map.set("key", "value");
+  
+  g)Set:
+    A collection of unique values.
+    Example:let set = new Set();
+    set.add(1);
+    set.add(2);
+  
+  h)WeakMap and WeakSet:
+    Similar to Map and Set but with weakly held keys, meaning that the key-value pairs can be garbage collected if there is no other reference to the object.
+
+3)Special Cases:-
+  a)Type Coercion: JavaScript can implicitly convert values from one type to another, known as type coercion.
+    Example:
+    let num = 5;
+    let str = "5";
+    console.log(num + str); // Output: "55"
+  
+  b)Type Checking: You can check the type of a variable using the typeof operator.
+    Example:
+    console.log(typeof 42);        // "number"
+    console.log(typeof "hello");   // "string"
+    console.log(typeof true);      // "boolean"
+    console.log(typeof undefined); // "undefined"
+    console.log(typeof null);      // "object" (a known quirk in JavaScript)
+    console.log(typeof Symbol());  // "symbol"
+    console.log(typeof 123n);      // "bigint"
+    console.log(typeof {});        // "object"
+    console.log(typeof function(){}); // "function"
