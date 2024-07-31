@@ -5,7 +5,7 @@ var:-
         If declared outside any function, it is globally scoped.
         
        *Hoisting:
-        var declarations are hoisted to the top of their containing scope. 
+        var declarations are hoisted, to the top of their containing scope. 
         This means we can access a var variable, before its declaration without getting an error (it will be undefined).
         Ex:-
         function exampleVar() {
@@ -109,3 +109,30 @@ const:-
         const f = 1;
         console.log(f); // Output: 1
         // const f = 2; // SyntaxError: Identifier 'f' has already been declared
+--------------------------------------------------------------------------------------------------------------------------
+->Hoisting and Hoisted:-
+      In JavaScript, "hoisting" refers to the behavior where variable and function declarations are moved to the top of their containing scope
+      during the compilation phase. This means that variables and functions can be used before they are declared in the code.
+      
+      The term "hoisted" describes the result of this behavior. When we say that a variable or function is "hoisted,"
+      we mean that, it has been moved to the top of its scope by the JavaScript engine during compilation.
+      
+      To summarize:
+      Hoisting: The concept or process of moving declarations to the top of the scope.
+      Hoisted: The state of a variable or function after it has been moved to the top of the scope.
+      
+      They are related but refer to different aspects of the same concept.
+      "Hoisting" describes the action, while "hoisted" describes the state after the action.
+      Ex:
+            Hoisting refers to the action of moving declarations to the top of their scope during the compilation phase.
+            console.log(myVar); // Output: undefined
+            var myVar = 5;
+            console.log(myVar); // Output: 5
+            
+            Explanation:-
+            In this example, the declaration of myVar is hoisted to the top of the scope. 
+            During the execution, the JavaScript engine treats the code as if it were written like this:-
+            var myVar; // Declaration is hoisted
+            console.log(myVar); // Output: undefined (since myVar is declared but not yet initialized)
+            myVar = 5; // Initialization
+            console.log(myVar); // Output: 5 (after initialization)
