@@ -71,9 +71,9 @@ function x(){
 }
 x(); //1 2 3 4 5 //it will print after every one sec.
 
-Ex:-
+Ex:-using var: we want to kind of have, new copy of i each and every time, the loop is executed.
 function x(){
-    for(let i =1;i<=5;i++){
+    for(var i =1;i<=5;i++){
         function closure(x){
             setTimeout(function(){
                 console.log(x);
@@ -83,4 +83,4 @@ function x(){
     }
     console.log("Mashi");
 }
-x();
+x();//Mashi 1 2 3 4 5 //it will print after every one sec.
