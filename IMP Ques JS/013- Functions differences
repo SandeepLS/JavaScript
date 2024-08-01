@@ -1,0 +1,93 @@
+//Function:-a set of statements, that performs a task or calculates a value.
+
+//Statement Function/Decleration Function:
+  function a(){
+    console.log("a called");  //
+  }
+  a();
+  
+//Expression Function:
+  var b = function  (){
+    console.log("b called");
+  }
+  b();  
+  /*Difference is: Hoisting, if i assign invocation on top of the scope like, a() b():-
+    Statement Function:-a is created memory, & this function is assigned to a.
+    Expression Function:-this b is created any other variable, It is assigned undefine initially,
+                         until the code hits function. the function is assigned to the variable b.
+                         B():-we get Type error: b is not a function
+  */
+
+
+//Anonymous Function:a function without a name is Anonymouse function. Does not have their own identity.
+  function (){
+      //we will get syntax error: Invalid statement, statement require a function name.
+  }
+  var b = function (){
+    console.log("Anonymous value"); //I used in a place, where functions are used as values. assign it some variable. Its act like a value.
+  }
+
+
+//Named Function: similer to Expression Function.
+  var c = function xyz(){
+      console.log("Named");
+  }
+  c(); //Named
+  
+  var c = function xyz(){  //xyz is not a function inside the inner scope, But it is created as a locall variable.
+      console.log("Anonymouse");
+  }
+  xyz(); //Refference error:xyz is not define.
+  
+  var c = function xyz(){
+      console.log(xyz);  //it is created as a locall variable. We will access the function, inside the function.
+  }
+  c();  //acess this function, inside the function.
+
+//Difference B/W Parameter & Argument:
+  var b = function (param1){  //Parameter:like Identity, get argument values.
+     console.log(param1)
+  }
+  b("san");  //O/P:san  //Argument:we passes some values to the parameter.
+
+  Ex:
+  function x(){
+      for(var i =1;i<=5;i++){
+          function closure(x){  //Parameter:like Identity, get argument values.
+              setTimeout(function(){
+                  console.log(x);
+              }, x * 1000);
+          }
+          closure(i)  //Argument:we passes some values to the parameter.
+      }
+      console.log("Mashi");
+  }
+  x();//Mashi 1 2 3 4 5 //it will print after every one sec.
+
+
+//First Class Function:
+Functions are treated as value. we can use anonymous function, to pass an value.
+Ex:anonymouse
+var b = function (param1){
+   console.log(param1)
+}
+b(function(){  //value. //Insted of the argument, we can pass function inside another function, as argument.
+
+});
+
+Ex:Suppose we have named function.
+var b = function (param1){
+   console.log(param1)
+}
+function xyz(){
+
+}
+b(xyz);
+
+Ex:
+var b = function (param1){
+  return function(){
+
+  }
+}
+console.log(b());
