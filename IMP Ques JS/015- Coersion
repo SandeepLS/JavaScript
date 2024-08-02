@@ -1,0 +1,42 @@
+Coercion:- is the automatic or implicit conversion of values from one data type to another in JavaScript.
+This happens when operators or functions expect specific data types, but the provided values are of different types.
+
+There are two main types of coercion in JavaScript:
+
+1)Type Conversion (Explicit Coercion):
+  This occurs when you explicitly, convert a value from one type to another using functions or methods.
+  like String(), Number(), Boolean(), or parseInt(). For example:
+  Ex:
+  let num = 123;
+  let str = String(num); // Explicitly converts number to string
+  
+2)Type Coercion (Implicit Coercion):
+  This happens automatically by the JavaScript engine when values of different types are used together, 
+  especially in operations like comparisons or arithmetic. For example:
+  Ex:
+  let num = 123;
+  let str = "456";
+  let sum = num + str; // "123456", num is coerced to a string
+
+Common Cases of Coercion
+  String Coercion:
+    When using the + operator with a string, the other operand is coerced into a string.
+    Example: "5" + 2 results in "52".
+  
+  Number Coercion:
+    When using arithmetic operators (-, *, /, etc.), JavaScript tries to convert the operands to numbers.
+    Example: "5" - 2 results in 3 because the string "5" is coerced into a number.
+  
+  Boolean Coercion:
+    In a boolean context (like an if statement), values are coerced to true or false.
+    Falsy values include false, 0, "" (empty string), null, undefined, and NaN.
+    Truthy values include, true, 42, "sandeep", [], {}, function().
+    Example: if ("") will not execute because an empty string is falsy.
+  
+  Equality Coercion
+    The == operator compares values for equality after performing type coercion if the types are different.
+    This can lead to unexpected results, so it's generally recommended to use the === operator,
+    which does not perform type coercion and checks for both value and type equality.
+    For example:
+    0 == false; // true, because 0 is falsy
+    0 === false; // false, because 0 is a number and false is a boolean
