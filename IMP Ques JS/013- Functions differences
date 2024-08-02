@@ -65,29 +65,33 @@
   x();//Mashi 1 2 3 4 5 //it will print after every one sec.
 
 
-//First Class Function:
-Functions are treated as value. we can use anonymous function, to pass an value.
-Ex:anonymouse
-var b = function (param1){
-   console.log(param1)
-}
-b(function(){  //value. //Insted of the argument, we can pass function inside another function, as argument.
+//First Class Function/First Class Citizen:
+  The ability to use function as value. 
+  And can be pased is an argument to another function.
+  And can be return from the function.
+    Ex:anonymouse
+    Functions are treated as value. we can use anonymous function, to pass an value.
+    var b = function (param1){
+       console.log(param1)
+    }
+    b(function(){  //value. //Insted of the argument, we can pass function inside another function, as argument.
+    
+    });
+    
+    Ex:Suppose we have named function.(we passing another function, Inside function).
+    var b = function (param1){
+       console.log(param1)
+    }
+    function xyz(){
+    }
+    b(xyz);
+    
+    Ex: 
+    var b = function (param1){
+      return function(){
+    
+      }
+    }
+    console.log(b());
 
-});
-
-Ex:Suppose we have named function.
-var b = function (param1){
-   console.log(param1)
-}
-function xyz(){
-
-}
-b(xyz);
-
-Ex:
-var b = function (param1){
-  return function(){
-
-  }
-}
-console.log(b());
+//Arrow Function:In 2015 ES6 introduce let, const, & Arrow function
