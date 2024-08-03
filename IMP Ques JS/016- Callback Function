@@ -36,7 +36,7 @@
       // This runs after the greeting.
       /*In this example, afterGreeting is a callback function that is passed to the greet function. */
 
-  Ex:Asynchronous Callback Example
+//Ex:Asynchronous Callback Example
       function fetchData(callback) {
         setTimeout(() => {
           console.log("Data fetched from server.");
@@ -56,11 +56,12 @@
       /*In this example, fetchData simulates an asynchronous operation 
       (e.g., fetching data from a server) using setTimeout. The callback function, processData, is called after the data is "fetched." */
 
---------------------------------------------------------------------------------------------------------
-Important Considerations:
+//--------------------------------------------------------------------------------------------------------
+/*Important Considerations:
   (i)Error Handling: When working with asynchronous callbacks, especially in I/O operations, error handling is important.
      Many asynchronous functions use a common pattern where the first argument of the callback is an error object or null.
     Ex:
+*/
     function fetchData(callback) {
       setTimeout(() => {
         const error = null; // Replace with an error object if there's an error
