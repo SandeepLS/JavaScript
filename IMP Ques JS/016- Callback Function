@@ -1,0 +1,81 @@
+//Callback:- If i passs the function, inside the another function is known as callback.
+    Ex:Synchronous example
+    function x(y){
+      console.log("x")
+      y();
+    }
+    x(function y(){
+      console.log("y");
+    });
+    
+    Ex:Asynchronous example
+    setTimeout(function(){
+      console.log("timer")
+    }, 5000);
+
+//Another defination & example:-
+ Callback function is a function that is passed as an argument, to another function,
+ and is executed after some operation has been completed.
+ Callbacks are commonly used to handle asynchronous operations, 
+ such as data fetching or event handling, but they can also be used in synchronous code.
+
+  Ex:Synchronous Callback Example
+      function greet(name, callback) {
+        console.log("Hello, " + name + "!");
+        callback();
+      }
+      
+      function afterGreeting() {
+        console.log("This runs after the greeting.");
+      }
+      
+      greet("Alice", afterGreeting);
+      
+      // Output:
+      // Hello, Alice!
+      // This runs after the greeting.
+      /*In this example, afterGreeting is a callback function that is passed to the greet function. */
+
+  Ex:Asynchronous Callback Example
+      function fetchData(callback) {
+        setTimeout(() => {
+          console.log("Data fetched from server.");
+          callback("Data");
+        }, 2000);
+      }
+      
+      function processData(data) {
+        console.log("Processing " + data);
+      }
+      
+      fetchData(processData);
+      
+      // Output after 2 seconds:
+      // Data fetched from server.
+      // Processing Data
+      /*In this example, fetchData simulates an asynchronous operation 
+      (e.g., fetching data from a server) using setTimeout. The callback function, processData, is called after the data is "fetched." */
+
+--------------------------------------------------------------------------------------------------------
+Important Considerations:
+  (i)Error Handling: When working with asynchronous callbacks, especially in I/O operations, error handling is important.
+     Many asynchronous functions use a common pattern where the first argument of the callback is an error object or null.
+    Ex:
+    function fetchData(callback) {
+      setTimeout(() => {
+        const error = null; // Replace with an error object if there's an error
+        const data = "Data";
+        callback(error, data);
+      }, 2000);
+    }
+    
+    fetchData((error, data) => {
+      if (error) {
+        console.error("An error occurred:", error);
+      } else {
+        console.log("Data:", data);
+      }
+    });
+  
+  (ii)Callback Hell: When using multiple nested callbacks, code can become difficult to read and maintain, a situation known as "callback hell." 
+      Modern JavaScript uses promises and async/await to mitigate this issue, making asynchronous code more manageable.
