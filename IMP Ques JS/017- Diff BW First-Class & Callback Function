@@ -1,0 +1,39 @@
+First-Class Functions:
+  Functions can be treated like any other variable. They can be assigned to variables, passed as arguments to other functions, 
+  returned from other functions, and stored in data structures.
+  
+  Characteristics:
+    Assignability: Functions can be assigned to variables or properties.
+    Passability: Functions can be passed as arguments to other functions.
+    Returnability: Functions can be returned from other functions.
+    Storable: Functions can be stored in arrays, objects, etc.
+  
+  Ex:
+    const greet = function() {
+      console.log("Hello!");
+    };
+    function callFunction(func) {
+      func();
+    }
+    callFunction(greet); // Outputs "Hello!"
+
+Callback Functions:
+  Function that is passed as an argument to another function and 
+  is invoked (or called back) after some operation is completed.
+  Callbacks are often used to handle asynchronous operations, like event handling or data fetching.
+  
+  Characteristics:
+  Asynchronous Execution: Often used in asynchronous operations to continue the execution of code after an operation completes.
+  Control Flow: They allow a function to delegate part of its execution to another function.
+
+  Ex:
+  function fetchData(callback) {
+    setTimeout(() => {
+      console.log("Data fetched from server.");
+      callback("Data");
+    }, 2000);
+  }
+  function processData(data) {
+    console.log("Processing " + data);
+  }
+  fetchData(processData); // fetchData is called with processData as a callback
