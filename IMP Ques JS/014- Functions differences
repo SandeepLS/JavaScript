@@ -68,7 +68,7 @@
 //First Class Function/First Class Citizen:
   The ability to use function as value. 
   And can be pased is an argument to another function.
-  And can be return from the function.
+  And can be return from the other function.
     Ex:anonymouse
     Functions are treated as value. we can use anonymous function, to pass an value.
     var b = function (param1){
@@ -93,5 +93,30 @@
       }
     }
     console.log(b());
+          OR
+  //First Class Function/First Class Citizen:The ability to use function as value.
+    Ex:Functions can be assigned to variables.
+      var greet = function(){
+        console.log("Hello");
+      }
+    
+    Ex:Function can be passed as argument.
+      function callFunction(func){
+        func();
+      }
+      callFunction(greet); // This will output "Hello!"
+    
+    Ex:Function can be returned, from other function.
+      function createGreeter(name){
+        return function(){
+          console.log("Hello " + name + "!");
+        }
+      }
+      const greetMashi = createGreeter("Mashi");
+      greetMashi();  // This will output "Hello, John!"
+    
+    Ex:Functions can be stored in data Structure.
+      const funcs = [greet, greetMashi];
+      funcs.forEach(func => func());  // Calls each function in the array
 
 //Arrow Function:In 2015 ES6 introduce let, const, & Arrow function
