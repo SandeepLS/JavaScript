@@ -1,0 +1,9 @@
+/*
+Event loop(i will consider is a super hero, behind the Browser)
+It has one job, only job is  it continuesly monitor the callstack As well as  callback queue.
+If the call stack is empty & this event loop see that, there is also a function, waiting to be executed in callback queue, just take that function, put it into call stack & it is quickly executed.
+
+fetch:  is goes and request the api call.
+The fetch function returns the promise . 
+And we have to pass the callback function, which will be executed, once the promises is resolved.
+*/
