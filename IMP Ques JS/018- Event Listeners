@@ -1,0 +1,38 @@
+Event listener:-
+  is a function, that waits for an event to occur, on a specific element or object,
+  and then executes a specified callback function when that event occurs.
+  Event listeners are a key component of the event-driven nature of JavaScript, especially in web development.
+
+How Event Listeners Work:
+  Event Types: Events can be user interactions (like clicks, key presses, mouse movements), browser actions (like page load, resize), or custom events.
+  Target Elements: Event listeners can be attached to various elements, such as HTML elements, the document, or the window object.
+  Callback Function: When the specified event occurs, the callback function is executed. 
+  This function can access the event object, which contains details about the event, such as the target element, type of event, and more.
+
+//Ex: Adding an Event Listener
+  <button id="myButton">Click me</button>
+  <script>
+    // Select the button element
+    const button = document.getElementById("myButton");
+  
+    // Define the callback function
+    function handleClick() {
+      alert("Button was clicked!");
+    }
+    // Attach the event listener to the button
+    button.addEventListener("click", handleClick);
+  </script>
+  Explain:In this example, when the user clicks the button with the ID myButton, 
+  the handleClick function is called, which shows an alert box.
+
+//Ex: Removing an Event Listener
+  You can remove an event listener using the removeEventListener method, which takes the same arguments as addEventListener.
+  button.removeEventListener("click", handleClick);
+
+//Important Considerations:-
+  Event Object: The callback function often takes an event object as an argument,
+  which contains information about the event and the element that triggered it.
+  Ex:
+  function handleClick(event) {
+    console.log("Clicked element:", event.target);
+  }
