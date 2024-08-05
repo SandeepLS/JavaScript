@@ -1,0 +1,10 @@
+JS is everywhere, can run inside the browser, server, smart watch, even robots isn't it. These all possible because of JavaScript Runtime Environment.
+
+It's like a big container,  which has all the think required, to run JS code.
+To run any pies of JS code, we need JS engine 
+It also have set of api, callstack queue, microtask queue, event loop, 
+
+JSRE is not possible without JS engine.
+Browser can only executed your js code, just because of JSRE.
+
+Nodeja also has JSRE. It has everything, which is required to run JS code.
