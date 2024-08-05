@@ -1,0 +1,23 @@
+Functional Programing:-is not possible without, Higher Order Function.
+Higher Order Function: A function, which takes another function as an argument.
+                      Or return the function from it.
+  Ex:A higher-order function is a function that either:
+  (i)Takes one or more functions as arguments:
+      function x(){      //is the callback function
+        console.log("Sandeep");
+      }
+      function y(func){   //Higher order function
+        func();
+      }
+      y(x);
+  
+  (i)OR:-Returns a function as its result.
+      function createGreeter(name) {
+        return function() {
+          console.log(`Hello, ${name}!`);
+        };
+      }
+      const greetSandeep = createGreeter("Sandeep");
+      greetSandeep(); // Output: Hello, Sandeep!
+  
+  
