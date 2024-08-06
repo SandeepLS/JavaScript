@@ -1,7 +1,25 @@
+Key Differences:-
+  map(): Transforms each element in the array and returns a new array of the same length.
+  filter(): Filters the array based on a condition and returns a new array with elements that pass the test.
+  reduce(): Reduces the array to a single value by iteratively applying a function to an accumulator and each element.
+
 map():-
   I have an array, if I want  to transfer a whole array, in that case we use map.
   And we have to pass function inside the map(),
   a functions which tells we that, what transformation do we need.(Double, Triple, Binary etc..)
+  Ex:Normal ex.
+    const numbers = [1, 2, 3, 4];
+    const doubled = [];
+    for (let i = 0; i < numbers.length; i++) {
+      doubled.push(numbers[i] * 2);
+    }
+    console.log(doubled); // Output: [2, 4, 6, 8]
+
+  Ex:map method.
+    const numbers = [1, 2, 3, 4];
+    const doubled = numbers.map(num => num * 2);
+    console.log(doubled); // Output: [2, 4, 6, 8]
+
   Ex:Double
     const arr = [5, 1, 3, 4];
     function double(x){
@@ -46,16 +64,79 @@ filter():-
     filter() method creates a new array with all elements,
     that pass the test implemented by the provided function. 
     It also does not modify the original array.
+    Ex:Nomal method.
+    const numbers = [1, 2, 3, 4];
+    const evenNumbers = [];
+    for (let i = 0; i < numbers.length; i++) {
+      if (numbers[i] % 2 === 0) {
+        evenNumbers.push(numbers[i]);
+      }
+    }
+    console.log(evenNumbers); // Output: [2, 4]
+
     Ex:
     const arr = [5, 1, 3, 2, 6];
     function isOdd(x){
       return x % 2;
     }
     const output = arr.filter(isOdd);
-    console.log(output);
+    console.log(output);  //5, 1, 3
 
     Ex:
     const numbers = [1, 2, 3, 4];
     const evenNumbers = numbers.filter(num => num % 2 === 0);
     console.log(evenNumbers); // Output: [2, 4]
 
+reduce():-Besically we use that place, Where we have to take all elements in array,
+    & come up with a single value return.
+    syntax:
+      array.reduce(function(accumulator, currentValue, index, array) {
+        // return updated accumulator
+      }, initialValue)
+
+    Ex:Normal method
+      const arr = [1, 2, 3, 4];
+      function findSum(arr){
+        let sum =0;
+        for(let i=0;i<arr.length;i++){  //hydrate over each value.
+          sum = sum + arr[i];
+        }
+        return sum;
+      }
+      console.log(findSum(arr));
+    
+    Ex:reduce method.
+      const arr = [1, 2, 3, 4];
+      const output = arr.reduce(function (acc, curr){  //2 parameter
+          acc = acc + curr;
+          return acc;
+      }, 0); //accumalator initial value.
+      console.log(output);
+
+    Ex:reduce method.
+    const numbers = [1, 2, 3, 4];
+    const sum = numbers.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
+    console.log(sum); // Output: 10
+
+  Ex:Maximum value Normal example.
+    const arr = [1, 2, 3, 4];
+    function findMax(){
+      let max = 0;
+      for(let i=0;i<arr.length;i++){
+        if(arr[i] > max){
+          max = arr[i];
+        }
+      }
+      return max;
+    }
+    console.log(findMax(arr));
+
+  Ex:reduce method.
+  const arr = [1, 2, 3, 4];
+  const output = arr.reduce (function(acc, curr){
+    if(curr > acc){
+      acc = curr;
+    }
+    return acc;
+  }, 0); //acc initial value 0.
+  console.log(output);
