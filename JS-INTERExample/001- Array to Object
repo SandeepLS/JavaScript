@@ -2,4 +2,4 @@
 
 const arr = ['a', 'b', 'c'];
 let obj = arr.reduce((acc,it)=>({...acc,[it]:it}),{});
-console.log(obj)
+console.log(obj)  //{ a: 'a', b: 'b', c: 'c' }
