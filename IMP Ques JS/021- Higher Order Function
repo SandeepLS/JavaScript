@@ -77,13 +77,17 @@ Ex:Optimize our code
     }
     
     const calculate = function(radius, logic){
-      const output = [];
-      for(let i=0;i<radius.length;i++){
+      const output = [];  //creates a new array
+      for(let i=0;i<radius.length;i++){  //hydrate over each elements in the radius
         output.push(logic(radius[i]));
       }
       return output;
     }
-    
     console.log(calculate(radius, area));
     console.log(calculate(radius, circumference));
     console.log(calculate(radius, diameter));
+
+    OR
+    console.log(radius.map(area));
+    //map function also just creates a new array,
+    and hydrate over each elements in the radius.
