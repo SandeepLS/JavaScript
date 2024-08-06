@@ -1,0 +1,31 @@
+Ex:
+  const user = [
+    { firstName:"Sandeep", lastName:"LS", age:24 },
+    { firstName:"Shrinivas", lastName:"LC", age:63 },
+    { firstName:"Vanja", lastName:"N", age:50 },
+    { firstName:"Sachin", lastName:"LS", age:24 },
+  ];
+
+//Ex:list of Full Name.
+  const output = user.map( x => x.firstName + " " + x.lastName );
+  console.log(output)
+
+//age checker:- 26:2, 63:1, 50:1
+  const output = user.reduce(function(acc, curr){
+    if(acc[curr.age]){
+      acc[curr.age] = ++acc[curr.age];  //if acc has current age, increment value
+    }
+    else{
+     acc[curr.age] = 1; //if acc has not curr age, assign 1 value;
+    }
+    return acc;
+  }, {})
+  console.log(output);
+
+//filter age has less the 30.
+  const output = user.filter(x => x.age<30);
+  console.log(output);
+
+//filter firstName age has less the 30.
+  const output = user.filter(x => x.age<30).map(x => x.firstName);
+  console.log(output);
