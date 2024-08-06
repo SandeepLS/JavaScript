@@ -29,3 +29,12 @@ Ex:
 //filter firstName age has less the 30.
   const output = user.filter(x => x.age<30).map(x => x.firstName);
   console.log(output);
+
+//(reduce)filter firstName age has less the 30.
+  const output = user.reduce((acc, curr) =>{
+    if(curr.age<30){
+      acc.push(curr.firstName);
+    }
+    return acc;
+  }, [])
+  console.log(output);
