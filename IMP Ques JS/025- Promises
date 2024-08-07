@@ -1,4 +1,5 @@
-Promises:-are used to handle, Async operation in JS.
+Promises:-are used to, handle Async operation in JS.
+Promises is an Object, Represent the eventual Completion OR Failure, of an asynchronous operation.
 In JavaScript, a Promise is an object, that will produce a single value some time in the future. 
 If the promise is successful, it will produce a resolved value, 
 but if the promise is unsuccessflu/something goes wrong, then it will produce a reason why the promise failed.
@@ -16,44 +17,83 @@ fetch():- this fetch functions, returns the promises.
               console.log(data);    //we get promises object, Respons data.
           })
 
+Promises as 2 Major property:- promisesState & promisesResult
 there are 3 states in promises:- Pending, Fullfilled, Rejected.
 //------------------------------------------------------------------------------------------------
-Ex:we take E-Commerce website, lets we take cart.
+Inversion of controll & Callback hell, major issue while using callback function:-
+1)Inversion of controll:
+          Ex:we take E-Commerce website, lets we take cart.
+          
+          const cart = ["sheo", "pant", "kurtha"];
+          /*along with the cart, we have some api.(api.createOrder()),
+           This api takes the cart item, return the order detalis/ID(create a order).
+           //api.createOrder(cart);
+           And we have another api, api.proceedPayment(),this api will take order details/ID,
+           and it will proceed the payment/payment page.
+           //api.proceedOrder(orderId);
+          
+           These 2 api are async, we don't no how much time it will take.
+           Now, let us see, how we use that in callback function(Its just rap the api, inside the callback function).
+           then pass the callback function, inside the createOrder() api, 
+           
+           Now, the responsible of createOrder() api, create an order firt,and then call the callback function back,
+           once the order is created, with the orderId function (orderId).
+          */
+          
+          createOrder(cart, function (orderId){
+              proceedOrder(orderId);            //passing a function 
+          }); 
+          //this is how used to handle, Async operation with callback.
+          /*Inversion of controll: we pass the callback function, to createOrder() api.
+              At some point of time, these createOrder() call or callback function and everything will be peacefull.
+              But what if these createOrder() api never call/callback function OR it might call twise.
+          */
 
-const cart = ["sheo", "pant", "kurtha"];
-/*along with the cart, we have some api.(api.createOrder()),
- This api takes the cart item, return the order detalis/ID(create a order).
- //api.createOrder(cart);
- And we have another api, api.proceedPayment(),this api will take order details/ID,
- and it will proceed the payment/payment page.
- //api.proceedOrder(orderId);
+          //---------------------without Inversion of controll(using promises)------------------------------------------------------------------
 
- These 2 api are async, we don't no how much time it will take.
- Now, let us see, how we use that in callback function(Its just rap the api, inside the callback function).
- then pass the callback function, inside the createOrder() api, 
- 
- Now, the responsible of createOrder() api, create an order firt,and then call the callback function back,
- once the order is created, with the orderId function (orderId).
-*/
+          const promises = createOrder(cart); 
+          //createOrder(cart) api,  returns the promises(enpty object {}, with some data value init{data:undefine}).
+          //After running createOrder() api, it will store some value in promises(in empty object{data:"orderId"}).
+          
+          /*Once we get the orderId, we proceed to Payment. Now we attach the callback function to promises object.
+              using promises.then (It is promises object).
+          */
+          promises.then(function (orderId){
+              proceedOrder(orderId);     //Attaching a function
+          });
 
-api.createOrder(cart, function (orderId){
-    api.proceedOrder(orderId);            //passing a function 
-}); 
-//this is how used to handle, Async operation with callback.
-/*Inversion of controll:we pass the callback function, to createOrder() api.
-    At some point of time, these createOrder() call or callback function and everything will be peacefull.
-    But what if these createOrder() api never call/callback function OR it might call twise.
-*/
+2)Callback hell:- major issue while using callback function:
+          Ex:
+          const cart = ["sheo", "pant", "kurtha"];
+          
+          //-----using callback hell---------
+          createOrder(cart, function (orderId){
+              proceedToPayment(orderId, function (paymentInfo){
+                  showOrderSummary(paymentInfo, function (){
+                      updateWallet();
+                  })
+              })             
+          }); 
+          
+          //-------Insted off above code(callback hell), we can write below code(using promises chaining, callback function)-------
+          
+          createOrder(cart)
+              .then(function (orderId){       //createOrder returns the promises(Object), & attached to the callback function.
+                 return proceedToPayment(orderId);     
+              })
+              .then(function (paymentInfo){
+                 return showOrderSummary(paymentInfo);
+              })
+              .then(function (){
+                 return updateWallet();
+              })
+          
+          //OR (Using Arrow function)
 
-//---------------------------------------------------------------------------------------
-
-const promises = createOrder(cart); 
-//createOrder(cart) api,  returns the promises(enpty object {}, with some data value init{data:undefine}).
-//After running createOrder() api, it will store some value in promises(in empty object{data:"orderId"}).
-
-/*Once we get the orderId, we proceed to Payment. Now we attach the callback function to promises object.
-    using promises.then (It is promises object).
-*/
-promises.then(function (orderId){
-    api.proceedOrder(orderId);     //Attaching a function
-}); 
+          createOrder(cart)
+                  .then(orderId => proceedToPayment(orderId))  
+                  
+                  .then(paymentInfo => showOrderSummary(paymentInfo))
+          
+                  .then(() => updateWallet());
+             
