@@ -1,0 +1,24 @@
+callback example:-If i passs the function, inside the another function is known as callback.
+
+  /* you have items in a cart, next step is we have to create 2 api,
+  createOrders & processdToPayment. 
+  */
+  const cart = ["sheo", "pant", "Kurtha"];
+  api.createOrder()  //we will tacke callback function, passs along with the cart
+  ai.proceedToPayment() //rap this api inside the callback function.
+
+callback hell:-When using multiple nested callbacks, code can become difficult to read and maintain, a situation known as "callback hell." 
+      Modern JavaScript uses promises and async/await to mitigate this issue, making asynchronous code more manageable.
+    Ex:
+    const cart = ["sheo", "pant", "Kurtha"];
+    api.createOrder(cart,function(){  //create a order, & make it function
+        api.proceedToPayment(function (){
+            api.showOrderSummary(function (){
+                api.updateWallet();
+            });
+        })
+    } )
+
+Inversion of Controll:-is another problem in callback.
+    we see while using callback, we loose controll of our program, because-
+    we pass that callback function, to another function,(Now we are giving controol of function, to other function).
