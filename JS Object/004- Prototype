@@ -1,0 +1,101 @@
+Prototype:-
+  All JavaScript objects inherit properties and methods from a prototype.
+  Whenever we create JS array OR object, JS Engine automatically without even leting you know,
+  attached our arrays OR object, with some hidden properties, methods and Functions, And 
+  these are the hidden properties and functions, which we can acces, just by doing Object. / arr. we can get lot of think.
+
+//Ex: In the previous chapter we learned how to use an object constructor:
+      function Person(first, last, age, eye) {
+        this.firstName = first;
+        this.lastName = last;
+        this.age = age;
+        this.eyeColor = eye;
+      }
+      
+      const myFather = new Person("John", "Doe", 50, "blue");
+      const myMother = new Person("Sally", "Rally", 48, "green");
+      
+      document.getElementById("demo").innerHTML =
+      "My father is " + myFather.age + ". My mother is " + myMother.age; 
+
+//Ex: We also learned that you can not add a new property to an existing object constructor:
+      <script>
+      function Person(first, last, age, eye) {
+        this.firstName = first;
+        this.lastName = last;
+        this.age = age;
+        this.eyeColor = eye;
+      }
+      
+      Person.nationality = "English";  //we cannot add a new property to a constructor function.
+      
+      const myFather = new Person("John", "Doe", 50, "blue");
+      const myMother = new Person("Sally", "Rally", 48, "green");
+      
+      document.getElementById("demo").innerHTML =
+      "The nationality of my father is " + myFather.nationality; 
+      </script>
+
+//Ex: To add a new property to a constructor, you must add it to the constructor function:
+      <script>
+      function Person(first, last, age, eye) {
+        this.firstName = first;
+        this.lastName = last;
+        this.age = age;
+        this.eyeColor = eye;
+        this.nationality = "English";
+      }
+      
+      const myFather = new Person("John", "Doe", 50, "blue");
+      const myMother = new Person("Sally", "Rally", 48, "green");
+      
+      document.getElementById("demo").innerHTML =
+      "The nationality of my father is " + myFather.nationality + ". The nationality of my mother is " + myMother.nationality;
+      </script>
+
+  /*
+    Prototype Inheritance:-
+    All JavaScript objects inherit properties and methods from a prototype:
+    
+    Date objects inherit from Date.prototype
+    Array objects inherit from Array.prototype
+    Person objects inherit from Person.prototype
+    
+    The Object.prototype is on the top of the prototype inheritance chain:
+    Date objects, Array objects, and Person objects inherit from Object.prototype.
+  */
+
+//Adding Properties and Methods to Objects, Using the prototype Property
+//Ex: The JavaScript prototype property allows you to add new properties to object constructors:
+      <script>
+      function Person(first, last, age, eye) {
+        this.firstName = first;
+        this.lastName = last;
+        this.age = age;
+        this.eyeColor = eye;
+      }
+      
+      Person.prototype.nationality = "English";  //we can add a new property to a Object constructor .
+      
+      const myFather = new Person("John", "Doe", 50, "blue");
+      document.getElementById("demo").innerHTML =
+      "The nationality of my father is " + myFather.nationality; 
+      </script>
+
+//Ex: The JavaScript prototype property also allows you to add, new methods to objects constructors:
+      <script>
+      function Person(first, last, age, eye) {
+        this.firstName = first;
+        this.lastName = last;
+        this.age = age;
+        this.eyeColor = eye;
+      }
+      
+      Person.prototype.name = function() {    //  //we can add a new method to a Object constructor .
+        return this.firstName + " " + this.lastName
+      };
+      
+      const myFather = new Person("John", "Doe", 50, "blue");
+      document.getElementById("demo").innerHTML =
+      "My father is " + myFather.name(); 
+      </script>
