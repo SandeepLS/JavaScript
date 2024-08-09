@@ -1,0 +1,28 @@
+/*
+An object literal is a list of property names:values inside curly braces {}.
+*/
+//Ex:-Create an empty JavaScript object using {}, and add 4 properties:
+      const person = {};
+      
+      // Add Properties
+      person.firstName = "John";
+      person.lastName = "Doe";
+      person.age = 50;
+      person.eyeColor = "blue"; 
+      
+      // Display Data from Object
+      document.getElementById("demo").innerHTML =
+      person.firstName + " is " + person.age + " years old.";
+
+//Ex:-Create an empty JavaScript object using new Object(), and add 4 properties:
+      const person = new Object();
+      person.firstName = "John";
+      person.lastName = "Doe";
+      person.age = 50;
+      person.eyeColor = "blue"; 
+      
+      // Diplay Object Content
+      document.getElementById("demo").innerHTML =
+      person.firstName + " is " + person.age + " years old.";
+
+
