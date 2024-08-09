@@ -1,0 +1,64 @@
+/*
+In JavaScript, the this keyword refers to an object.
+The this keyword refers to different objects depending on how it is used:
+*/
+//Ex: this in a Method, When used in an object method, this refers to the object.
+      // Create an object:
+      const person = {
+        firstName: "John",
+        lastName: "Doe",
+        id: 5566,
+        fullName : function() {
+          return this.firstName + " " + this.lastName;  //this refers to the person object.
+        }
+      };
+      
+      // Display data from the object:
+      document.getElementById("demo").innerHTML = person.fullName();
+
+//Ex: this Alone, When used alone, this refers to the global object.
+      let x = this;
+      document.getElementById("demo").innerHTML = x;
+
+//Ex: this in a Function, he global object is the default binding for this.
+      //"use strict"; undefine
+      document.getElementById("demo").innerHTML = myFunction();
+      function myFunction() {
+        return this;
+      }  //global object
+
+//Ex: this in Event Handlers, this refers to the HTML element that received the event.
+      <h1>The JavaScript <i>this</i> Keyword</h1>
+      <button onclick="this.style.display='none'">Click to Remove Me!</button>
+
+//Ex: calls person1.fullName with person2 as an argument, this refers to person2, even if fullName is a method of person1:
+      const person1 = {
+        fullName: function() {
+          return this.firstName + " " + this.lastName;
+        }
+      }
+      
+      const person2 = {
+        firstName:"John",
+        lastName: "Doe",
+      }
+      
+      let x = person1.fullName.call(person2); 
+      document.getElementById("demo").innerHTML = x; 
+
+//Ex: Function Borrowing, an object can borrow a method from another object. With the bind() method.
+      const person = {
+        firstName:"John",
+        lastName: "Doe",
+        fullName: function() {
+          return this.firstName + " " + this.lastName;
+        }
+      }
+      
+      const member = {
+        firstName:"Hege",
+        lastName: "Nilsen",
+      }
+      
+      let fullName = person.fullName.bind(member);
+      document.getElementById("demo").innerHTML = fullName();
