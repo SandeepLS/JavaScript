@@ -1,0 +1,24 @@
+/*
+Sometimes we need to create many objects of the same type.
+To create an object type, we use an object constructor function.
+*/
+//Ex:-Constructor Function for Person objects
+      function Person(first, last, age, eye) {
+        this.firstName = first;
+        this.lastName = last;
+        this.age = age;
+        this.eyeColor = eye;
+      }
+      
+      // Create a Person object
+      const myFather = new Person("John", "Doe", 50, "blue");
+      
+      // Display age
+      document.getElementById("demo").innerHTML =
+      "My father is " + myFather.age + "."; 
+
+/*
+In the constructor function, this has no value.
+The value of this will become the new object when a new object is created.
+Def:-In JavaScript, the this keyword refers to an object, Depending on how it is used.
+*/
