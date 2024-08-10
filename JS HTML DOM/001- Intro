@@ -1,4 +1,13 @@
 DOM:-
-Using HTML DOM, JavaScript can access and change all the elements of an HTML document.
-When a web page is loaded, the browser creates a Document Object Model of the page.
-The HTML DOM model is constructed as a tree of Objects: https://www.w3schools.com/js/js_htmldom.asp
+  Using HTML DOM, JavaScript can access and change all the elements of an HTML document.
+  When a web page is loaded, the browser creates a Document Object Model of the page.
+  The HTML DOM model is constructed as a tree of Objects: https://www.w3schools.com/js/js_htmldom.asp
+
+  The DOM is a W3C (World Wide Web Consortium) standard, for accessing documents.
+  The W3C DOM standard is separated into 3 different parts:
+      Core DOM - standard model for all document types.
+      XML DOM - standard model for XML documents.
+      HTML DOM - standard model for HTML documents.
+
+  The HTML DOM is a standard object model and programming interface for HTML.
+  In other words: The HTML DOM is a standard for how to get, change, add, or delete HTML elements.
