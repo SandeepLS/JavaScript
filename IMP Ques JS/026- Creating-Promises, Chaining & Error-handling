@@ -1,0 +1,45 @@
+//Ex:This is How we create promises:-
+const cart = ["Sheo", "Pant", "kurtha"];
+
+ /* Consumer part:-
+    createOrder(cart);, async function, this returns the promises.
+    Then attach the callback function, to the promises object.
+    And function will call to procced to Payment
+    */
+    const promises = createOrder(cart);  //orderId
+    promises.then(function(orderId){  
+        console.log(orderId)
+        // processedToPayment(orderId);   
+    })
+
+/*Producer part:- creating a promises.
+  we will try to create, own createOrder();
+  createOrder(cart);, async function, this returns the promises.(const pr)
+  To create a promises, we will use `new` keyword.(Promise constructor).
+  const pr = new Promises();  //create promises
+  How do we call Promise Constructor, take a function, & this function have 2 parameter function(resolve, reject);
+  */
+  //Create our promises.
+  function createOrder(cart){
+      const pr = new Promise(function (resolve, reject){
+         //createOrder
+         //validateCart
+         //OrderId
+         if(!validateCart(cart)){  //if the sending cart, is not vallid, get rejected.
+          const err = new Error("Cart is not valid");
+          reject(err);   
+          }
+          //if th logic of createOrder, is sucessflul. Then we will get some OrderId.
+          const orderId = "1234";
+          if(orderId){
+            setTimeout(function(){
+                resolve(orderId);
+            }, 5000);
+        }
+      });
+      return pr;
+  };
+  function validateCart(cart){
+      return true;
+  }
+  O/P:-1234
