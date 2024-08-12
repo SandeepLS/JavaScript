@@ -10,7 +10,7 @@ createOrder(cart)
     .then(function(orderId){ 
         console.log(orderId)  
         return orderId
-    })                         //once we get the orderId from the promises[createOrder(cart)], we will pass it to the next chain.    
+    })                         //once we get the orderId from the promises[createOrder(cart)], we will pass-it(attached) to the next chain.    
     .then(function (orderId){
         return proceedToPayment(orderId);
     })                         //once we get the paymentInfo from the promises[proceedToPayment(orderId)], just send the data to callback function wt attached it.    
