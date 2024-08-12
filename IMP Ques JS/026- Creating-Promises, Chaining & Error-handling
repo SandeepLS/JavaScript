@@ -1,5 +1,5 @@
 //Ex:This is How we create promises:-
-const cart = ["Sheo", "Pant", "kurtha"];
+ const cart = ["Sheo", "Pant", "kurtha"];
 
  /* Consumer part:-
     createOrder(cart);, async function, this returns the promises.
@@ -7,10 +7,13 @@ const cart = ["Sheo", "Pant", "kurtha"];
     And function will call to procced to Payment
     */
     const promises = createOrder(cart);  //orderId
-    promises.then(function(orderId){  
+    promises.then(function(orderId){     //Grasefully handle the resolve part.
         console.log(orderId)
         // processedToPayment(orderId);   
     })
+    .catch(function (err){             //Grasefully handle the rejection part.
+        console.log(err.message);
+    });
 
 /*Producer part:- creating a promises.
   we will try to create, own createOrder();
@@ -41,5 +44,6 @@ const cart = ["Sheo", "Pant", "kurtha"];
   };
   function validateCart(cart){
       return true;
+      //return false;
   }
   O/P:-1234
