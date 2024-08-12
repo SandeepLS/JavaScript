@@ -1,0 +1,58 @@
+/*
+Def: Which we may initialize, another promise inside our .then() method,
+& accordingly we may execute our result.
+we can pass the data, each chain level to other chain level.
+*/
+Ex:
+const cart = ["Sheo", "Pant", "kurtha"];
+
+createOrder(cart)
+    .then(function(orderId){ 
+        console.log(orderId)  
+        return orderId
+    })                         //once we get the orderId from the promises[createOrder(cart)], we will pass it to the next chain.    
+    .then(function (orderId){
+        return proceedToPayment(orderId);
+    })                         //once we get the paymentInfo from the promises[proceedToPayment(orderId)], just send the data to callback function wt attached it.    
+    .then(function(paymentInfo){
+        console.log(paymentInfo);
+    })
+    .catch(function (err){   
+        console.log(err.message);
+    });
+
+
+function createOrder(cart){
+    const pr = new Promise(function (resolve, reject){
+        
+       if(!validateCart(cart)){  //if the sending cart, is not vallid, get rejected.
+        const err = new Error("Cart is not valid");
+        reject(err);   
+        }
+        //if th logic of createOrder, is sucessflul. Then we will get some OrderId.
+        const orderId = "1234";
+        if(orderId){
+            setTimeout(function(){
+                resolve(orderId);
+            }, 3000);
+        }
+    });
+    return pr;
+};
+
+function proceedToPayment(orderId){
+    return new Promise(function (resolve, reject){
+        resolve("Payment Successful");
+    });
+}
+
+function validateCart(cart){
+    return true;
+    // return false;
+}
+
+/*
+O/P:
+1234
+Payment Successful
+*/
