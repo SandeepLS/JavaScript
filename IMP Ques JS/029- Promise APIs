@@ -1,0 +1,108 @@
+/**
+  Promise Lifecycle
+    A promise can be in one of three states:
+    Pending: The initial state, neither fulfilled nor rejected.
+    Fulfilled: The operation completed successfully, and the promise has a resulting value.
+    Rejected: The operation failed, and the promise has a reason for the failure.
+  
+  There are 4 promise apis(Promise Methods (APIs)):-
+  Allowing you to handle operations, that may take an uncertain amount of time to complete, 
+  such as fetching data from a server, reading a file, or performing a timeout.
+    *Promise.all()
+    *Promise.allSettled()
+    *Promise.race()
+    *Promise.any()
+  
+  lingo:- Once the promises are settled => we got the result
+          Wheather it is resolve/reject , success/failure & fulfilled/Rejected.
+*/
+Promise Methods (APIs):
+1)Promise.resolve():-
+  Returns a promise, that is resolved with the given value. If the value is promises, it's simply returns promise.
+  Ex: Promise.resolve(42).then(val => console.log(val));  //42
+
+2)Promise.reject():-
+  Returns a promise, that is rejected with the given reason.
+  Ex: Promise.reject("Error occured").catch(err => console.error(err));  //Error occured
+
+3)Promise.all():-
+  Takes an array (or any iterable) of promises and returns a single promise,
+  that resolve, when all of the promises, in the iterable have resolved.
+  If any promise is rejected, the returned promise is rejected with that reason.
+  Ex:
+  const p1 = new Promise((resolve, reject)=>{
+      setTimeout(() => resolve("P1 sucess"), 3000);
+  })
+  const p2 = new Promise((resolve, reject) =>{
+      // setTimeout(() => resolve("P2 sucess"), 1000);
+      setTimeout(() => reject("P1 fail"), 1000);
+  })
+  const p3 = new Promise((resolve, reject) =>{
+      setTimeout(() => resolve("P3 sucess"), 2000);
+  })
+  
+  Promise.all([p1,p2,p3])
+      .then(result => {
+          console.log(result);
+      })
+      .catch(err =>{
+          console.error(err);
+      });
+
+4)Promise.allSetled():-
+  It will wait for all the promises to get seteled, wheather it is successful / fail,
+  it will wait for all of them, & it collect all the result, & it will give it back, as array of object.
+  Ex:
+  Promise.allSettled([p1,p2,p3])
+      .then(result => {
+          console.log(result);
+      })
+      .catch(err =>{
+          console.error(err);
+      });
+
+5)Promise.race():-
+  whatever will be the first one(First settled promise), it will just return the result.
+  (wheather it is success / fail).
+  Ex:
+  const p1 = new Promise((resolve, reject)=>{
+      setTimeout(() => resolve("P1 sucess"), 3000);
+  })
+  const p2 = new Promise((resolve, reject) =>{
+      // setTimeout(() => resolve("P2 sucess"), 1000);
+      setTimeout(() => reject("P2 fail"), 6000);
+  })
+  const p3 = new Promise((resolve, reject) =>{
+      setTimeout(() => resolve("P3 sucess"), 2000);  //P3 success
+  })
+  
+  Promise.race([p1,p2,p3])
+      .then(result => {
+          console.log(result);
+      })
+      .catch(err =>{
+          console.error(err);
+      });
+
+6)Promise.any():-
+  Will wait for the, 1st settled success(1st settle resolved promises).
+  Ex:
+  const p1 = new Promise((resolve, reject)=>{
+      setTimeout(() => resolve("P1 sucess"), 3000);
+  })
+  const p2 = new Promise((resolve, reject) =>{
+      // setTimeout(() => resolve("P2 sucess"), 1000);
+      setTimeout(() => reject("P2 fail"), 6000);
+  })
+  const p3 = new Promise((resolve, reject) =>{
+      // setTimeout(() => resolve("P3 sucess"), 2000);
+      setTimeout(() => reject("P3 fail"), 4000)
+  })
+  
+  Promise.any([p1,p2,p3])
+      .then(result => {
+          console.log(result);
+      })
+      .catch(err =>{
+          console.error(err);
+      });
