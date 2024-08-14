@@ -51,3 +51,9 @@
     }).catch((error)=>{
         console.log(error)
     })
+
+--------------------------------------------------------------------------------------------------
+//await:- await operator/keyword is used to, wait for a Promises.
+  It can only be used, inside an async function with reguler Javascript code.
+//example of async/await
+//example of promise without using async/await.
