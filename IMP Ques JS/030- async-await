@@ -9,7 +9,6 @@
     }
     const dataPromise = getdata();
     console.log(dataPromise);   //here we will get promise data.
-    
     dataPromise.then(res => console.log(res));  //here we will get actual data, what we return in the function.
   
     Example 1: Returning a value
@@ -55,5 +54,49 @@
 --------------------------------------------------------------------------------------------------
 //await:- await operator/keyword is used to, wait for a Promises.
   It can only be used, inside an async function with reguler Javascript code.
-//example of async/await
+  How do we use async along with await:- 
+  async and await combo, is used to handle promises.
+
+  Ex: Using async/await:-
+  function fetchData(shouldResolve){
+      return new Promise((resolve, reject) =>{
+          setTimeout(()=>{
+              if(shouldResolve){
+                  resolve("Data fetched successfully")
+              } else{
+                  reject("Error fetching data!")
+              }
+          }, 2000)
+      })
+  }
+  
+  async function getData(shouldResolve){
+      try{
+          const result = await fetchData(shouldResolve);
+          console.log(result);
+      }catch(error){
+          console.error(error);
+      }
+  }
+  getData(true)  //Data fetched successfully
+  getData(false)  //Error fetching data!
+
+-------------------------------------------------------------------------------------------------
 //example of promise without using async/await.
+  function fetchData(shouldResolve){
+      return new Promise((resolve, reject) =>{
+          setTimeout(()=>{
+              if(shouldResolve){
+                  resolve("Data fetched successfully")
+              } else{
+                  reject("Error fetching data!")
+              }
+          }, 2000)
+      })
+  }
+  
+  fetchData(true).then((result) =>{   //true or false
+      console.log(result);
+  }).catch((error) =>{
+      console.error(error);
+  })
