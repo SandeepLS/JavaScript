@@ -1,0 +1,53 @@
+//async:
+  async is a keyword, that is used befor the function, to create async function.
+  async function: always return a promise. there are tow cases,
+    either we can return promises / value(string, num, bool).
+    This function will take value, rapid insaid the promise & return the value.
+    Ex:
+    async function getdata() {
+        return "Sandeep";   //we return value.
+    }
+    const dataPromise = getdata();
+    console.log(dataPromise);   //here we will get promise data.
+    
+    dataPromise.then(res => console.log(res));  //here we will get actual data, what we return in the function.
+  
+    Example 1: Returning a value
+      async function returnValue() {
+        return 42; // This is a number
+      }
+      
+      returnValue().then((result) => {
+        console.log(result); // Output: 42
+      });
+    
+    Example 2: Returning a promise
+      async function returnPromise() {
+        return new Promise((resolve) => {
+          setTimeout(() => {
+            resolve('Hello, world!');
+          }, 1000);
+        });
+      }
+      returnPromise().then((result) => {
+        console.log(result); // Output: Hello, world! (after 1 second)
+      });
+    
+    Example3: resolve & reject
+    async function returnPromise(shouldResolve){
+        return new Promise((resolve, reject) =>{
+            setTimeout(()=>{
+                if(shouldResolve){
+                    resolve("Hello Sandeep")  //if true
+                } else{
+                    reject("Somthing went wrong")  //if false
+                }
+            }, 2000)
+        })
+    }
+    
+    returnPromise(false).then((result) =>{   //true or false
+        console.log(result);
+    }).catch((error)=>{
+        console.log(error)
+    })
