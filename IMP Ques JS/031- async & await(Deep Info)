@@ -1,0 +1,23 @@
+//create promises, before async/await:
+  Ex:1
+  const p = new Promise((resolve, reject) =>{
+      resolve("Data Fetched Successfully!");
+  })
+  function fetchData(){
+      p.then((result) =>{
+          console.log(result);
+      })
+  }
+  fetchData();
+
+//After async/await
+  const p = new Promise((resolve, reject) =>{
+      resolve("Data Fetched Successfully!");
+  })
+  async function fetchData(){
+     const val = await p;
+     console.log(val);
+  }
+  fetchData();
+-----------------------------------------------------------------------
+//why async/await is so special:
