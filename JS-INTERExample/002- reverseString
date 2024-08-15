@@ -1,0 +1,36 @@
+/*
+The split('') method converts the string into an array of character: ['H', 'e', 'l', 'l', 'o', ' ', 'W', 'o', 'r', 'l', 'd'].
+The reverse() method reverses the order of elements in the array: ['d', 'l', 'r', 'o', 'W', ' ', 'o', 'l', 'l', 'e', 'H'].
+Finally, the join('') method concatenates the reversed array elements back into a string: "dlroW olleH".
+*/
+//Ex:
+  const originalString = "Hello World";
+  const reversedString = originalString.split('').reverse().join('');
+  console.log(reversedString);  // Output: "dlroW olleH"
+
+
+/*
+The split(' ') method divides the string into an array of words: ['Hello', 'World'].
+The reverse() method then rearranges this array in reverse order: ['World', 'Hello'].
+Finally, the join(' ') method amalgamates the reversed array of words back into a string: "World Hello".
+*/
+//Ex:
+  const string = "Hello World";
+  const reverseString = string.split(' ').reverse().join(' ');
+  console.log(reverseString);  // Output: "World Hello"
+
+/*
+The split(' ') method creates an array of words: ['Hello', 'World'].
+  The map() method iterates over each word, and for each word:
+  The split('') method converts the word into an array of characters.
+  The reverse() method reverses the order of those characters.
+  The join('') method then concatenates the reversed characters back into a word.
+After processing all words, you get an array of reversed words: ['olleH', 'dlroW'].
+Finally, the join(' ') method combines these reversed words into a single string: "olleH dlroW".
+*/
+//Ex:
+  const string = "Hello World";
+  const reverseString = string.split(' ')
+          .map(word => word.split('').reverse().join(''))
+          .join(' ');
+  console.log(reverseString);
