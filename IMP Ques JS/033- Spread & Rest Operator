@@ -1,0 +1,41 @@
+/*Spread :
+The spread operator (...) in JavaScript is a powerful and flexible tool used for expanding elements in arrays, objects, and function calls. 
+provides an elegant way to handle data.
+
+*/
+1)Spreading in Arrays:
+  Ex:Copying an Array
+    const originalArray = [1, 2, 3];
+    const copiedArray = [...originalArray];
+    
+    console.log(copiedArray); // Output: [1, 2, 3]
+
+  Ex:Combining Arrays
+    const array1 = [1, 2, 3];
+    const array2 = [4, 5, 6];
+    const combinedArray = [...array1, ...array2];
+    
+    console.log(combinedArray); // Output: [1, 2, 3, 4, 5, 6]
+
+  Ex:Function Arguments:
+    function sum(a, b, c) {
+      return a + b + c;
+    }
+    const numbers = [1, 2, 3];
+    const result = sum(...numbers);
+    
+    console.log(result); // Output: 6
+
+2)Spreading in Objects:
+  Ex:Copying an Object
+    const originalObject = { a: 1, b: 2 };
+    const copiedObject = { ...originalObject };
+    
+    console.log(copiedObject); // Output: { a: 1, b: 2 }
+
+  Ex: Merging Objects
+    const obj1 = { a: 1, b: 2 };
+    const obj2 = { b: 3, c: 4 };
+    const mergedObject = { ...obj1, ...obj2 };
+    
+    console.log(mergedObject); // Output: { a: 1, b: 3, c: 4 }
