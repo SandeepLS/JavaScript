@@ -1,0 +1,50 @@
+/*
+ Def:- where a function that takes multiple arguments, is transformed into a series of functions, that each take a single argument. 
+*/
+//Ex:
+  function add(x, y, z) {
+      return x + y + z;
+  }
+  const result = add(1,2,3);
+  console.log(result)
+
+//Ex:To curry this function, you can transform it so that it can be called with one argument at a time:
+  function curryAdd(x) {
+      return function(y) {
+          return function(z) {
+              return x + y + z;
+          };
+      };
+  }
+  // Using the curried function
+  const addWith2 = curryAdd(2);
+  const addWith2And3 = addWith2(3);
+  const result = addWith2And3(4); // Result is 9
+  
+  console.log(result); // Outputs: 9
+  
+//Generic Currying Function:
+  To create a more flexible and reusable currying function that can handle any number of arguments, you can write a generic curry function:
+  EX:
+  function curry(fn) {
+      return function curried(...args) {
+          if (args.length >= fn.length) {
+              return fn.apply(this, args);
+          } else {
+              return function(...nextArgs) {
+                  return curried.apply(this, args.concat(nextArgs));
+              };
+          }
+      };
+  }
+  
+  // Example usage
+  function add(a, b, c) {
+      return a + b + c;
+  }
+  
+  const curriedAdd = curry(add);
+  
+  console.log(curriedAdd(1)(2)(3)); // Outputs: 6
+  console.log(curriedAdd(1, 2)(3)); // Outputs: 6
+  console.log(curriedAdd(1)(2, 3)); // Outputs: 6
