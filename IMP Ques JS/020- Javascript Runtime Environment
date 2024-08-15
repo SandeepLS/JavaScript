@@ -1,3 +1,4 @@
+/*
 JS is everywhere, can run inside the browser, server, smart watch, even robots isn't it. These all possible because of JavaScript Runtime Environment.
 
 It's like a big container,  which has all the think required, to run JS code.
@@ -8,3 +9,18 @@ JSRE is not possible without JS engine.
 Browser can only executed your js code, just because of JSRE.
 
 Nodeja also has JSRE. It has everything, which is required to run JS code.
+
+setTimeout:-
+  It actually registerd the callback method, into webAPIs.
+  & It also starts a timer of 3000 milisec.
+  Once the timer is over, it will move to callback-queue, & it will wait untill the call-Stack is empty,
+  Once the event loop know,  Call-stack is empty, it will send the callback-queue data to callstack.
+  Ex:
+  console.log("Start");
+  
+  setTimeout( function cb() {
+      console.log("Callback function")
+  }, 3000);
+  
+  console.log("End");
+*/
