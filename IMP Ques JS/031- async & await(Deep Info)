@@ -21,3 +21,119 @@
   fetchData();
 -----------------------------------------------------------------------
 //why async/await is so special:
+
+//normal promise:
+    Ex:
+    const p = new Promise((resolve, result) =>{
+        setTimeout(() =>{
+            resolve("Promises Resolve value!")
+        }, 5000)
+    });
+
+    //JS Engine will not wait, for promise to be resolved.
+    function getData(){
+        p.then((result) => console.log(result));
+        console.log("Hello Sandeep");
+    }
+    getData();
+    //Hello Sandeep
+    //Promises Resolve value!, After 5 sec it will print.
+--------------------------------------------------------
+//What happends in async/await:
+  Ex:
+  const p = new Promise((resolve, result) =>{
+      setTimeout(() =>{
+          resolve("Promises Resolve value!")
+      }, 5000)
+  });
+  
+  //JS Engine was waiting for, promise to resolved.
+  async function getData(){
+      console.log("Morning");
+      const value = await p;
+      console.log("Hello Sandeep")
+      console.log(value);
+  }
+  getData();
+  //Morning
+  //Hello Sandeep  (From here will run after 5 sec.)
+  //Promises Resolve value!
+---------------------------------------------------------
+//Another ex:
+    const p = new Promise((resolve, result) =>{
+        setTimeout(() =>{
+            resolve("Promises Resolve value!")
+        }, 5000)
+    });
+    
+    async function getData(){
+        console.log("Morning");
+        const value = await p;
+        console.log("Hello Sandeep")
+        console.log(value);
+    
+        const value2 = await p;
+        console.log("Hello Sandeep 2")
+        console.log(value2);
+    }
+    getData();
+  const p = new Promise((resolve, result) =>{
+      setTimeout(() =>{
+          resolve("Promises Resolve value!")
+      }, 5000)
+  });
+  
+  async function getData(){
+      console.log("Morning");
+      const value = await p;
+      console.log("Hello Sandeep")
+      console.log(value);
+  
+      const value2 = await p;
+      console.log("Hello Sandeep 2")
+      console.log(value2);
+  }
+  getData();
+  //Morning
+  //Hello Sandeep    (From here will run after 5 sec.)
+  //Promises Resolve value!
+  //Hello Sandeep
+  //Promises Resolve value!
+---------------------------------------------------------------
+//
+  const p = new Promise((resolve, result) =>{
+      setTimeout(() =>{
+          resolve("Promises Resolve value!")
+      }, 5000)
+  });
+  
+  const p2 = new Promise((resolve, result) =>{
+      setTimeout(() =>{
+          resolve("Promises Resolve value!")
+      }, 10000)
+  });
+  
+  async function getData(){
+      console.log("Morning");
+      const value = await p;
+      console.log("Hello Sandeep")
+      console.log(value);
+  
+      const value2 = await p2;
+      console.log("Hello Sandeep 2")
+      console.log(value2);
+  }
+  getData();
+  //Morning
+  //Hello Sandeep    (From here will run after 5 sec.)
+  //Promises Resolve value!
+  //Hello Sandeep 2   (From here will run after 10 sec.)
+  //Promises Resolve value!
+--------------------------------------------------------------
+if it is reserve the above example setTimeout, like p is 10000 & p2 is 5000 sec,
+we will get result:
+Morning
+Hello Sandeep    (From here will run after 10 sec.)
+Promises Resolve value!
+Hello Sandeep 2
+Promises Resolve value!
