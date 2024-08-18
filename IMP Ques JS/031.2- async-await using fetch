@@ -1,0 +1,29 @@
+//Real world example of async/await:-
+
+const API_URL = "https://api.github.com/users/SandeepLS";
+
+async function getData(){
+
+    const data = await fetch(API_URL); //the fetch(promises) gives a response(data). 
+    //& the execution was susppended 842 ms(we can see in console, Network), It was witing for promises to resolve.
+   
+    const jsonValue = await data.json(); //convert redable-stream into jsonValue, again it return a promises.
+    //Once this promises is resolved, we will get jsonValue.
+    console.log(jsonValue);
+
+    /**OR:- this is actual writting skill.
+        fetch(API_URL).then(res => res.json()).then(res => console.log(res));
+    */
+}
+getData();
+
+/**
+ api.github.com => we can take user url, & pate in other tab with our userId.
+ How fetch works:-fetch() is basically proise, when the promises is resolved, it's give a Response Object.=> fetch(API_URL)
+    infront of fetch, we have to write await keyword.=> await fetch(API_URL)
+    After the promises is resolved, whatever data it will get, it will comein data.=> const data = await fetch();
+
+Response Object: is a body, which is the readable stream, 
+    Suppose if you have to convert redable-stream into json, we have to do =>Response.json();
+    The .json() again a promise, & when the promises is resolved, its give you a jsonValue. 
+ */
