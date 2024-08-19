@@ -1,6 +1,7 @@
 React:- Component, State & Props
 (A)Components:- are the building blocks of any React Application,-
   And single app usually consist of multiple components.
+  A component is essentially a pice of the user Interface, It is like a function that returns HTML elements.
   Reusability: components can be reused, multiple time accross the application,
   this reduces the development time.
   Ex:-
