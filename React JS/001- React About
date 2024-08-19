@@ -30,6 +30,7 @@ Features:-
   By using JSX, we can write HTML structure,
   in that same file, contains Javascript code.
   JSX is the combination of HTML & JS, HTML + JS = JSX.
+  Ex: const simple = <h1>Hello World</h1>;
 
 (b)Virtual DOM:- Data Object Model.
   It define, How document can be access/How manipulating on web pages.
