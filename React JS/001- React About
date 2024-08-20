@@ -1,6 +1,7 @@
 Def:- Reactjs is a Javascript library, for building Fast &
   interactive user interface. for Web as well as Mobile application.
-  It is a open-source, Reusable component based front=end library.
+  It is a open-source.
+  Which allows us to create, Reusable component in our web application. & makes our UI building much more simpler.
   In a Model View Controller, React is a View,-
   which means is responsible for, how the app looks like & fell.
 
