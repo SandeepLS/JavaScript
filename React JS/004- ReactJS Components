@@ -14,19 +14,21 @@ Components:- are the building blocks of any react application,
   Nested:-Component can also be Nested component, 
   One component can internally consist of several component.
 
-  Render method:-Component misdify a render method, that's specify how exactl looks & fell,
-  Component can also recive a properties, from it's Parent component.
+  Render method:-Component must define a render method, that's specify how exactly looks & fell,
+  A Component can also recive a properties, from it's Parent component.
   
 Types:-
   (i)Stateless Functional component:-
-      They are JS Function
-      They return HTML
-      Can be contained in a .js OR .jsx file.
+      They are JS Function,
+      that return HTML.
+      They can be contained in a .js OR .jsx file.
 
-  (ii)Statefull Class component:-
-      The Regular classes that extended the class component.
+  (ii)Statefull Class component:-these are ES6 class.
+      The Regular classes, that extended the class component.
       They must contain a render method, that return HTML.
       Can be contained in a .js OR .jsx file.
+
+App.js is the main component, that gets render to the DOM.
 
 Ex:- Fisrst Component:-
     *)In index.js:- App is main component, the gets render to the ReactDOM.
@@ -40,7 +42,7 @@ Ex:- Fisrst Component:-
     *)In App.js:- Can be consist of several other component, that can be nested.
       import './App.css';
       function App() {
-        return (
+        return ( 
           <div>
             <h1>Hello </h1>
             <h1>Hello </h1>
