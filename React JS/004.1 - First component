@@ -1,3 +1,5 @@
+Note:- App.js is the main component, thats get render to the Dom.
+
 Folder:- Components
 Ex:-
 FunctionalComp.js:-
@@ -15,10 +17,12 @@ class ClassComp extends React.Component{
     }
 }
 
+Note:- Let's see how this above component can be nested, into the main component. => using export & import.
+
 Components have Nested into the Main component, Using import and export keyword.
 Export:- feature is used to export, a particular module(file), & use it to another module(file).
 import:- feature is used to import, a particular module(file), & use it to existing module(file).
-Consider a folder, contains a multiple components, with a .jsx extension.
+Consider a folder, contains a multiple components, with a .jsx extension.    
 
 2 types of exports:-
 (i)default export:-is used to export only one object(function, variable, class) from the file.
