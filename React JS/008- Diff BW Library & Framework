@@ -1,0 +1,12 @@
+React is a UI library, rather then a UI frameworks like Anguler & Vue.
+
+Frameworks are strict & highly opinioted, in terms of how we write, the code of our application,
+while libraries are extremely unopinionated, on how we built out our logic.
+
+Libraries allows us to use multiple third party packages & libraries(like, Redux, MobX, HookState =>these are state management),
+while it's little strict with framework.
+
+
+SAP: we are in the same HTML page, & we just changing the component.
+react is unMounting one block, & mounting another blocks.
+
