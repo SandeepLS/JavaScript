@@ -16,7 +16,7 @@ React:- Component, State & Props
   }
 }
 
-(B)State:- is an object that holds some data. 
+(B)State:- of a component,is an object, that holds some data. 
            This data influence the output of the component.
            Everytime the state of an object changes, The component is rerender on to the screen.
 
