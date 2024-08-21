@@ -1,0 +1,2 @@
+== checks for equality with type coercion, so 1 (number) is equal to "1" (string).
+=== checks for strict equality without type coercion, so 1 (number) is not equal to "1" (string).
