@@ -1,0 +1,11 @@
+for (var i = 0; i < 3; i++) {
+  setTimeout(function() {
+    console.log(i);
+  }, 1000);  
+}  //333
+
+/*
+Due to the use of var, the variable i is hoisted and has a global scope within the function.
+By the time the setTimeout function executes, the loop has completed and i has a value of 3.
+Each setTimeout callback will log this final value of i, which is 3.
+*/
