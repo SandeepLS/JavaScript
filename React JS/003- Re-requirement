@@ -15,6 +15,9 @@ if we don't want to use IDE, we can use codesandbox.io, It is cloud base IDE.
 we should use Vite, it is basic boiler-Plate code for react.
 https://vitejs.dev/guide/
 
+npm create vite@latest
+npm install
+npm run dev
 ----------------------------------
    <!doctype html>
    <html lang="en">
