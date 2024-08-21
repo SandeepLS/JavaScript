@@ -1,4 +1,6 @@
-Note:- App.js is the main component, thats get render to the Dom.
+Note:-
+Our React App only mount one component, that is App.js.
+App.js is the main component, thats get render to the Dom.
 
 Folder:- Components
 Ex:-
