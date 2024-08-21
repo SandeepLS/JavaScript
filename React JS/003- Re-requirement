@@ -7,3 +7,6 @@
 
   version check:- cmd -> npx create-react-app --version
   Upgrade:- cmd -> npm i react@latest react-dom@latest
+
+----------------------------------------------------
+if we don't want to use IDE, we can use codesandbox.io, It is cloud base IDE.
