@@ -60,5 +60,24 @@ Features:-
   due to large developer community.
 
 
-
 https://radixweb.com/blog/react-vs-react-native
+------------------------------------------------------------------
+Note:- wt ever u type in input, it will redirected to h1 tage.
+import React from 'react'
+import { useState } from 'react'
+
+function  Header() {
+    const [search, setSearch] = useState('');
+
+    function searchProduct(e){
+        setSearch(e.currentTarget.value);
+    }
+  return (
+    <header>
+        <input type='search' name='' id='' onChange={searchProduct} />
+        <h2>{search}</h2>
+    </header>
+  )
+}
+
+export default Header;
