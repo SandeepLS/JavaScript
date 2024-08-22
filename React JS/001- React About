@@ -62,7 +62,7 @@ Features:-
 
 https://radixweb.com/blog/react-vs-react-native
 ------------------------------------------------------------------
-Note:- wt ever u type in input, it will redirected to h1 tage.
+Note:- when ever u type in input, it will change state to h1 tage.
 import React from 'react'
 import { useState } from 'react'
 
