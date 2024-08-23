@@ -1,0 +1,11 @@
+function outerFunction() {
+  var secret = 'hidden';
+  function innerFunction() {
+    return secret;
+  }
+  return innerFunction;
+}
+var closureFunction = outerFunction();
+console.log(closureFunction());  //hidden
+
+//When outerFunction() is called, it returns innerFunction.
