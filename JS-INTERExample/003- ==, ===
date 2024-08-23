@@ -1,8 +1,20 @@
+/*
 == checks for equality with type coercion, so 1 (number) is equal to "1" (string).
 === checks for strict equality without type coercion, so 1 (number) is not equal to "1" (string).
+*/
 
-//Ex:
+//Ex:1
   let a = 1;
   let b = "1";
   console.log(a == b);  //true
   console.log(a === b);  //false
+------------------------------------------------------------------------------------------------
+//Ex:2
+let a = 4;
+let b = "4";
+console.log(a == b); // true
+console.log(a === b); // false
+/*
+What is the primary reason a == b returns true but a === b returns false?
+Ans: == compares only the values regardless of data type, while === compares values and data types.
+*/
