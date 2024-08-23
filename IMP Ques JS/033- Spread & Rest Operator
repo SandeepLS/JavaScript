@@ -39,3 +39,13 @@ provides an elegant way to handle data.
     const mergedObject = { ...obj1, ...obj2 };
     
     console.log(mergedObject); // Output: { a: 1, b: 3, c: 4 }
+----------------------------------------------------------------------------------------------
+/*
+The spread operator ... is used to create a new object "newObj" with a copy of obj’s properties,
+and an additional property arr which is an array [2, 3, 4].
+*/
+//Ex:
+  let obj = { a: 1 };
+  let arr = [2, 3, 4];
+  let newObj = { ...obj, arr };
+  console.log(newObj);  //{ a: 1, arr: [ 2, 3, 4 ] }
