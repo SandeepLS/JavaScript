@@ -37,4 +37,9 @@ npm run dev
    </html>
 -------------------------------------
 Shortform keys:-
-rfc, rcc, rafce, 
+rfc = react function component
+rcc = react class component
+rce = reactClassExportComponent
+rconst = concept of state
+rpce = reactClassPrueExportComponent
+rafce, 
