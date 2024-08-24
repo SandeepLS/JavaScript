@@ -1,3 +1,5 @@
+Component LifeCycle:-Basically explain, stages the component goes through.
+
 It can be devide into 3 parts:-
 (a)Mounting:-                                                                                    Mounting:-
     The first thing will invoked in LifeCycle, that is componentWillMount()                 componentWillMount()
@@ -7,7 +9,7 @@ It can be devide into 3 parts:-
                                                                                             componentDidMount()
                                                                                             
 (b)Updation:-
-    When a component recive props, componentWillReciveProps() will invoked,                      Updation:-
+    When a component recive props, componentWillReciveProps() gets invoked,                      Updation:-
     setstate(): is called when the state of the properties are changed.                     componentReciveProps()      setState()
     So everytime there is a change, react decides, weather the next Comp state-                       | 
     should trigger a re-render or not.To do that[shouldComponentUpdate()],                  shouldComponentUpdate()
@@ -19,4 +21,9 @@ It can be devide into 3 parts:-
                                                                                               componentDidUpdate()
 
 (c)UnMounting:-
-    componentWillUnMount():- It performs any clean up necessary.
+    componentWillUnMount():- is called while unMounting the component.
+    It performs any clean up necessary.
+
+-----------------------------------------------------------------------------------------------------
+->componentWillMount(): is called immediately, before initial rendering occurs.
+->componentDidMount(): is invoked after, react component inserted into the DOM.
