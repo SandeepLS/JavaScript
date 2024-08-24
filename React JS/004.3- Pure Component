@@ -1,5 +1,6 @@
 Pure component:-In other way to create class component, is by extending pure component.
-                React.Pure.Component is a variation of React.Component class And does a shallow comparision of state & props.
+                React.Component is the base class for React Component,-
+                React.PureComponent is a variation of React.Component class And does a shallow comparision of state & props.
                 PC avoid unnecessary rerender, how does that do it, it does not implement should component update method,
                 But the pure component on the other hand, shalow comparision of state and props,
                 and check if the rerender actually necessary, only then does it render it the ReactDOM. 
@@ -7,15 +8,15 @@ Pure component:-In other way to create class component, is by extending pure com
                 A React.Component can be considerd pure, if it renders the same output, for the same state & props.
 Ex:-Components(Folder):-
 (i)PureComp.js:-rpce
-import React, { PureComponent } from 'react'
-class PureComp extends PureComponent {
-  render() {
-    return (
-      <div>I'm PureComp {this.props.name}</div>
-    )
+  import React, { PureComponent } from 'react'
+  class PureComp extends PureComponent {
+    render() {
+      return (
+        <div>I'm PureComp {this.props.name}</div>
+      )
+    }
   }
-}
-export default PureComp
+  export default PureComp
 
 (ii)RegComp.js:-rce
 import React, { Component } from 'react'
