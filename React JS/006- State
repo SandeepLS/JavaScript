@@ -72,7 +72,7 @@ class StateComp extends Component {
 export default StateComp
 ------------------------------------------------------------------------------------------------
 setState():- state can be updated in response to event handlers, server response or props changes.
-             This is done using setState method.(All the updation done using setState)
+             This is done using setState method.(All the updation done using setState).
                 this.setState({ quantity:value })
 
         setState():-enques all the updates mode, to the component state And instruct React to re-render the component,
