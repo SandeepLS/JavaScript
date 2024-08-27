@@ -5,5 +5,11 @@ chrom browser
 
 cmd:- check
 node --version
+----------------------------------------------------------
+we should use Vite, it is basic boiler-Plate code for react.
+https://vitejs.dev/guide/
 
+npm create vite@latest
+npm install
+npm run dev
 */
