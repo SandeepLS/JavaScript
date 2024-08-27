@@ -1,0 +1,59 @@
+Def:- Reactjs is a Javascript library, for building Fast &
+  interactive user interface. for Web as well as Mobile application.
+  It is a open-source.
+  Which allows us to create, Reusable component in our web application. & makes our UI building much more simpler.
+  In a Model View Controller, React is a View,-
+  which means is responsible for, how the app looks like & fell.
+
+Ex:- Let's see the react works in real-time.
+  Take an example of Instagram page.
+  The entire of UI designed into an 5 component,
+  -Search component
+  -Profile description component
+  -Status component
+  -Post list component
+  -Single post component
+  Which is make, code easier to debug &
+  each component has it's own property & function.
+
+Features:-
+(a)JSX:- is a syntax extention to Javascript.
+  It is used with React, What the user interface should looks like.
+  By using JSX, we can write HTML structure,
+  in that same file, contains Javascript code.
+  JSX is the combination of HTML & JS, HTML + JS = JSX.
+  Ex: const simple = <h1>Hello World</h1>;
+
+(b)Virtual DOM:- Data Object Model.
+  It define, How document can be access/How manipulating on web pages.
+  DOM treats an XML/HTML document, as tree structure.
+  Note:-That Virtual DOM, is the exact copy of Real DOM.
+  Manipulating the Real DOM is much slower, Then manipulating Virtual DOM,-
+  because nothing gets drown onscreen.
+----------------------------------------------------------------------------
+Building Blocks of React:-
+Component, State & Props.
+(A)Components:- are the building blocks of any React Application,-
+  And single app usually consist of multiple components.
+  A component is essentially a pice of the user Interface, It is like a function that returns HTML elements.
+  Reusability: components can be reused, multiple time accross the application,
+  this reduces the development time.
+  Ex:-
+  class Simple extends React.Component {   //A component is implementing as a JS class, having some state & render method.
+  state = {};    //state is a data, which you want component to render.
+  render(){      //render responsible, How the UI looks & Fell to the user.
+      return(
+          <div>
+            <h1>Hello world</h1>
+          </div>
+      );
+  }
+}
+
+(B)State:- of a component,is an object, that holds some data. 
+           This data influence the output of the component.
+           Everytime the state of an object changes, The component is rerender on to the screen.
+
+(C)Props:-props is short for Properties,
+          That allows us to, pass argument or data, to components.
+          Props are paased to components, in the way similar to that of HTML-Tag attributes.
