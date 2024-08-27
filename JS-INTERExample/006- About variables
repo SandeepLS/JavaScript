@@ -1,0 +1,5 @@
+/*
+A variable declared with const, must be initialized at the time of declaration.
+const x = 10; //Valid
+const y;      //Invalid
+*/
