@@ -3,3 +3,8 @@ A variable declared with const, must be initialized at the time of declaration.
 const x = 10; //Valid
 const y;      //Invalid
 */
+
+/*
+If a function is defined inside another function, what is true about the inner function's scope?
+Ans: The inner function has access to the local variables and parameters of the outer function.
+*/
