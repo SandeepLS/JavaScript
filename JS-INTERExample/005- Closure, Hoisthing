@@ -1,0 +1,52 @@
+function outerFunction() {
+  var secret = 'hidden';
+  function innerFunction() {
+    return secret;
+  }
+  return innerFunction;
+}
+var closureFunction = outerFunction();
+console.log(closureFunction());  //hidden
+
+//When outerFunction() is called, it returns innerFunction.
+--------------------------------------------------------------------------------------------------------------------------------
+//Hoisthing:-
+/*
+In JavaScript, hoisting refers to the behavior,
+where variable and function declarations are moved to the top of their containing scope (script or function) during compile time, 
+but initializations are not hoisted.
+*/
+//Variable and function declarations are moved to the top of their containing scope during compile time.
+Example 1: Variable Hoisting
+    console.log(myVar); // Output: undefined
+    var myVar = 5;
+    console.log(myVar); // Output: 5
+
+    Explanation:
+    Hoisting: During the compile phase, the declaration var myVar; is moved to the top of the scope. But the initialization (myVar = 5;) remains in its original position.
+    
+    After hoisting, the code looks like this:
+      var myVar;
+      console.log(myVar); // Output: undefined
+      myVar = 5;
+      console.log(myVar); // Output: 5
+    
+    First console.log(myVar);: Since the variable is declared but not yet initialized, its value is undefined.
+    Second console.log(myVar);: After the assignment, the variable holds the value 5.
+
+Example 2: Function Hoisting
+    console.log(myFunction()); // Output: "Hello, world!"
+    
+    function myFunction() {
+        return "Hello, world!";
+    }
+
+    Explanation:
+    Hoisting: The entire function declaration is hoisted to the top of the scope. This means that the function myFunction can be called before its definition in the code.
+    
+    After hoisting, the code looks like this:
+      function myFunction() {
+          return "Hello, world!";
+      }
+      console.log(myFunction()); // Output: "Hello, world!"
+    Calling myFunction(): Since the function declaration is hoisted, you can call the function before its actual definition in the code.
