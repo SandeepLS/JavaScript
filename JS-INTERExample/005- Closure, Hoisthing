@@ -1,3 +1,5 @@
+//Closure:-
+/*
 function outerFunction() {
   var secret = 'hidden';
   function innerFunction() {
@@ -9,6 +11,33 @@ var closureFunction = outerFunction();
 console.log(closureFunction());  //hidden
 
 //When outerFunction() is called, it returns innerFunction.
+*/
+/*
+Closures in JavaScript are a powerful concept that allows you to create a private state for a function,
+enabling you to hide variables from the global scope while still making them accessible to specific functions.
+This is particularly useful for scenarios such as maintaining a counter's state.
+
+Closures are used to create a private state for a function,
+where variables can be hidden from the global scope but accessible to specific functions. 
+This is useful for scenarios like maintaining a counter's state.
+
+Example: Closure to Maintain a Counter's State
+Here's an example of how closures can be used to create a private counter:
+  function createCounter() {
+      let count = 0; // `count` is a private variable
+  
+      return function() {
+          count += 1;  // Increment the counter
+          return count;
+      };
+  }
+  
+  const counter = createCounter();
+  
+  console.log(counter()); // Output: 1
+  console.log(counter()); // Output: 2
+  console.log(counter()); // Output: 3
+*/
 --------------------------------------------------------------------------------------------------------------------------------
 //Hoisthing:-
 /*
