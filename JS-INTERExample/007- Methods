@@ -1,0 +1,12 @@
+/*
+The splice() method, Modifide the contents of an array, By Removing, Replacing/Adding elements.
+let fruits = ["Appli", "Banana", "Chery"];
+fruits.splice(1,1,"Mango");
+console.log(fruits)  //[ 'Appli', 'Mango', 'Chery' ]
+
+Explaination:-
+fruits.splice(1, 1, "Mango") means:
+  Start at index 1 (which is "Banana").
+  Remove 1 element (i.e., remove "Banana").
+  Insert "Mango" at that position.
+*/
