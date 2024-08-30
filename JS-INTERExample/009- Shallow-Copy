@@ -1,0 +1,12 @@
+/*
+Ex:
+//x is an object with one property: foo with the value 'bar'.
+let x = { foo: 'bar' };
+
+//Create a Shallow Copy of x Using Object.assign:
+let y = Object.assign({}, x);
+y.foo = 'baz';  //Modify the foo Property in y.
+
+//Since x and y are separate objects, the change made to y.foo does not impact x.foo.
+console.log(x.foo);  //bar
+*/
