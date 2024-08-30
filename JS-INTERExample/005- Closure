@@ -4,7 +4,7 @@ What is the primary benefit of using closures in JavaScript?
 Closures enable function factories with private variables for encapsulation and data hiding.
 
 Ex:
-  function createCounter() {
+  function createCounter() { 
       let count = 0; // Private variable
   
       return {
