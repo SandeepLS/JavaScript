@@ -10,3 +10,57 @@ fruits.splice(1, 1, "Mango") means:
   Remove 1 element (i.e., remove "Banana").
   Insert "Mango" at that position.
 */
+-------------------------------------------------------------------------------------------------
+/*
+To store a user’s previous and current states in JavaScript without affecting the original object, 
+especially when dealing with nested objects, you can use deep cloning.
+One common method to achieve deep cloning is using JSON.parse(JSON.stringify()).
+
+Ex:
+  // Initial user state
+  let userState = {
+      name: "John",
+      age: 30,
+      address: {
+          city: "New York",
+          zip: "10001"
+      }
+  };
+  
+  // Deep clone the userState to store the previous state
+  let previousState = JSON.parse(JSON.stringify(userState));
+  
+  // Update the current state
+  userState.name = "Jane";
+  userState.address.city = "Los Angeles";
+  
+  // Output the states
+  console.log("Previous State:", previousState); 
+  console.log("Current State:", userState); 
+
+  Explanation:
+  Deep Cloning: The line let previousState = JSON.parse(JSON.stringify(userState)); 
+  creates a deep copy of the userState object. This means all nested objects are also copied, not just the top-level properties.
+  
+  Updating the State: When the userState object is modified (e.g., changing name and city), 
+  these changes do not affect the previousState object because previousState is a deep copy.
+
+  O/P:-
+  Previous State: {
+    name: "John",
+    age: 30,
+    address: {
+      city: "New York",
+      zip: "10001"
+    }
+  }
+  Current State: {
+    name: "Jane",
+    age: 30,
+    address: {
+      city: "Los Angeles",
+      zip: "10001"
+    }
+  }
+*/
+--------------------------------------------------------------------------------------------
