@@ -1,0 +1,23 @@
+/*
+  Which of the following is true about prototype inheritance in JavaScript?
+  Ans: Prototypal inheritance allows objects to inherit properties directly from other objects.
+  
+  Ex:
+    // Create a prototype object
+    const personPrototype = {
+        greet: function() {
+            return `Hello, my name is ${this.name}.`;
+        }
+    };
+    
+    // Create an object that inherits from the prototype
+    const person = Object.create(personPrototype);
+    person.name = 'Alice';
+    
+    console.log(person.greet()); // Output: "Hello, my name is Alice."
+  
+  Summary:
+  Prototypal Inheritance: This example demonstrates how an object (person),
+  can inherit properties and methods directly from another object (personPrototype). 
+  This is the essence of prototypal inheritance in JavaScript.
+*/
