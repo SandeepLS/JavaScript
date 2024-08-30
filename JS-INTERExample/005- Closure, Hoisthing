@@ -1,5 +1,39 @@
 //Closure:-
 /*
+What is the primary benefit of using closures in JavaScript?
+Closures enable function factories with private variables for encapsulation and data hiding.
+
+Ex:
+  function createCounter() {
+      let count = 0; // Private variable
+  
+      return {
+          increment: function() {
+              count++;
+              return count;
+          },
+          decrement: function() {
+              count--;
+              return count;
+          },
+          getCount: function() {
+              return count;
+          }
+      };
+  }
+  
+  const counter = createCounter();
+  
+  console.log(counter.increment()); // Output: 1
+  console.log(counter.increment()); // Output: 2
+  console.log(counter.decrement()); // Output: 1
+  console.log(counter.getCount());  // Output: 1
+  
+  // Attempting to access the count variable directly will fail
+  console.log(counter.count); // Output: undefined
+*/
+
+/*
 function outerFunction() {
   var secret = 'hidden';
   function innerFunction() {
@@ -12,6 +46,7 @@ console.log(closureFunction());  //hidden
 
 //When outerFunction() is called, it returns innerFunction.
 */
+
 /*
 Closures in JavaScript are a powerful concept that allows you to create a private state for a function,
 enabling you to hide variables from the global scope while still making them accessible to specific functions.
