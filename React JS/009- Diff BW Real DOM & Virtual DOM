@@ -1,0 +1,11 @@
+Real DOM:-
+  Real DOM is the actual structure of the webpage.
+  React Update complete document in the Real DOM.
+  React DOM is the actual webpage rendered on the browser any changes,
+    made directly reflect on the complete webpage.
+
+Virtual DOM:-
+  Virtual DOM is the virtual representation of Real DOM.
+  React update the state changes in Virtual DOM first and then it syncs with Real DOM.
+  Virtual DOM is just like a blueprint of a machine, can do changes in the blueprint but,
+    those changes will not directly apply to the machine.
