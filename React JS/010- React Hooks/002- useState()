@@ -1,5 +1,101 @@
 /*
-The React useState Hook allows us to track state in a function component.
+The React useState Hook allows us to track the application state in a function component.
 State generally refers to data or properties that need to be tracking in an application.
 To use the useState Hook, we first need to import it into our component.
+
+Example: Initialize state at the top of the function component.
+import { useState } from "react";
+function FavoriteColor() {
+  const [color, setColor] = useState("");
+}
+
+Notice:- we are destructuring the returned values from useState.
+  The first value, color, is our current state.
+  The second value, setColor, is the function that is used to update our state.
 */
+
+Example-1: Use the state variable in the rendered component.
+  impor t { useState } from "react";
+  import ReactDOM from "react-dom/client";
+  
+  function FavoriteColor() {
+    const [color, setColor] = useState("red");
+  
+    return <h1>My favorite color is {color}!</h1>
+  }
+
+Example-2: Use a button to update the state:
+  import { useState } from "react";
+  import ReactDOM from "react-dom/client";
+  
+  function FavoriteColor() {
+    const [color, setColor] = useState("red");
+  
+    return (
+      <>
+        <h1>My favorite color is {color}!</h1>
+        <button
+          type="button"
+          onClick={() => setColor("blue")}
+        >Blue</button>
+      </>
+    )
+  }
+
+Example-3: Create multiple state Hooks:
+  import { useState } from "react";
+  import ReactDOM from "react-dom/client";
+  
+  function Car() {
+    const [brand, setBrand] = useState("Ford");
+    const [model, setModel] = useState("Mustang");
+    const [year, setYear] = useState("1964");
+    const [color, setColor] = useState("red");
+  
+    return (
+      <>
+        <h1>My {brand}</h1>
+        <p>
+          It is a {color} {model} from {year}.
+        </p>
+      </>
+    )
+  }
+
+Updating Objects and Arrays in State
+  When state is updated, the entire state gets overwritten.
+  What if we only want to update the color of our car?
+  If we only called setCar({color: "blue"}), this would remove the brand, model, and year from our state.
+  We can use the JavaScript spread operator to help us.
+
+Example-4: Use the JavaScript spread operator to update only the color of the car:
+  import { useState } from "react";
+  import ReactDOM from "react-dom/client";
+  
+  function Car() {
+    const [car, setCar] = useState({
+      brand: "Ford",
+      model: "Mustang",
+      year: "1964",
+      color: "red"
+    });
+  
+    const updateColor = () => {
+      setCar(previousState => {
+        return { ...previousState, color: "blue" }
+      });
+    }
+  
+    return (
+      <>
+        <h1>My {car.brand}</h1>
+        <p>
+          It is a {car.color} {car.model} from {car.year}.
+        </p>
+        <button
+          type="button"
+          onClick={updateColor}
+        >Blue</button>
+      </>
+    )
+  }
