@@ -62,13 +62,36 @@ Example-3: Create multiple state Hooks:
     )
   }
 
+Example-4: Create a single Hook that holds an object:
+import { useState } from "react";
+import ReactDOM from "react-dom/client";
+
+function Car() {
+  const [car, setCar] = useState({
+    brand: "Ford",
+    model: "Mustang",
+    year: "1964",
+    color: "red"
+  });
+
+  return (
+    <>
+      <h1>My {car.brand}</h1>
+      <p>
+        It is a {car.color} {car.model} from {car.year}.
+      </p>
+    </>
+  )
+}
+
+
 Updating Objects and Arrays in State
   When state is updated, the entire state gets overwritten.
   What if we only want to update the color of our car?
   If we only called setCar({color: "blue"}), this would remove the brand, model, and year from our state.
   We can use the JavaScript spread operator to help us.
 
-Example-4: Use the JavaScript spread operator to update only the color of the car:
+Example-5: Use the JavaScript spread operator to update only the color of the car:
   import { useState } from "react";
   import ReactDOM from "react-dom/client";
   
