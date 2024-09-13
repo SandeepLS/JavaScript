@@ -1,4 +1,33 @@
 /*
+Def:-
+Hooks are special functions, that let you use state and other React features in functional components, without writing a class.
+Hooks allow developers to manage component state, lifecycle events, and side effects more cleanly and concisely.
+
+Ex:-
+import React, { useState, useEffect } from "react";
+
+function Counter() {
+  // Declare a state variable 'count' with an initial value of 0
+  const [count, setCount] = useState(0);
+
+  // useEffect hook to update the document title whenever 'count' changes
+  useEffect(() => {
+    document.title = `You clicked ${count} times`;
+  }, [count]); // Only re-run the effect if 'count' changes
+
+  return (
+    <div>
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>
+        Click me
+      </button>
+    </div>
+  );
+}
+export default Counter;
+*/
+
+/*
 Hooks:- 
   allow function components, to have access to state and other React features.
   Because of this, class components are generally no longer needed.
