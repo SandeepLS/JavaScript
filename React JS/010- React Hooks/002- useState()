@@ -99,3 +99,23 @@ Example-4: Use the JavaScript spread operator to update only the color of the ca
       </>
     )
   }
+-------------------------------------------------------------------
+Example: Using useState to Manage a Counter:-
+
+import React, { useState } from "react";
+function Counter() {
+  // Declare a state variable 'count' with an initial value of 0
+  const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      <p>Current count: {count}</p>
+      {/* Button to increment the count */}
+      <button onClick={() => setCount(count + 1)}>Increase Count</button>
+      {/* Button to decrement the count */}
+      <button onClick={() => setCount(count - 1)}>Decrease Count</button>
+    </div>
+  );
+}
+
+export default Counter;
