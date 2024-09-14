@@ -1,6 +1,6 @@
 /*
-The React useState Hook allows us to track the application state in a function component.
-State generally refers to data or properties that need to be tracking in an application.
+The React useState Hook allows us to, track the application state in a function component.
+State generally refers to application data or properties, that need to be tracked.
 To use the useState Hook, we first need to import it into our component.
 
 Example: Initialize state at the top of the function component.
@@ -15,7 +15,7 @@ Notice:- we are destructuring the returned values from useState.
 */
 
 Example-1: Use the state variable in the rendered component.
-  impor t { useState } from "react";
+  import { useState } from "react";
   import ReactDOM from "react-dom/client";
   
   function FavoriteColor() {
