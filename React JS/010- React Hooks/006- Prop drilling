@@ -1,0 +1,79 @@
+/*
+Prop drilling: It refers to the process of passing data (props) from a parent component down to child components, 
+often through multiple layers of intermediate components, that don't actually need the data, just to get it to a deeply nested component.
+
+This can lead to a few problems:
+  Unnecessary props
+  Reduced maintainability
+  Tight coupling
+*/
+Ex:
+  function App() {
+    const user = { name: "John Doe", age: 30 };
+  
+    return (
+      <div>
+        <ParentComponent user={user} />
+      </div>
+    );
+  }
+  
+  function ParentComponent({ user }) {
+    return <ChildComponent user={user} />;
+  }
+  
+  function ChildComponent({ user }) {
+    return <GrandChildComponent user={user} />;
+  }
+  
+  function GrandChildComponent({ user }) {
+    return <p>User: {user.name}</p>;
+  }
+  export default App;
+  Explanation:
+  In this example, the user prop is passed from the App component all the way down to
+  GrandChildComponent, even though ParentComponent and ChildComponent don't actually need it. 
+  This is an example of prop drilling.
+//https://codesandbox.io/p/sandbox/prop-drilling-39q7rx?file=%2Fsrc%2FApp.tsx
+-------------------------------------------------------------------------------------
+/*
+How to Avoid Prop Drilling:
+To avoid prop drilling, we can use techniques such as:
+  React Context API: Provides a way to pass data through the component tree without manually passing props at every level.
+  State management libraries: Libraries like Redux, Zustand, or Recoil can store global state and allow components to access it directly.
+*/
+Ex:-Using Context API (to avoid prop drilling):
+  import React, { createContext, useContext } from "react";
+  
+  // Create a UserContext
+  const UserContext = createContext();
+  
+  function App() {
+    const user = { name: "John Doe", age: 30 };
+  
+    return (
+      <UserContext.Provider value={user}>
+        <ParentComponent />
+      </UserContext.Provider>
+    );
+  }
+  
+  function ParentComponent() {
+    return <ChildComponent />;
+  }
+  
+  function ChildComponent() {
+    return <GrandChildComponent />;
+  }
+  
+  function GrandChildComponent() {
+    // Use context instead of prop drilling
+    const user = useContext(UserContext);
+    return <p>User: {user.name}</p>;
+  }
+  export default App;
+  Explination:-
+  Here, instead of passing the user prop through each component,
+  we use the Context API to share data directly with GrandChildComponent.
+  This eliminates the need for prop drilling, making the code more maintainable.
+//https://codesandbox.io/p/sandbox/prop-drilling-avoiding-method-sd4frp?file=%2Fsrc%2FApp.tsx
