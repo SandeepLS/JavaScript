@@ -99,3 +99,5 @@ function Component5() {
     </>
   );
 }
+
+//Even though components 2-4 did not need the state, they had to pass the state along so that it could reach component 5.
