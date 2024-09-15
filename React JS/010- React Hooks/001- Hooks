@@ -3,6 +3,9 @@ Def:-
 Hooks are special functions, that let you use state and other React features in functional components, without writing a class.
 Hooks allow developers to manage component state, lifecycle events, and side effects more cleanly and concisely.
 
+some commonly used React Hooks are:-
+useState(), useEffect(), useContext(), useRef(), useMemo(), useCallback()
+
 Ex:-
 import React, { useState, useEffect } from "react";
 
