@@ -1,0 +1,59 @@
+/*
+useContext Hook with React's Context API, to manage global data in our app, 
+such as Themes, user authentication state, and share it across components.
+*/
+//code:- https://codesandbox.io/p/sandbox/basic-hn8wty
+//Ex: Using useContext to Access Global User State.
+  Step-1: Create a User Context:-(UserProvider.jsx)
+      import React, { createContext, useState } from "react";
+      
+      // Create a context to manage the user state
+      export const UserContext = createContext();
+      
+      export function UserProvider({ children }) {
+        const [user, setUser] = useState({ name: "John Doe", isLoggedIn: true });
+      
+        return (
+          <UserContext.Provider value={{ user, setUser }}>
+            {children}
+          </UserContext.Provider>
+        );
+      }
+
+  Step-2: Use the Context in a Component
+      import React, { useContext } from "react";
+      import { UserContext } from "./UserProvider";
+      
+      function UserProfile() {
+        // Access the user state using useContext
+        const { user } = useContext(UserContext);
+      
+        return (
+          <div>
+            <h1>User Profile</h1>
+            {user.isLoggedIn ? (
+              <>
+                <p>Welcome, {user.name}!</p>
+                <p>Status: Logged In</p>
+              </>
+            ) : (
+              <p>Please log in.</p>
+            )}
+          </div>
+        );
+      }
+      export default UserProfile;
+
+  Step-3: Wrap Your Application with the UserProvider
+      import React from "react";
+      import ReactDOM from "react-dom";
+      import { UserProvider } from "./UserProvider";
+      import UserProfile from "./UserProfile";
+      
+      function App() {
+        return (
+          <UserProvider>
+            <UserProfile />
+          </UserProvider>
+        );
+      }
