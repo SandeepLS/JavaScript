@@ -4,7 +4,7 @@ you can modify the code like this:
   a)Use useState to manage the state of the selected country.
   b)Use conditional rendering to display the second dropdown when a country is selected.
 */
-//Ex:
+//Ex: https://codesandbox.io/p/sandbox/drop-down-6fjccx
 import { useState } from "react";
 import "./styles.css";
 
