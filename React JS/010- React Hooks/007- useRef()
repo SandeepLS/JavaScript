@@ -1,0 +1,79 @@
+/*
+useRef Hook, to directly interact with a DOM element without causing a re-render.
+*/
+Example-1:-Using useRef to Access an Input Element/to focus the input.
+  import React, { useRef } from "react";
+  
+  function FocusInput() {
+    // Declare a ref to hold the input element
+    const inputRef = useRef(null);
+  
+    // Function to focus the input field when button is clicked
+    const focusInputField = () => {
+      inputRef.current.focus(); // Access the DOM element using the ref
+    };
+  
+    return (
+      <div>
+        <input ref={inputRef} type="text" placeholder="Enter something..." />
+        <button onClick={focusInputField}>Focus the Input</button>
+      </div>
+    );
+  }
+  export default FocusInput;
+/*
+Explanation:
+  const inputRef = useRef(null);: This creates a ref object that will hold a reference to the input element. Initially, it’s set to null.
+  inputRef.current.focus(): When the button is clicked, this function is called to programmatically focus the input field by directly accessing the DOM element via inputRef.
+  No Re-render: Using useRef does not cause a re-render of the component when the ref is updated, unlike state changes that trigger re-renders.
+This is a typical use case of useRef where you need to interact with the DOM directly, such as focusing an input field, without causing unnecessary re-renders of the componen
+*/
+------------------------------------------------------------------------------------------------------
+Example-2:- Use useRef to track application renders.
+  import { useState, useEffect, useRef } from "react";
+  import ReactDOM from "react-dom/client";
+  
+  function App() {
+    const [inputValue, setInputValue] = useState("");
+    const count = useRef(0);
+  
+    useEffect(() => {
+      count.current = count.current + 1;
+    });
+  
+    return (
+      <>
+        <input
+          type="text"
+          value={inputValue}
+          onChange={(e) => setInputValue(e.target.value)}
+        />
+        <h1>Render Count: {count.current}</h1>
+      </>
+    );
+  }
+-------------------------------------------------------------------------------------------------------
+Example-3:- Use useRef to keep track of previous state values:
+  import { useState, useEffect, useRef } from "react";
+  import ReactDOM from "react-dom/client";
+  
+  function App() {
+    const [inputValue, setInputValue] = useState("");
+    const previousInputValue = useRef("");
+  
+    useEffect(() => {
+      previousInputValue.current = inputValue;
+    }, [inputValue]);
+  
+    return (
+      <>
+        <input
+          type="text"
+          value={inputValue}
+          onChange={(e) => setInputValue(e.target.value)}
+        />
+        <h2>Current Value: {inputValue}</h2>
+        <h2>Previous Value: {previousInputValue.current}</h2>
+      </>
+    );
+  }
