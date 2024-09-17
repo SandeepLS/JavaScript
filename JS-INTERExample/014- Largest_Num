@@ -1,0 +1,21 @@
+//Ex-1:
+let numbers = [3, 5, 7, 2, 8, -1, 4, 10, 12];
+let largest = Math.max(...numbers);
+console.log(largest); // Output: 12
+/*
+Explanation:
+The Math.max() function returns the largest of the zero or more numbers provided as arguments.
+The spread operator (...) is used to "spread" the array elements as individual arguments to the Math.max() function.
+*/
+
+
+//Ex-2: If you want to find the largest number manually (without Math.max()), you can use a for loop:
+let numbers = [3, 5, 7, 2, 8, -1, 4, 10, 12];
+let largest = numbers[0];
+
+for (let i = 1; i < numbers.length; i++) {
+  if (numbers[i] > largest) {
+    largest = numbers[i];
+  }
+}
+console.log(largest); // Output: 12
