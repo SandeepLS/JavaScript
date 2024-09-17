@@ -1,0 +1,59 @@
+/*
+The useReducer Hook is similar to the useState Hook.
+It allows for custom state logic.
+
+If you find yourself, keeping track of multiple pieces of state, that rely on complex logic,
+In that case useReducer may be useful.
+
+Syntax:
+The useReducer Hook accepts two arguments.
+useReducer(<reducer>, <initialState>)
+  The reducer function contains your custom state logic. and
+  the initialStatecan be a simple value but generally will contain an object.
+
+The useReducer Hook returns the current state and a dispatch method.
+*/
+-------------------------------------------------------------
+Ex: Let's create a simple counter component where the state is updated using useReducer.
+import React, { useReducer } from 'react';
+
+// 1. Define the initial state
+const initialState = { count: 0 };
+
+// 2. Define the reducer function
+function reducer(state, action) {
+  switch (action.type) {
+    case 'increment':
+      return { count: state.count + 1 };
+    case 'decrement':
+      return { count: state.count - 1 };
+    case 'reset':
+      return initialState;
+    default:
+      throw new Error();
+  }
+}
+
+function Counter() {
+  // 3. Use the useReducer hook
+  const [state, dispatch] = useReducer(reducer, initialState);
+
+  return (
+    <div>
+      <p>Count: {state.count}</p>
+
+      {/* 4. Dispatch actions */}
+      <button onClick={() => dispatch({ type: 'increment' })}>
+        Increment
+      </button>
+      <button onClick={() => dispatch({ type: 'decrement' })}>
+        Decrement
+      </button>
+      <button onClick={() => dispatch({ type: 'reset' })}>
+        Reset
+      </button>
+    </div>
+  );
+}
+
+export default Counter;
