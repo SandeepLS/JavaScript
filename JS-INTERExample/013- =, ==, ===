@@ -1,0 +1,24 @@
+1/ = (Assignment Operator):
+  It assigns the value, to the variable on the left.
+  Ex: let x = 10;  // Assigns the value 10 to the variable x.
+
+2/ == (Loose Equality Comparison):
+  It compares two values for equality,after converting both values to a common type (type coercion).
+  It only checks for value equality, ignoring the data type.
+  Ex:5 == '5';   // true, because '5' is coerced to the number 5 before comparison.
+     null == undefined;  // true, because null and undefined are considered equivalent.
+
+3/ === (Strict Equality Comparison):
+  This is the strict equality operator. It compares two values for equality without type conversion.
+  It checks both the value and the data type.
+  Ex: 5 === '5';  // false, because 5 is a number and '5' is a string
+      null === undefined;  // false, because they are of different types
+
+Summary:
+  = is for assignment.
+  == checks for value equality with type coercion (loose equality).
+  === checks for both value and type equality (strict equality).
+
+  
+  
+
