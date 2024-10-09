@@ -14,3 +14,9 @@ JavaScript is an object-oriented programming (OOP) language:-
    5 Polymorphism: Different objects responding to the same method differently.
    6 Abstraction: Simplifying the interface by hiding complex details.
 
+Encapsulation: Binding code & data together into single unit.
+Inheritence: When one object, acquire all properties & behave like a parent object.
+Polymorphisam: If one task is performed in different ways is known as Poly.
+               To convey client into different ways, we draw something, will give realtime example etc.
+Abstraction: Hiding internal details & showing functionality.
+             Ex: phoneCall, Becauze we don't know the internal processing.
