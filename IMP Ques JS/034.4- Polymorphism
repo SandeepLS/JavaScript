@@ -1,0 +1,31 @@
+5/ Polymorphism
+   It allows different classes to define their own version of methods, that are inherited or shared. 
+   It provides the flexibility, to call the same method on different objects,
+   but get different results based on the object’s class.
+
+   Ex:
+  class Vehicle {
+    move() {
+      console.log('The vehicle is moving');
+    }
+  }
+  
+  class Car extends Vehicle {
+    move() {
+      console.log('The car is driving');
+    }
+  }
+  
+  class Bicycle extends Vehicle {
+    move() {
+      console.log('The bicycle is pedaling');
+    }
+  }
+  
+  const myCar = new Car();
+  const myBicycle = new Bicycle();
+  myCar.move(); // Output: 'The car is driving'
+  myBicycle.move(); // Output: 'The bicycle is pedaling'
+  
+
+    
