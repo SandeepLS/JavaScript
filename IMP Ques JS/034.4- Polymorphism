@@ -1,4 +1,4 @@
-5/ Polymorphism
+4/ Polymorphism
    It allows different classes to define their own version of methods, that are inherited or shared. 
    It provides the flexibility, to call the same method on different objects,
    but get different results based on the object’s class.
