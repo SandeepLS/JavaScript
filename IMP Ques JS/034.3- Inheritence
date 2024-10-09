@@ -1,0 +1,33 @@
+4/ Inheritence:-
+   Inheritance allows a child class, to inherit properties and methods from parent class.
+   Ex:
+  // Parent class
+  class Vehicle {
+    constructor(type) {
+      this.type = type;
+    }
+  
+    move() {
+      console.log(`${this.type} is moving`);
+    }
+  }
+  
+  // Child class that inherits from Vehicle
+  class Car extends Vehicle {
+    constructor(brand, model) {
+      super('Car');  // Call the parent class constructor with 'Car'
+      this.brand = brand;
+      this.model = model;
+    }
+  
+    startEngine() {
+      console.log(`${this.brand} ${this.model} engine started`);
+    }
+  }
+  
+  // Creating an instance of the child class
+  const myCar = new Car('Toyota', 'Corolla');
+  
+  // Calling methods
+  myCar.startEngine();  // Output: Toyota Corolla engine started
+  myCar.move();         // Output: Car is moving (inherited from Vehicle class)
