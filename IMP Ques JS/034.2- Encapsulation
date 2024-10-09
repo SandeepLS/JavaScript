@@ -1,0 +1,22 @@
+3/ Encapsulation
+  Definition: Encapsulation is the practice of keeping properties and methods private to the object,
+  Then controlling access to them through public methods. This helps maintain data integrity.
+  Implementation: JavaScript doesn't have explicit private properties, but the convention is to use _ or
+                  modern syntax (using closures or #).
+  
+  Example (using # for private fields):
+  class Car {
+    #mileage = 0;
+  
+    constructor(brand, model) {
+      this.brand = brand;
+      this.model = model;
+    }
+  
+    drive(distance) {
+      this.#mileage += distance;
+      console.log(`Mileage is now ${this.#mileage}`);
+    }
+  }
+  const myCar = new Car('Toyota', 'Corolla');
+  myCar.drive(40);  //Mileage is now 40
