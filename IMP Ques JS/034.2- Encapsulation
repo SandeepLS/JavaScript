@@ -1,4 +1,4 @@
-3/ Encapsulation
+2/ Encapsulation
   Definition: Encapsulation is the practice of keeping properties and methods private to the object,
   Then controlling access to them through public methods. This helps maintain data integrity.
   Implementation: JavaScript doesn't have explicit private properties, but the convention is to use _ or
