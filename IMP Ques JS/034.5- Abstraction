@@ -1,0 +1,22 @@
+5/ Abstraction:
+   is the concept of hiding complex implementation details and exposing only the necessary parts. 
+   JavaScript doesn't enforce strict abstraction, but you can achieve it through methods and closures.
+
+   Ex:
+  function createPerson(name) {
+  let _name = name;  // Private variable
+
+  return {
+    getName: function() {
+      return _name;
+    },
+    setName: function(newName) {
+      _name = newName;
+    }
+  };
+}
+
+const person = createPerson('John');
+console.log(person.getName());  // Output: 'John'
+person.setName('Jane');
+console.log(person.getName());  // Output: 'Jane'
