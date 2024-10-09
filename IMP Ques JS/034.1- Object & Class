@@ -1,0 +1,56 @@
+1/ Object:-
+  Objects is a collections of key-value pairs, where values can be data (properties) or functions (methods).
+  Everything in JavaScript, except for primitives, is an object, including functions and arrays.
+  Ex:
+  const car = {
+    brand: 'Toyota',
+    model: 'Corolla',
+    startEngine: function() {
+      console.log('Engine started');
+    }
+  };
+
+2/ Classes:
+  In ES6 and beyond, JavaScript introduced classes to define object blueprints.
+  Although it's syntactic sugar over JavaScript's prototype-based inheritance, it gives a more familiar OOP syntax.
+  Ex:
+  class Car {
+    constructor(brand, model) {
+      this.brand = brand;
+      this.model = model;
+    }
+  
+    startEngine() {
+      console.log(`${this.brand} ${this.model} engine started`);
+    }
+  }
+
+  //Creating an Object Instance:
+  const myCar = new Car('Toyota', 'Corolla');
+
+  Calling a Method:
+  myCar.startEngine();
+
+  Explaination:
+  // Class Declaration:
+    class Car {}: This declares a class called Car. A class in JavaScript is a blueprint for creating objects.
+    constructor(brand, model): The constructor is a special method that gets called when a new instance of the class is created. 
+    It initializes the object with the values provided. In this case, it takes two arguments: brand and model.
+      this.brand = brand and this.model = model: These lines assign the brand and model parameters to the instance’s properties.
+      The keyword this refers to the current object (instance) being created.
+    startEngine() method: This is a method of the class that can be called on instances of the class. 
+  
+  //Creating an Object Instance:
+    const myCar = new Car('Toyota', 'Corolla');
+      new Car('Toyota', 'Corolla'): This creates a new instance of the Car class, passing 'Toyota' as the brand and 'Corolla' as the model.
+      myCar: This is the instance (object) created from the Car class. It has the properties brand = 'Toyota' and model = 'Corolla'.
+  
+  //Calling a Method:
+    myCar.startEngine();
+    This calls the startEngine() method on the myCar object.
+
+Key Concepts:
+Classes: A way to define a blueprint for objects (in this case, Car).
+Constructor: Initializes object properties (here, brand and model).
+Object Creation: The new keyword creates a new instance of the class (myCar).
+Methods: Functions that belong to an object (in this case, startEngine()).
