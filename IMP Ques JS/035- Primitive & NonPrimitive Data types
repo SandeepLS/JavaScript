@@ -1,0 +1,62 @@
+In JavaScript, data types are categorized into two types: primitive and non-primitive data types.
+
+1/  Primitive Data Types
+    They are immutable, meaning that their values cannot be changed once created,
+    and they are stored directly in the stack memory.
+    Examples:
+    a/ Number: Represents both integer and floating-point numbers.
+      let age = 25;
+      let price = 99.99;
+
+    b/ String: Represents textual data, enclosed in single, double, or backticks (for template literals).
+      let name = 'John';
+      let greeting = `Hello, ${name}`;
+
+    c/ Boolean: Represents a logical entity and can have only two values: true or false.
+      let isActive = true;
+
+    d/ Undefined: A variable that has been declared but not assigned a value automatically gets the value undefined.
+      let x;
+      console.log(x); // undefined
+
+    e/ Null: Represents the intentional absence of any object value.
+      let y = null;
+
+    f/ Symbol: A unique and immutable primitive value, often used as object keys.
+      let symbol1 = Symbol('unique');
+
+    g/ BigInt: Used to represent integers with arbitrary precision (larger than the Number type can hold).
+      let bigNumber = BigInt(1234567890123456789012345678901234567890);
+
+2/ Non-Primitive Data Types (Reference Types):-
+   They are mutable, meaning that their content can be changed. These are stored in the heap memory,
+   and variables hold a reference to the location in the memory where the data is stored.
+  Examples:
+  a/ Object: A collection of key-value pairs.
+    let person = {
+      name: 'Alice',
+      age: 30,
+    };
+  
+  b/ Array: A list-like collection of values (which can be of different types).
+    let fruits = ['apple', 'banana', 'orange'];
+  
+  c/ Function: is a reusable block of code, designed to perform a particular task.
+    function greet() {
+      return 'Hello, world!';
+    }
+  
+  d/ Date: Used to work with dates and times.
+    let currentDate = new Date();
+  
+  e/ RegExp: Represents a regular expression, used for pattern matching in strings.
+    let regex = /hello/;
+  
+  f/ Map and Set: Newer data structures introduced in ES6.
+    let map = new Map();
+    let set = new Set();
+
+
+Summary
+Primitive Types: Number, String, Boolean, Undefined, Null, Symbol, BigInt
+Non-Primitive Types: Object, Array, Function, Date, RegExp, Map, Set
