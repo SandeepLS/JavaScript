@@ -25,3 +25,9 @@
     let y = x--; // y is assigned the current value of x (5), then x is decremented.
     console.log(x); // 4
     console.log(y); // 5
+
+Example Comparing Both:
+let x = 5;
+console.log(++x); // 6 (prefix: x is incremented, then returned)
+console.log(x++); // 6 (postfix: x is returned, then incremented)
+console.log(x);   // 7 (after the postfix increment, x is now 7)
