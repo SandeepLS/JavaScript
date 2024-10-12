@@ -1,0 +1,27 @@
+1/ Prefix: 
+    Operator is placed before the variable (++x or --x), and the operation is performed before returning the value.
+    Ex: 1
+    let x = 5;
+    let y = ++x; // x is incremented first, then y is assigned the value of x (6).
+    console.log(x); // 6
+    console.log(y); // 6
+    
+    Ex: 2
+    let x = 5;
+    let y = --x; // x is decremented first, then y is assigned the value of x (4).
+    console.log(x); // 4
+    console.log(y); // 4
+    
+2/ Suffix (Postfix): 
+    Operator is placed after the variable (x++ or x--), and the current value is returned before performing the operation.
+    Ex: 1
+    let x = 5;
+    let y = x++; // y is assigned the current value of x (5), then x is incremented.
+    console.log(x); // 6
+    console.log(y); // 5
+    
+    Ex: 2
+    let x = 5;
+    let y = x--; // y is assigned the current value of x (5), then x is decremented.
+    console.log(x); // 4
+    console.log(y); // 5
