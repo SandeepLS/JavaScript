@@ -5,6 +5,17 @@ Def:- Reactjs is a Javascript library, for building Fast &
   In a Model View Controller, React is a View,-
   which means is responsible for, how the app looks like & fell.
 
+React is a JavaScript library for building user interfaces.
+React is used to build single-page applications.
+React allows us to create reusable UI components.
+
+React is a JavaScript library created by Facebook.
+
+How works react:-
+React creates a VIRTUAL DOM in memory.
+Instead of manipulating the browser's DOM directly, React creates a virtual DOM in memory, 
+where it does all the necessary manipulating, before making the changes in the browser DOM.
+
 Ex:- Let's see the react works in real-time.
   Take an example of Instagram page.
   The entire of UI designed into an 5 component,
