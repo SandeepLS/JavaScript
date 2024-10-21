@@ -22,4 +22,19 @@ Ex:
   console.log(myCar.brand)  //Ford
 Note: The constructor function is called automatically when the object is initialized.
 
+------------------------------------------------------------------------------------------------------------
+Method in Classes:-
+You can add your own methods in a class:
+Ex:
+class Car{
+    constructor(name){
+        this.brand = name;
+    }
 
+    present(){
+        return `I have this.brand`;
+    }
+}
+const myCar = new Car("Ford");
+console.log(myCar.present);
+-------------------------------------------------------------------------------------------------------------
