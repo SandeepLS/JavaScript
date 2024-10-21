@@ -1,0 +1,25 @@
+Classes:-
+A class is a type of function, Insted of using function keyword to initiate it,
+we use the class keyword, & the properties are assigned inside a constructor() method.
+Ex:
+  class Car {
+    constructor(name) {
+      this.brand = name;
+    }
+  }
+
+Notice: the case of the class name. We have begun the name, "Car", with an uppercase character. 
+        This is a standard naming convention for classes.
+
+Now we can create objects using the Car class:
+Ex:
+  class Car{
+      constructor(name){
+          this.brand = name;
+      }
+  }
+  const myCar = new Car("Ford");
+  console.log(myCar.brand)  //Ford
+Note: The constructor function is called automatically when the object is initialized.
+
+
