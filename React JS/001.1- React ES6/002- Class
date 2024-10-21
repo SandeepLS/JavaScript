@@ -32,9 +32,10 @@ class Car{
     }
 
     present(){
-        return `I have this.brand`;
+        //return `I have this.brand`; OR
+        return `I have ${this.brand}`;
     }
 }
 const myCar = new Car("Ford");
-console.log(myCar.present);
+console.log(myCar.present());  //I have Ford
 -------------------------------------------------------------------------------------------------------------
