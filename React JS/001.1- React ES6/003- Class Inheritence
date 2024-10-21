@@ -1,0 +1,33 @@
+Class Inheritance:-
+To create a class inheritance, use the extends keyword.
+A class created with a class inheritance inherits all the methods from another class.
+
+Ex: Create a class named "Model" which will inherit the methods from the "Car" class:
+class Car {
+    constructor(name) {
+      this.brand = name;
+    }
+  
+    present() {
+      return 'I have a ' + this.brand;
+    }
+}
+  
+class Model extends Car {
+    constructor(name, mod) {
+      super(name);
+      this.model = mod;
+    }  
+    show() {
+      return this.present() + ', it is a ' + this.model
+    }
+}
+  
+const mycar = new Model("Ford", "Mustang");
+//document.write(mycar.show());
+console.log(mycar.show());  //I have a Ford, it is a Mustang
+
+Note:-
+The super() method refers to the parent class.
+By calling the super() method in the constructor method,-
+we call the parent's constructor method and get access to the parent's properties and methods.
