@@ -1,0 +1,30 @@
+Arrow functions: allow us to write shorter function syntax.
+Ex:
+a)This demonstrates a regular function, NOT an arrow function:-
+  hello = function(){
+      return "hello world";
+  }
+  const res = hello();
+  console.log(res);  //hello world
+
+b)A demonstration of a simple arrow function.
+  hello = () =>{
+      return "Sandeep";
+  }
+  const res = hello();
+  console.log(res);
+
+c)If the function has only one statement, and the statement returns a value, you can remove the brackets and the return keyword.
+  hello = () => "Sandeep"
+  const res = hello();
+  console.log(res);  //Note: This works only if the function has only one statement.
+
+d)If you have parameters, you pass them inside the parentheses:
+  hello = (val) => "Sandeep" + val;
+  const res = hello(" LS");
+  console.log(res);
+
+e)if you have only one parameter, you can skip the parentheses as well:
+  hello = val => "Sandeep" + val;
+  const res = hello(" LS");
+  console.log(res);
