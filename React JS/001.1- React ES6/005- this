@@ -1,0 +1,84 @@
+this:-
+The handling of this is also different in arrow functions compared to regular functions.
+In short, with arrow functions there is no binding of this.
+
+In regular functions the this keyword represented the object that called the function,
+which could be the window, the document, a button or whatever.
+With arrow functions, the this keyword always represents the object that defined the arrow function.
+
+Ex: Let me give example
+Both examples call a method twice, first when the page loads, and once again when the user clicks a button.
+
+Conclusion:
+In regular functions, this refers to the object that calls the function.
+In arrow functions, this is lexically bound to the surrounding context,
+where the function was defined and does not change based on how or where it is called.
+
+Example 1:-With a regular function, this represents the object that called the function:
+    <!DOCTYPE html>
+    <html>
+    <body>
+    <h1>Regular Function</h1>
+    <p>The <strong>this</strong> keyword represents different objects depending on how the function was called.</p>
+    <button id="btn">Click Me!</button>
+    
+    <p><strong>this</strong> represents:</p>
+    <p id="demo"></p>
+    <p>See the difference before and after the button is clicked.</p>
+      
+    <script>
+    class Header {
+      constructor() {
+        this.color = "Red";
+      }
+    
+      changeColor = function() {
+        document.getElementById("demo").innerHTML += this;
+      }
+    }
+    
+    const myheader = new Header();
+    
+    //The window object calls the function:
+    window.addEventListener("load", myheader.changeColor);
+    
+    //A button object calls the function:
+    document.getElementById("btn").addEventListener("click", myheader.changeColor);
+    </script>
+    </body>
+    </html>
+    
+Example 2:With an arrow function, this represents the Header object no matter who called the function:
+    <!DOCTYPE html>
+    <html>
+    <body>
+    <h1>Arrow Function</h1>
+    <p>The <strong>this</strong> keyword represents the Header object.</p>
+    
+    <button id="btn">Click Me!</button>
+    <p><strong>this</strong> represents:</p>
+    <p id="demo"></p>
+    
+    <script>
+    class Header {
+      constructor() {
+        this.color = "Red";
+      }
+    
+      changeColor = function(){
+        document.getElementById("demo").innerHTML += this;
+      }
+    }
+    
+    const myheader = new Header();
+    
+    //The window object calls the function:
+    window.addEventListener("load", myheader.changeColor);
+    
+    //A button object calls the function:
+    document.getElementById("btn").addEventListener("click", myheader.changeColor);
+    
+    </script>
+    </body>
+    </html>
+
