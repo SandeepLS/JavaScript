@@ -1,0 +1,15 @@
+1) System Design:-
+System design is the process of desining the architecture, components, modules, & interface/interactions,
+of a software system to meet, user specific requirements.
+  a) Defining the architecture: This includes the software and hardware architecture.
+  b) Interface: Basically interface is anything, to which the user interact.
+      Ex:If we want to switch on the TV, our remote is interface.
+      System is target of, building a system is to meet user need.
+  c) Using modeling languages: Designers use modeling languages to express the information,
+     Some examples of modeling languages include Unified Modeling Language (UML), Flowchart,
+     Business Process Modeling Notation (BPMN), and Systems Modelling Language (SysML).
+
+2)Why is SD important:-
+System design is a crucial phase, it ensures the developed system meets the specific requirements and,
+expectations of the end-users, while maintaining efficiency, scalability, and reliability, -
+Reduces Development Time and Costs, Ensures Security and Compliance.
