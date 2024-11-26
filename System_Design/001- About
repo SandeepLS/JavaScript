@@ -28,6 +28,9 @@ of a software system to meet, user specific requirements.
     Details of the software, which is running. OR Implementation code.
     Ex: When we zoom in on to the server, we will get, Which software are running, what is the code, which version using, etc.
 
+High-Level Design (HLD): Focuses on the overall architecture, including databases, APIs, servers, and client-side technologies.
+Low-Level Design (LLD): Focuses on specific modules, data structures, algorithms, and system interactions.
+
 4)Modularity/ Modular system/Approach:- 25:00
     Modularity is basically breaking down, larger task into smaller smaller pices independently,-
     So that we can process, all of them in parallel, which will endup, helping us creating a bigger task.
