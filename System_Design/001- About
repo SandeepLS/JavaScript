@@ -22,6 +22,6 @@ without going into the details.
 Ex: When we have, lot of component like userInterface(System design), load balance, server, database, cash, api getway.
 
 Low Level Design:-
-They are these servers, are were process our request, They will be multiple files like code, classes, functions etc.
+These servers are, were process our request, They will be multiple files like code, classes, functions etc.
 Details of the software, which is running. OR Implementation code.
-Ex: When we zoom in on to the server, Which software are running, what is the code, which version.
+Ex: When we zoom in on to the server, we will get, Which software are running, what is the code, which version using, etc.
