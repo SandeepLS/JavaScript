@@ -31,6 +31,8 @@ of a software system to meet, user specific requirements.
 4)Modularity/ Modular system/Approach:- 25:00
     Modularity is basically breaking down, larger task into smaller smaller pices independently,-
     So that we can process, all of them in parallel, which will endup, helping us creating a bigger task.
+
+    Breaking our code into smaller chunks.
     
     Ex: If i want to build a care, How do we start with that,
     ->We start creating a weels of that,
