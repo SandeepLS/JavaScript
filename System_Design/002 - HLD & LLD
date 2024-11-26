@@ -1,0 +1,20 @@
+        HIGH-LEVEL DESIGN	                                LOW-LEVEL DESIGN
+High Level Design is the general system design,     Low Level Design is like detailing HLD,
+means it refers to the overall system design.	      means it refers to component-level design process.
+
+It is also known as macro level/system design.	    It is also known as micro level/detailed design.
+
+It describes the overall architecture of the-       It describes detailed description of each and every module.
+application.	
+
+It is created by solution architect.	              It is created by designers and developers.
+
+In High Level Design the participants are,-         In Low Level Design The participants are,-
+design team, review team, and client team.          design team, Operation Teams, and Implementers.
+
+In HLD the input criteria is (SRS),                 In LLD the input criteria is reviewed High Level Design (HLD).
+Software Requirement Specification.
+
+In HLD the output criteria is database design,      In LLD the output criteria is program specification and,
+functional design and review record.                unit test plan.
+
