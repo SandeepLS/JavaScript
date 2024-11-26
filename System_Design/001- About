@@ -1,4 +1,4 @@
-Module 10:- Part=1
+Module 10:- Class-1
 
 1) System Design:-
 System design is the process of desining the architecture, components, modules, & interface/interactions,
@@ -12,16 +12,40 @@ of a software system to meet, user specific requirements.
      Business Process Modeling Notation (BPMN), and Systems Modelling Language (SysML).
 
 2)Why is SD important:-
-System design is a crucial phase, it ensures the developed system meets the specific requirements and,
-expectations of the end-users, while maintaining efficiency, scalability, and reliability, -
-Reduces Development Time and Costs, Ensures Security and Compliance.
+    System design is a crucial phase, it ensures the developed system meets the specific requirements and,
+    expectations of the end-users, while maintaining efficiency, scalability, and reliability, -
+    Reduces Development Time and Costs, Ensures Security and Compliance.
+    
+    In Project production 70% of the times, will go to System Design.
 
-3) High Level Design:-22:00
-It is a overview/Quick summary, Like what we are going to implement.
-without going into the details.
-Ex: When we have, lot of component like userInterface(System design), load balance, server, database, cash, api getway.
+3)High Level Design:- 22:00
+    It is a overview/Quick summary, Like what we are going to implement.
+    without going into the details.
+    Ex: When we have, lot of component like userInterface(System design), load balance, server, database, cash, api getway.
+    
+    Low Level Design:-
+    These servers are, were process our request, They will be multiple files like code, classes, functions etc.
+    Details of the software, which is running. OR Implementation code.
+    Ex: When we zoom in on to the server, we will get, Which software are running, what is the code, which version using, etc.
 
-Low Level Design:-
-These servers are, were process our request, They will be multiple files like code, classes, functions etc.
-Details of the software, which is running. OR Implementation code.
-Ex: When we zoom in on to the server, we will get, Which software are running, what is the code, which version using, etc.
+4)Modularity/ Modular system/Approach:- 25:00
+    Modularity is basically breaking down, larger task into smaller smaller pices independently,-
+    So that we can process, all of them in parallel, which will endup, helping us creating a bigger task.
+    
+    Ex: If i want to build a care, How do we start with that,
+    ->We start creating a weels of that,
+    ->We start creating a seets of that, doors of that & etc,
+    Then finally, we assemble all of this together, we build a car.
+
+
+5)Interface in coding level:-
+    Logical function, It takes some input & give some output.
+    A method which user can interact.
+    We don't worry about internal process.
+    
+    Ex: if i have one function, which will be addition.
+    function add(a, b){  //Interface
+        let  res = a+b;  
+        console.log(res);
+    }
+    add(1, 2);  //If i call this function, i will get some O/P.
