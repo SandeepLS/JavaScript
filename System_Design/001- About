@@ -1,4 +1,5 @@
-Module 10:-
+Module 10:- Part=1
+
 1) System Design:-
 System design is the process of desining the architecture, components, modules, & interface/interactions,
 of a software system to meet, user specific requirements.
@@ -24,5 +25,3 @@ Low Level Design:-
 They are these servers, are were process our request, They will be multiple files like code, classes, functions etc.
 Details of the software, which is running. OR Implementation code.
 Ex: When we zoom in on to the server, Which software are running, what is the code, which version.
-
-4)Modularity/Modular system/Modular approach:- 25:00
