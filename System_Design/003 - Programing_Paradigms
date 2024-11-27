@@ -1,16 +1,136 @@
+Diff B/W Java & JavaScript:- https://www.geeksforgeeks.org/difference-between-java-and-javascript/
+
 Programing Language & Programing Paradigms they are two distinct things:-
 
 Programing Language: As we all are aware, Like C, C++, Java & JavaScript. It is independent.
 
 Programing Paradigms: 
--> Paradigm: as method, to solve some problem or do some task.
--> Programming paradigm: is an approach to solve problem using some programming language.
-   or also we can say it is a method to solve a problem using tools and techniques that are available to us following some approach.
+   -> Paradigm: as method, to solve some problem or do some task.
+   -> Programming paradigm: is an approach to solve problem using some programming language.
+      or also we can say it is a method to solve a problem using tools and techniques that are available to us following some approach.
+   
+   -> Also Programming paradigms refer to the styles and approaches in computer programming,
+      that help developers organize and structure their code effectively. 
+   -> They are essentially guidelines or best practices, adopted by programmers over time.
+   -> And there is no strict separation among paradigms, and often a mix of different paradigms,
+      It can be used depending on the needs of the task or project.
 
--> Also Programming paradigms refer to the styles and approaches in computer programming,
-   that help developers organize and structure their code effectively. 
--> They are essentially guidelines or best practices, adopted by programmers over time.
--> And there is no strict separation among paradigms, and often a mix of different paradigms,
-   It can be used depending on the needs of the task or project.
+Imperative programming is more suitable for fine-grained control or complex logic.
+Declarative programming is more readable and efficient for tasks involving abstraction or high-level operations.
+Procedural programming is a natural evolution of imperative programming, focusing on modularity and reuse.
+It is ideal for applications with clear step-by-step workflows.
+Functional programming excels in handling data transformations, asynchronous operations, and building systems with minimal side effects.
 
+a)Imperative paradigm:-
+   Where the give detail information to the compiler.
+   Ex: Here I'am explicitly telling the compiler, Iterate go from the index i=0 upto the fruits length & 
+   then print each of the fruits index.
+   We are giving explicit instruction, We are giving details instruction to the computer, Focusing on step by step procedure.
+      //Array of fruits
+      const fruits = ["apple", "banana", "cherry"];
+      //Iterate over the  fruits array, & print each element to the comsole.
+      for (let i = 0; i < fruits.length; i++) {
+          console.log(fruits[i]);
+      }   //apple banana cherry\
 
+   Definition:
+   In imperative programming, you give the computer step-by-step instructions to achieve a task(Like, How to do it). 
+   You explicitly specify how the task is to be done, including loops, conditions, and variable updates.
+   
+   Example:
+   As shown in your example, you are using a for loop to explicitly iterate over the array and print each element.
+   // Imperative example
+   const fruits = ["apple", "banana", "cherry"];
+   for (let i = 0; i < fruits.length; i++) {
+       console.log(fruits[i]); // Explicitly stating how to iterate and print
+   }
+   // Output:
+   // apple
+   // banana
+   // cherry
+
+   Key Points:
+   ->We ahve to provide Explicit instructions.
+   ->The developer defines how to perform the task (iteration and indexing).
+
+b)Declarative Programming:-
+   The opposite of imperative is called Declarative.
+   Where you just leave it, upto the compiler to figure-out the step.
+   In Imperative, I whould be the details step, But here am doing library functions(->filter()), which are already expose.
+   
+   Definition:
+   In declarative programming, We focus on what to achieve, not how to do it.
+   The language's built-in abstractions or library functions, figure out the steps for you.
+   
+   Example:
+   Instead of explicitly iterating through the array, We use higher-order functions (e.g., forEach) to express the task declaratively.
+   // Declarative example
+   const fruits = ["apple", "banana", "cherry"];
+   fruits.forEach((fruit) => console.log(fruit)); // Let the library handle iteration
+   // Output:
+   // apple
+   // banana
+   // cherry
+   
+   Key Points:
+   ->Focuses on the desired result rather than the step-by-step process.
+   ->Makes the code more concise and expressive.
+   
+   Another declarative example could involve using a map or filter function, which abstracts the iteration process:
+   // Declarative with map (if transforming data)
+   const upperCaseFruits = fruits.map((fruit) => fruit.toUpperCase());
+   console.log(upperCaseFruits); 
+   // Output: ["APPLE", "BANANA", "CHERRY"]
+   
+   // Declarative with filter (if filtering data)
+   const fruitsWithA = fruits.filter((fruit) => fruit.includes("a"));
+   console.log(fruitsWithA); 
+   // Output: ["apple", "banana"]
+
+C)Procedural Programming:-
+   Focousing more on the dividing the function.
+   Definition:
+   Procedural programming is a subset of imperative programming, that organizes code into procedures (also called functions or routines).
+   These procedures are reusable blocks of code, that perform specific tasks, helping to structure programs more effectively.
+   
+   Example:
+   // Function definition (procedure)
+   function printFruit() {
+       console.log("Apple");
+   }
+   
+   // Another procedure
+   function printGreeting() {
+       console.log("Hello, welcome!");
+   }
+   
+   // Main function calling other procedures
+   function main() {
+       printGreeting(); // Call the greeting procedure
+       printFruit();    // Call the fruit printing procedure
+   }
+   
+   // Entry point
+   main();
+   // Output:
+   // Hello, welcome!
+   // Apple
+
+d)Functional Programming:-
+   Definition:
+   Functional programming paradigm that treats computation as the evaluation of pure functions, and avoids changing state or mutable data.
+   Functions in this paradigm are first-class citizens, meaning they can be assigned to variables, passed as arguments,
+   and returned from other functions.
+   
+   Example:-
+   // Functional example
+   const numbers = [1, 2, 3, 4];
+   
+   // Pure function: No side effects
+   const double = (num) => num * 2;
+   
+   // Using map (higher-order function) to apply the pure function
+   const doubled = numbers.map(double);
+   
+   console.log(doubled); 
+   // Output: [2, 4, 6, 8]
