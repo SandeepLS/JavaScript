@@ -8,10 +8,3 @@ The fetch function returns the promise .
 And we have to pass the callback function, which will be executed, once the promises is resolved.
 */
 
-Difference B/W Event-Loop	& Event-Driven Programming:-
-Aspect	    Event Loop	                                  Event-Driven Programming
-Definition	Mechanism to manage asynchronous tasks.	      Programming paradigm that responds to events.
-Role	      Processes and schedules tasks in phases.	    Defines how a program is structured and interacts.
-Scope	      Internal, runtime feature (Node.js, browser).	High-level, application-specific design pattern.
-Focus	      Low-level execution of queued operations.	    High-level response to events with handlers.
-Example	    Event loop executes a setTimeout callback.	  Defining a click handler for a button.
