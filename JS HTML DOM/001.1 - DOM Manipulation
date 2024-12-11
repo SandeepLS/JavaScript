@@ -1,0 +1,35 @@
+DOM Manipulation:-
+  It refers to the process of, dynamically modifying the Document Object Model (DOM),
+  DOM is a web page using programming languages like JavaScript. 
+  The DOM represents the structure of a web page as a tree of objects,
+  where each node corresponds to a part of the page, such as elements, attributes, or text.
+
+DOM manipulation allows developers to:
+  > Change content, styles, or attributes of elements.
+  > Add, remove, or rearrange elements.
+  > Respond to user interactions in real-time.
+
+Why is DOM Manipulation Important?
+It enables dynamic and interactive behavior in web pages, such as:
+  > Showing/hiding elements.
+  > Updating content without reloading the page.
+  > Handling user input or events.
+It plays a crucial role in frameworks/libraries like React, Angular, and Vue, which manage the DOM efficiently.
+
+Real-Life Example:-
+Imagine a button that shows or hides a message when clicked:
+HTML:-
+  <button id="toggleBtn">Toggle Message</button>
+  <div id="message" style="display: none;">Hello, World!</div>
+
+JS:-
+  let button = document.getElementById("toggleBtn");
+  let message = document.getElementById("message");
+  
+  button.addEventListener("click", () => {
+      if (message.style.display === "none") {
+          message.style.display = "block"; // Show the message
+      } else {
+          message.style.display = "none"; // Hide the message
+      }
+  });
