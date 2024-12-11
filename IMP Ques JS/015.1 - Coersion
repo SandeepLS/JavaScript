@@ -1,0 +1,49 @@
+//+ Numbersss
+// String + Number = String 
+console.log("6"+6); //66
+console.log(6+"6"); //66
+console.log("6"+"6");   //66
+console.log(6+6);   //12
+
+//Boolean + String = String
+//Boolean + Number = Number
+console.log(true+"6");  //true6
+console.log(true+6);  //7
+console.log(6+true);  //7
+console.log(true);  //true
+console.log(false)  //fasle
+console.log("6"+true);  //6true
+
+console.log("6"+true+6+"6");  //6true66 //string
+
+//Boolean + Boolean = Number
+console.log(true+true); //2
+console.log(true+false);//1
+console.log(false+false);//0
+
+
+//-
+// String - Number = Num
+console.log("6"-6); //0
+console.log(6-"6"); //0
+console.log("6"-"6");//0
+console.log(6-6);   //0
+
+console.log("abc"-3);//NAN
+console.log("abc"-6); //NAN
+console.log(6-"abc"); //NAN
+console.log(6+"abc"); //6abc
+
+console.log(true-"6");  //-5
+console.log("6"-true);  //5
+console.log(true-6);  //-5
+console.log(6-true);    //5
+console.log(true);  //true
+console.log(false)  //fasle
+
+
+console.log("6"+[]); //6
+console.log("6"+""); //6
+console.log("6"+[1,2,3]); //61,2,3
+console.log(true+1+"255"); //2255
+console.log(true-1-"255");  //-255
