@@ -1,0 +1,26 @@
+Dsa ques on array:- We have to inc the array by 1, 
+Ex-1:-Input [1,2,3]
+      Output : 123+1 =124 :- [1,2,4]
+Ex-2:-Input [9,9]
+      Output : 99+1 =100 :- [1,0,0]
+
+Solution:-
+  function incrementArray(arr) {
+    let inc = 1; //increment part
+  
+    for (let i = arr.length - 1; i >= 0; i--) {
+      let sum = arr[i] + inc;
+      arr[i] = sum % 10;
+      inc = Math.floor(sum / 10);
+  
+      if (inc === 0) break;
+    }
+  
+    if (inc > 0) {
+      arr.unshift(inc);
+    }
+    return arr;
+  }
+  
+  console.log(incrementArray([1, 2, 3]));
+  console.log(incrementArray([9, 9]));
