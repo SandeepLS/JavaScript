@@ -9,3 +9,23 @@ Virtual DOM:-
   React update the state changes in Virtual DOM first and then it syncs with Real DOM.
   Virtual DOM is just like a blueprint of a machine, can do changes in the blueprint but,
     those changes will not directly apply to the machine.
+-----------------------------------------------------------------------------------------
+1. Definition:-
+Real/Actual/Browser DOM: The Real DOM is the actual, live, and directly manipulatable structure, of a web page in browser memory.
+Virtual DOM: The Virtual DOM, on the other hand, is a lightweight JavaScript abstraction, representing the web page’s structure in memory.
+
+2. Updation:- 
+Real DOM: If Any changes triggers/happens, an immediate update to the Real DOM.
+Virtual DOM: React updates the Virtual DOM, instead of the Real DOM, when changes occur.
+
+3. Representation:-
+Real DOM: is Not just a JavaScript representation; it’s the actual DOM structure of HTML elements.
+Virtual DOM: JavaScript representation of DOM elements and properties.
+
+4. Rendering:-
+Real DOM: Rendered directly in the browser’s view.
+Virtual DOM: Not rendered in the browser’s view; used by React for updates and optimizations.
+
+5. Developer Friendly:-
+Real DOM: Complex and requires manual optimizations for performance.
+Virtual DOM: Offers a more declarative and user-friendly API; optimizations handled by React.
