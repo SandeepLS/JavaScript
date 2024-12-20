@@ -18,6 +18,12 @@ https://vitejs.dev/guide/
 npm create vite@latest
 npm install
 npm run dev
+
+If you get any error in version, check the below code & package.json:-
+nvm list
+nvm use 18
+npm install vite@^5.0.0
+npm install vite@^5.0.0
 ----------------------------------
    <!doctype html>
    <html lang="en">
