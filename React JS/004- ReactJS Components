@@ -31,7 +31,7 @@ Types:-
 App.js is the main component, that gets render to the DOM.
 
 Ex:- Fisrst Component:-
-    *)In index.js:- App is main component, the gets render to the ReactDOM.
+    *)In index.js:- contains App.js is main component, the gets render to the ReactDOM.
       const root = ReactDOM.createRoot(document.getElementById('root'));
       root.render(
         <React.StrictMode>
