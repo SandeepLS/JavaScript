@@ -37,6 +37,9 @@ Higher order component:- is a Function,
       };
 
   (v)Final O/P:-
+> First we created variable count & initialized it to 0.
+> And we have to define variable in render().
+> Then we have to create onClick event in Button & write the function for onClick event.
 Click.js:-
 import React, { Component } from 'react'
 
