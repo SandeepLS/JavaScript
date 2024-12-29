@@ -12,12 +12,29 @@
   console.log(0 == false); // true - false is coerced to 0
   console.log(null == undefined); // true - Special case where null and undefined are considered equal
 
+  Examples:
+  let a = 5;
+  if (a == "5") { // Evaluates to true because of type coercion
+    console.log("Values are equal");
+  }
+
 3/ === (Strict Equality Comparison):
   This is the strict equality operator. It compares two values for equality without type conversion.
   It checks both the value and the data type.
-  Ex: 5 === '5';  // false, because 5 is a number and '5' is a string
-      null === undefined;  // false, because they are of different types  
+  Ex: 5 === '5';  // false, Different data types, because 5 is a number and '5' is a string
+      console.log(0 === false); // false - Different data types (number vs. boolean)
+      console.log(null === undefined); // false - null and undefined are different types
+      console.log(5 === 5); // true - Both value and type are the same
 
+      Examples:
+      let b = 5;
+      if (b === "5") { // Evaluates to false because the types are different
+        console.log("Values are equal");
+      } else {
+        console.log("Values are not equal"); // This will execute
+      }
+
+---------------------------------------------------
 Summary:
   =  : It assigns the value.
   == : is used to compare two values for equality, with type conversion. 
