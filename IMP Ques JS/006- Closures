@@ -31,6 +31,9 @@ Explanation:
 
 Uses of clousers:-
   -Module design pattern
+  -Maintain state
+  -Create Private Variables
+  -Callback
   -Currying
   -Functions like once
   -Memoize
