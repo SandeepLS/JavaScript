@@ -1,26 +1,33 @@
-Closures:- is a combination of function, bundle together with-
+Closures:- is a combination/multiple of function, bundle together with-
            Lexical environment(Reference to its surrounding state.).
+           Very powerful in JavaScript, especially for maintaining state or creating private variables.
           Ex:-
           function name(){
-              var name = "Sandeep";  //name is a local variable created by init
+              var name = "Sandeep";  //name is a local variable, in the `name` function
               function displayName(){  //displayName() is the inner function, that forms the closure
-                  console.log(name);  //use variable declared in the parent function
+                  console.log(name);  //Accessing `name` from the Outer function/Parent function
               }
               displayName();
           }
           name();  //Sandeep  
 
           Ex:-2
-          function x(){
-                  var name = "san";
-                  function y(){
-                          console.log(name);
-                  }
-                  return y;
-          }
-          var z = x();
-          console.log(z);
-          z();
+           function x() {
+             var name = "san"; // `name` is in the lexical environment of `x`
+             function y() {
+               console.log(name); // `y` forms a closure and remembers `name`
+             }
+             return y; // Returning the inner function
+           }
+           var z = x(); // `z` now holds the function `y` along with its closure
+           console.log(z); // Output: [Function: y]
+           z(); // Output: san
+
+Explanation:
+> When x is invoked, it returns the inner function y.
+> z holds the reference to y along with its closure, meaning y still has access to the name variable from x.
+> Calling z() logs "san".
+
 
 Uses of clousers:-
   -Module design pattern
