@@ -1,0 +1,57 @@
+Uses of clousers:-
+  -Module design pattern
+  -Maintain state
+  -Create Private Variables
+  -Callback
+  -Currying
+----------------------------------------------------------------------------
+-> Example 1: Basic Closure
+    function greet(name) {
+      return function (message) {
+        console.log(`${message}, ${name}!`);
+      };
+    }
+
+    const greetJohn = greet("John"); // `greet` returns an inner function with access to `name`
+    greetJohn("Hello"); // Output: Hello, John!
+    greetJohn("Goodbye"); // Output: Goodbye, John!
+
+-> Example 2: Maintaining State
+    function counter() {
+      let count = 0;
+      return function () {
+        count += 1;
+        return count;
+      };
+    }
+    
+    const increment = counter();
+    console.log(increment()); // Output: 1
+    console.log(increment()); // Output: 2
+    console.log(increment()); // Output: 3
+
+-> Example 3: Private Variables
+    function secretHolder(secret) {
+      return {
+        getSecret: function () {
+          return secret;
+        },
+        setSecret: function (newSecret) {
+          secret = newSecret;
+        },
+      };
+    }
+    
+    const mySecret = secretHolder("initial secret");
+    console.log(mySecret.getSecret()); // Output: initial secret
+    mySecret.setSecret("new secret");
+    console.log(mySecret.getSecret()); // Output: new secret
+
+    Here:
+    The variable secret is private and can only be accessed or modified using the methods provided.
+-----------------------------------------------------------------------------------------
+
+Key Points
+> Closures "remember" variables from their parent function's scope.
+> They are created every time a function is declared inside another function.
+> Closures are powerful and widely used in JavaScript programming, especially for managing state and creating modular code.
