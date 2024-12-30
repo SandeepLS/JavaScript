@@ -1,0 +1,116 @@
+1. Variables
+   Variables are containers for storing data values. 
+   In JavaScript, you can declare variables using var, let, or const.
+
+Types of Variable Declarations:
+a) var:
+   Function-scoped.
+   It Can be redeclared and updated.
+   Hoisted (we accessible before initialization, but undefined).
+   Ex:
+   var name = "John";
+   console.log(name); // John
+
+b) let:
+    Block-scoped.
+    Cannot be redeclared in the same block.
+    Can be updated but not hoisted.
+    Ex:
+    let age = 25;
+    age = 30;
+    console.log(age); // 30
+
+c) const:
+    Block-scoped.
+    Cannot be redeclared or updated.
+    Must be initialized at the time of declaration.
+    Ex:
+    const pi = 3.14;
+    console.log(pi); // 3.14
+
+---------------------------------------------------------------------------------
+2. Functions
+    Functions are blocks of code, It designed to perform a task and are executed when invoked (called).
+    Syntax:
+    function functionName(parameters) {
+      // Code to be executed
+      return value; // Optional
+    }
+    functionName(arguments)
+    
+    Example-1: Function Declaration
+    function add(a, b) {
+      return a + b;
+    }
+    console.log(add(3, 5)); // 8
+    
+    Example-2: Function Expression
+    const subtract = function (a, b) {
+      return a - b;
+    };
+    console.log(subtract(10, 4)); // 6
+    
+    Arrow Function:
+    Introduced in ES6, arrow functions provide a concise syntax for writing functions.
+    Example-3:
+    const multiply = (a, b) => a * b;
+    console.log(multiply(4, 3)); // 12
+
+---------------------------------------------------------------------------------
+3. Loops
+   Loops are used to, execute a block of code repeatedly.
+
+Types of Loops:
+a) for Loop: It Runs a block of code, a specified number of times.
+    Ex: 
+    for (let i = 0; i < 5; i++) {
+      console.log(i);
+    }
+    // Output: 0 1 2 3 4
+
+b) while Loop: It Executes as long as the condition is true.
+    Ex:
+    let i = 0;
+    while (i < 3) {
+      console.log(i);
+      i++;
+    }
+    // Output: 0 1 2
+
+c) do...while Loop: Executes the block of code at least once, then repeats while the condition is true.
+    Ex:
+    let i = 0;
+    do {
+      console.log(i);
+      i++;
+    } while (i < 3);
+    // Output: 0 1 2
+
+d) for...of Loop: Used to iterate over, iterable objects (arrays, strings, etc.).
+    Ex:
+    const arr = [10, 20, 30];
+    for (let value of arr) {
+      console.log(value);
+    }
+    // Output: 10 20 30
+
+e) for...in Loop: Used to iterate over the properties of an object.
+    Ex:
+    const obj = { a: 1, b: 2, c: 3 };
+    for (let key in obj) {
+      console.log(`${key}: ${obj[key]}`);
+    }
+    // Output: a: 1 b: 2 c: 3
+
+Combining Variables, Functions, and Loops:-
+// Function to calculate the sum of array elements
+function calculateSum(arr) {
+  let sum = 0; // Variable to store the sum
+  for (let i = 0; i < arr.length; i++) { // Loop through the array
+    sum += arr[i];
+  }
+  return sum; // Return the sum
+}
+
+const numbers = [1, 2, 3, 4, 5]; // Declare an array
+console.log(calculateSum(numbers)); // Output: 15
