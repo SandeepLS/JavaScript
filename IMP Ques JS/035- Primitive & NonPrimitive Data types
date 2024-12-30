@@ -20,7 +20,7 @@ In JavaScript, data types are categorized into two types: primitive and non-prim
       console.log(x); // undefined
 
     e/ Null: Represents the intentional absence of any object value.
-      let y = null;
+      let y = null;  //null
 
     f/ Symbol: A unique and immutable primitive value, often used as object keys.
       let symbol1 = Symbol('unique');
