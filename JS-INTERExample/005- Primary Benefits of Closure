@@ -1,7 +1,7 @@
 //Closure:-
 /*
 What is the primary benefit of using closures in JavaScript?
-Closures enable function factories with private variables for encapsulation and data hiding.
+Closures enable function factories, with private variables for encapsulation and data hiding.
 
 Ex:
   function createCounter() { 
