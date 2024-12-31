@@ -1,0 +1,50 @@
+Both for and while loops, allow you to execute a block of code, multiple times
+
+When to Use a for Loop:-
+1. When You Know the Number of Iterations in Advance:
+    // Example: Iterating through an array
+    const numbers = [10, 20, 30, 40];
+    for (let i = 0; i < numbers.length; i++) {
+        console.log(numbers[i]);
+    }
+
+2. When You Need a Counter:
+    Use for loops when maintaining a counter variable is essential.
+    // Example: Printing numbers from 1 to 5
+    for (let i = 1; i <= 5; i++) {
+        console.log(i);
+    }
+
+3. Readable When Iterating Over a Range:
+    for loops make code more concise and readable when you need to iterate over a range
+    for (let i = 0; i < 10; i++) {
+        console.log(i);
+    }
+
+When to Use a while Loop:-
+1. When the Number of Iterations, Is Not Known in Advance:
+    // Example: Reading user input until a valid number is entered
+    let input;
+    while (isNaN(input)) {
+        input = prompt("Enter a number:");
+    }
+    console.log(`You entered: ${input}`);
+
+2. When the Condition Controls the Loop:
+    Use while loops when the condition itself drives the loop and it might not run at all if the condition is false initially.
+    // Example: Decreasing a value until it reaches 0
+    let count = 10;
+    while (count > 0) {
+        console.log(count);
+        count--;
+    }
+
+3. Infinite Loops with Controlled Exit:
+    Use a while (true) loop for scenarios where the loop runs indefinitely but exits upon a condition.
+    // Example: Infinite loop with a break condition
+    while (true) {
+        let answer = prompt("Type 'exit' to stop:");
+        if (answer === "exit") {
+            break;
+        }
+    }
