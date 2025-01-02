@@ -1,0 +1,19 @@
+Difference Between Array and List:-
+
+Array	List:-
+  > A collection of elements stored at contiguous memory locations with a fixed size. Fixed size, defined at the time of creation,-
+  > Fixed size, defined at the time of creation.
+  > Stores elements of the same data type (e.g., int[], string[] in strongly typed languages).
+  
+  Ex:
+  const arr = [1, 2, 3, 4]; // Fixed-size collection
+  arr.push(5); // Dynamically add elements, but underlying memory allocation does not expand.
+
+List:-
+  > A dynamic collection of elements that can grow or shrink in size as needed.
+  > Dynamic size, can be resized automatically as elements are added or removed.
+  > Can store elements of different data types, especially in loosely typed languages (e.g., List in Python or ArrayList in Java).
+
+  Ex:
+  lst = [1, "text", 3.14]  # Dynamic and can hold mixed data types
+  lst.append("new item")   # Easy to add or remove elements
