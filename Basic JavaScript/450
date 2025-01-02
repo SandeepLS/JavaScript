@@ -1,0 +1,11 @@
+  Whenever E-C is created, it is pushed into the stack,
+  Whenever E-C is deleted, it will move out of the stack.
+  
+  "Call Stack maintains the, order of execution of, Execution-Context"
+  
+  Call-Stack also known as:-
+    Execution-Context Stack.
+    Program Stack.
+    Control Stack.
+    Runtime Stack.
+    Machine Stack.
