@@ -1,0 +1,39 @@
+render():-
+The render() method, is used to define what a component should display on the screen. 
+It returns a React element, that represents the UI structure of the component. 
+Render responsible, How the UI looks & Fell to the user.
+
+In class components, render() is a required method, while functional components simply return JSX.
+
+Example:-
+import React, { Component } from "react";
+
+class Welcome extends Component {
+  render() {
+    return (
+      <div>
+        <h1>Hello, {this.props.name}!</h1>
+        <p>Welcome to React.</p>
+      </div>
+    );
+  }
+}
+export default Welcome;
+
+index.js:-
+import React from "react";
+import ReactDOM from "react-dom";
+import Welcome from "./Welcome";
+
+ReactDOM.render(<Welcome name="John" />, document.getElementById("root"));
+
+Explanation:
+1. What it Does:
+   > The render() method returns JSX, which describes the component's UI.
+2. How it Works:
+   > If name="John" is passed as a prop to the Welcome component, it will render:
+    Hello, John!
+    Welcome to React.
+3. When it Runs:
+   The render() method is invoked whenever the component needs to update or display the UI, 
+   such as after a state or prop change.
