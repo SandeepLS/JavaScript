@@ -15,35 +15,62 @@ React:- Component, State & Props
       );
   }
 }
-
+-----------------------------------------------------------------------------------------------
 (B)State:- of a component,is an object, that holds some data. 
            This data influence the output of the component.
            Everytime the state of an object changes, The component is rerender on to the screen.
+  Example:
+  import React, { useState } from 'react'
+  function stateCounter() {
+      const [count, setCount] = useState(0);
+    return (
+      <div>
+          <h1>Counter: {count} </h1>
+          <button onClick={() => setCount(count+1)}>Increase Count</button>
+          <button onClick={() => setCount(count-1)}>Decrease Count</button>
+          <button onClick={() => setCount(0)}>Reset</button>
+      </div>
+    )
+  }
+  export default stateCounter;
 
+  useState Hook:
+  > Initializes the state variable count to 0.
+  > Provides setCount to update the value of count.
+  > When setCount is called, React updates the value of count and re-renders the component to display the new value.
+
+-----------------------------------------------------------------------------------------------
 (C)Props:-props is short for Properties,
           That allows us to, pass argument or data, to components.
-          Props are paased to components, in the way similar to that of HTML-Tag attributes.
-
-Ex:- App.js
-import React from 'react';
-
-class App extends React.Component{
-  render(){
-    return(
-        <div>
-          <h1>{this.props.carProp}</h1>
-          <h1>{this.props.bikeProp}</h1>
-        </div>
+          The Props are, a way of passing data from a parent component to a child component.-
+          They are read-only, It means the child component cannot modify them directly.
+  Example: 
+  // Parent Component(App.js)
+  import React from 'react';
+  import Greeting from './Greeting';
+  
+  function App() {
+    return (
+      <div>
+        <Greeting name="John" />
+        <Greeting name="Jane" />
+      </div>
     );
   }
-}
+  export default App;
+  
+  // Child Component (Greeting.js)
+  import React from 'react';
+  
+  function Greeting(props) {
+    return <h1>Hello, {props.name}!</h1>;
+  }
+  export default Greeting;
 
-Main.js()
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App.jsx';
-
-ReactDOM.render(<App carProp="600cc" bikeProp="150cc" />,
-            document.getElementById('app'));
-
-export default App;
+  Explanation:
+  1. Parent Component (App):
+     Passes the name prop with values "John" and "Jane" to the Greeting component.
+  2. Child Component (Greeting):
+     Receives the name prop and uses it to display a dynamic greeting.
+  3. Props Usage:
+     props.name accesses the name value passed from the parent.
