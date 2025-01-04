@@ -21,6 +21,14 @@ When to Use a for Loop:-
         console.log(i);
     }
 
+4. What is the for...of Loop?
+   The for...of loop iterates over the values of an iterable object, such as:
+    Strings
+    Arrays
+    Maps
+    Sets, etc.
+
+-----------------------------------------------------------------------
 When to Use a while Loop:-
 1. When the Number of Iterations, Is Not Known in Advance:
     // Example: Reading user input until a valid number is entered
