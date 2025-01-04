@@ -1,6 +1,7 @@
 Components:- are the building blocks of any react application,
   that represent a part of user interface.
-  Ex:-facebook homepage.
+  And a single app usually consist of multiple components.
+  Ex:-Instagram Userpage.
     the entrire UI broken down into several component
     -credential componenr
     -signup component
