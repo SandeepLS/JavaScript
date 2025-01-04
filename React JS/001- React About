@@ -38,11 +38,31 @@ Why:-
 
 Features:-
 (a)JSX:- is a syntax extention for Javascript.
-  It is used with React, What the user interface should looks like.
-  By using JSX, we can write HTML structure,
-  in that same file, contains Javascript code.
+  By using JSX, we can write HTML structure, in that same file, It contains Javascript code.
   JSX is the combination of HTML & JS, HTML + JS = JSX.
   Ex: const simple = <h1>Hello World</h1>;
+
+  Example:
+  import React from 'react';
+  function Welcome() {
+    const name = 'John';
+    return (
+      <div>
+        <h1>Hello, {name}!</h1>
+        <p>Welcome to the React world.</p>
+      </div>
+    );
+  }
+  export default Welcome;
+
+  Explanation
+  1. HTML-like Syntax:
+     <div>, <h1>, and <p> look like HTML but are written inside a JavaScript function.
+  2. JavaScript Integration:
+     {name} allows embedding JavaScript expressions inside JSX.
+  3. Transpilation:
+     The JSX code above is transpiled into React.createElement calls, which React uses to create the virtual DOM.
+  JSX simplifies this structure and makes it more readable and easier to maintain.
 
 (b)Virtual DOM:- Data Object Model.
   It define, How document can be access/How manipulating on web pages.
