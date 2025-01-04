@@ -37,7 +37,7 @@ Why:-
   Dedicated tools for easy debugging.
 
 Features:-
-(a)JSX:- is a syntax extention to Javascript.
+(a)JSX:- is a syntax extention for Javascript.
   It is used with React, What the user interface should looks like.
   By using JSX, we can write HTML structure,
   in that same file, contains Javascript code.
