@@ -67,6 +67,10 @@ React:- Component, State & Props
   }
   export default Greeting;
 
+  O/P:
+  Hello, John!
+  Hello, Jane!
+
   Explanation:
   1. Parent Component (App):
      Passes the name prop with values "John" and "Jane" to the Greeting component.
