@@ -1,0 +1,37 @@
+Conditional Rendering:-
+It refers to the practice of, displaying different UI elements or components based on certain conditions.
+It works similarly to JavaScript conditions, allowing developers to dynamically render content,-
+depending on the application's state or props.
+
+Techniques for Conditional Rendering:
+1. if Statements
+2. Ternary Operator (condition ? expr1 : expr2)
+3. Logical AND (condition && expr)
+
+Example: Using Conditional Rendering in React
+Let’s assume we’re building a simple app that displays a login button if the user is logged out and a welcome message if the user is logged in.
+import React, { useState } from 'react';
+
+function App() {
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  return (
+    <div>
+      {/* Conditional Rendering using Ternary Operator */}
+      {isLoggedIn ? (
+        <h1>Welcome back, User!</h1>
+      ) : (
+        <button onClick={() => setIsLoggedIn(true)}>Login</button>
+      )}
+    </div>
+  );
+}
+
+export default App;
+
+Explanation:
+1. State Management: isLoggedIn state determines whether the user is logged in (true) or not (false).
+2. Ternary Operator:
+    If isLoggedIn is true, the <h1> element is displayed.
+    If isLoggedIn is false, the <button> is displayed.
+3. Button Action: Clicking the button changes the state to true, triggering a re-render with the welcome message.
