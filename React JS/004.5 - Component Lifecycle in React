@@ -1,0 +1,149 @@
+The component lifecycle refers to the series of methods or phases,
+that a React component goes through from its creation to its destruction.
+
+In React, there are two main approaches to handle lifecycle events:
+1. Class Components: Use lifecycle methods like componentDidMount, componentWillUnmount, etc.
+2. Functional Components: Use the useEffect hook to handle lifecycle events.
+
+Lifecycle Phases
+1. Mounting: When a component is created and inserted into the DOM.
+   > Example (Class): componentDidMount:-
+     Definition: This lifecycle method is called once, after the component is mounted in the DOM. 
+     It’s a good place for initializing data, making API calls, or setting up subscriptions.
+     Example:-
+      import React, { Component, useState,} from 'react';
+      
+      // Class Component
+      class MountingExample extends Component {
+        componentDidMount() {
+          console.log('Component mounted!');
+        }
+      
+        render() {
+          return <h1>Class Mounting Phase</h1>;
+        }
+      }
+   
+   > Example (Hook): useEffect with an empty dependency array( useEffect(() => {...}, []) ).
+     Definition: The useEffect hook with an empty dependency array ([]) acts like componentDidMount.
+     It runs only once, after the component is mounted.
+     Example:-
+      // Functional Component
+      const MountingExampleFunc = () => {
+        useEffect(() => {
+          console.log('Component mounted!');
+        }, []); // Empty array ensures it runs once after mounting
+      
+        return <h1>Functional Mounting Phase</h1>;
+      };
+
+2. Updating: phase occurs, When a component updates/re-renders due to changes in its state or props.
+   > Example (Class): componentDidUpdate
+     Definition: This lifecycle method is called, after the component updates. 
+     It’s useful for responding to prop or state changes, like syncing state with an external system.
+     Example:-
+      import React, { Component, useState, useEffect } from 'react';
+      
+      // Class Component
+      class UpdatingExample extends Component {
+        componentDidUpdate(prevProps, prevState) {
+          console.log('Component updated!', prevProps, prevState);
+        }
+      
+        render() {
+          return <h1>Class Updating Phase</h1>;
+        }
+      }
+    
+   > Example (Hook): useEffect with dependencies( useEffect(() => {...}, [deps]) ).
+     Definition: The useEffect hook with a dependency array runs whenever one of the specified dependencies changes.
+     It allows you to handle updates caused by state or prop changes.
+     Example:-
+      // Functional Component
+      const UpdatingExampleFunc = () => {
+        const [count, setCount] = useState(0);
+      
+        useEffect(() => {
+          console.log('Count updated:', count);
+        }, [count]); // Runs whenever "count" changes
+      
+        return (
+          <>
+            <h1>Functional Updating Phase</h1>
+            <button onClick={() => setCount(count + 1)}>Increment Count</button>
+          </>
+        );
+      };
+
+3. Unmounting: is occurs, When a component is removed from the DOM.
+   > Example (Class): componentWillUnmount
+     This lifecycle method is called, just before the component is removed from the DOM.
+     It’s commonly used for cleanup, such as unsubscribing from events or timers.
+     Example:-
+      import React, { Component, useEffect } from 'react';
+      
+      // Class Component
+      class UnmountingExample extends Component {
+        componentWillUnmount() {
+          console.log('Component will unmount!');
+        }
+      
+        render() {
+          return <h1>Class Unmounting Phase</h1>;
+        }
+      }
+
+   > Example (Hook): Cleanup function in useEffect( return () => {...} in useEffect ).
+     Definition: The cleanup function inside useEffect is executed when the component unmounts.
+     It ensures resources like subscriptions or event listeners are released.
+     Example:-
+      // Functional Component
+      const UnmountingExampleFunc = () => {
+        useEffect(() => {
+          console.log('Component mounted!');
+      
+          return () => {
+            console.log('Component will unmount!');
+          }; // Cleanup function runs during unmount
+        }, []);
+      
+        return <h1>Functional Unmounting Phase</h1>;
+      };
+---------------------------------------------------------------------------------------------------------
+Example: Class Component
+  import React, { Component } from "react";
+  
+  class LifecycleDemo extends Component {
+    componentDidMount() {
+      console.log("Component mounted!");
+    }
+  
+    componentWillUnmount() {
+      console.log("Component will unmount!");
+    }
+  
+    render() {
+      return <h1>Class Component Lifecycle</h1>;
+    }
+  }
+  
+  export default LifecycleDemo;
+
+----------------------------------------------
+Example: Functional Component (with useEffect)
+import React, { useEffect } from "react";
+
+const LifecycleDemo = () => {
+  useEffect(() => {
+    console.log("Component mounted!");
+
+    return () => {
+      console.log("Component will unmount!");
+    };
+  }, []); // Empty dependency array ensures this runs once on mount and cleanup on unmount.
+
+  return <h1>Functional Component Lifecycle</h1>;
+};
+
+export default LifecycleDemo;
+
