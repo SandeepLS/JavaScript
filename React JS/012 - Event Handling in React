@@ -1,0 +1,53 @@
+1. Event Handling in React:-
+    In React, event handling is the process of, capturing/recording user interactions,-
+    such as click the button, form submissions, & input changes.
+    
+    Example: Handling a Button Click
+    import React, { useState } from "react";
+    
+    function ClickHandlerExample() {
+      const [count, setCount] = useState(0);
+    
+      // Event handler function
+      const handleClick = () => {
+        setCount(count + 1);  //setCount(count + 1) updates the state
+      };
+    
+      return (
+        <div>
+          <p>You clicked the button {count} times.</p>
+          <button onClick={handleClick}>Click Me</button>
+        </div>
+      );
+    }
+    
+    export default ClickHandlerExample;
+
+Event Handling in React:-
+-> Event handling is the process of, capturing/recording user interactions, 
+   Using React’s synthetic event system.
+-> Event handlers are passed as props to JSX elements, like onClick or onChange.
+
+Event Listeners (Native DOM):-
+-> Imperative way of adding listeners directly to DOM elements.
+-> Listeners are manually attached to elements using addEventListener.
+
+
+Example:- of Event Listeners in Vanilla JavaScript.
+<!DOCTYPE html>
+<html lang="en">
+  <body>
+    <button id="myButton">Click Me</button>
+    <script>
+      const button = document.getElementById("myButton");
+
+      // Adding an event listener
+      button.addEventListener("click", () => {
+        alert("Button clicked!");
+      });
+
+      // Removing the event listener
+      // button.removeEventListener("click", handleClick);
+    </script>
+  </body>
+</html>
