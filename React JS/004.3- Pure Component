@@ -1,11 +1,65 @@
-Pure component:-In other way to create class component, is by extending pure component.
-                React.Component is the base class for React Component,-
-                React.PureComponent is a variation of React.Component class And does a shallow comparision of state & props.
-                PC avoid unnecessary rerender, how does that do it, it does not implement should component update method,
-                But the pure component on the other hand, shalow comparision of state and props,
-                and check if the rerender actually necessary, only then does it render it the ReactDOM. 
+Pure component:-
+-> In other way to create class component, is by extending pure component.
+-> React.Component is the base class for React Component,-
+-> React.PureComponent is a variation of React.Component,-
+   that implements a shallow comparison for props and state, to determine if the component should re-render.
+-> If neither the state nor the props have changed (based on shallow comparison), 
+   the component will skip the re-rendering process, thereby improving performance.
+-> When to use PureComponent: Use it when:
+   a. Your component renders the same output, for the same props and state.
+   b. You want to avoid unnecessary re-renders, for performance optimization.
 
-                A React.Component can be considerd pure, if it renders the same output, for the same state & props.
+Example 1:-
+Example of React.PureComponent:- Using React.Component
+
+regComponent.jsx:-
+  import React, { Component } from "react";
+  class RegularComponent extends Component {
+    render() {
+      console.log("RegularComponent re-rendered");
+      return <div>Regular Component: {this.props.name}</div>;
+    }
+  }
+  export default RegularComponent;
+
+pureComponent.jsx:- Using React.PureComponent
+  import React, { PureComponent } from "react";
+  class PureComp extends PureComponent {
+    render() {
+      console.log("PureComponent re-rendered");
+      return <div>Pure Component: {this.props.name}</div>;
+    }
+  }
+  export default PureComp;
+
+Using above both example:-
+  import React, { useState } from "react";
+  import RegularComponent from "./RegularComponent";
+  import PureComp from "./PureComp";
+  
+  function App() {
+    const [name, setName] = useState("React");
+    const [count, setCount] = useState(0);
+  
+    const updateName = () => {
+      setName("React"); // This doesn't trigger a re-render in PureComponent.
+    };
+  
+    return (
+      <div>
+        <button onClick={updateName}>Update Name</button>
+        <button onClick={() => setCount(count + 1)}>Increment Count</button>
+        <RegularComponent name={name} />
+        <PureComp name={name} />
+      </div>
+    );
+  }
+ 
+  export default App;
+
+
+--------------------------------------------------------------------------------
+Example 2:-
 Ex:-Components(Folder):-
 (i)PureComp.js:-rpce
   import React, { PureComponent } from 'react'
