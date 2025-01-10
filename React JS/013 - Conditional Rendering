@@ -3,7 +3,7 @@ It refers to the practice of, displaying different UI elements or components bas
 It works similarly to JavaScript conditions, allowing developers to dynamically render content,-
 depending on the application's state or props.
 
-Techniques for Conditional Rendering:
+The Techniques for Conditional Rendering:
 1. if Statements
 2. Ternary Operator (condition ? expr1 : expr2)
 3. Logical AND (condition && expr)
