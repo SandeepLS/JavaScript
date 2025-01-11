@@ -1,0 +1,61 @@
+React Router:-
+-> React Router is a library, for managing navigation and routing in React applications.
+-> It enables developers to create a single-page application (SPA), with dynamic and conditional navigation,
+   between components or pages without reloading the browser. 
+-> React Router uses a declarative approach for defining routes and allows the URL to stay in sync with the app’s view.
+
+Key Features of React Router
+-> Declarative routing using components (<Route> and <Routes>).
+-> Nested routing to structure components hierarchically.
+-> Dynamic route matching for paths with parameters (e.g., /user/:id).
+-> Navigation control using components like <Link> or <NavLink>.
+-> Supports route-based code splitting with React.lazy.
+-? Programmatic navigation using useNavigate hook.
+
+Example of React Router:-
+Here’s a simple example with navigation between a Home page, an About page, and a Profile page.
+// Install React Router: npm install react-router-dom
+    import React from "react";
+    import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
+    
+    function App() {
+      return (
+        <Router>
+          <nav>
+            {/* Navigation links */}
+            <Link to="/">Home</Link> | <Link to="/about">About</Link> | <Link to="/profile/123">Profile</Link>
+          </nav>
+    
+          <Routes>
+            {/* Define routes */}
+            <Route path="/" element={<Home />} />
+            <Route path="/about" element={<About />} />
+            <Route path="/profile/:id" element={<Profile />} />
+          </Routes>
+        </Router>
+      );
+    }
+    
+    // Component Definitions
+    function Home() {
+      return <h1>Welcome to the Home Page!</h1>;
+    }
+    
+    function About() {
+      return <h1>About Us</h1>;
+    }
+    
+    function Profile({ id }) {
+      return <h1>Profile Page - User ID: {id}</h1>;
+    }
+    
+    export default App;
+
+Explanation of the Example
+-> <Router>: Wraps the entire app to enable routing functionality.
+-> <Link>: Provides navigation without reloading the page.
+-> <Routes> and <Route>: Define paths and associate them with specific components.
+   / renders the Home component.
+   /about renders the About component.
+-> /profile/:id renders the Profile component with a dynamic parameter (id).
+-> Dynamic Route (/profile/:id): Allows passing of dynamic data via the URL.
