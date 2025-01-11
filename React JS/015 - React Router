@@ -57,5 +57,5 @@ Explanation of the Example
 -> <Routes> and <Route>: Define paths and associate them with specific components.
    / renders the Home component.
    /about renders the About component.
--> /profile/:id renders the Profile component with a dynamic parameter (id).
+   /profile/:id renders the Profile component with a dynamic parameter (id).
 -> Dynamic Route (/profile/:id): Allows passing of dynamic data via the URL.
