@@ -1,0 +1,138 @@
+> npm create vite@latest
+  give project name: miniContextAPI
+  react
+  Javascript
+
+Context API:-
+It allows you to share state and functions, across multiple components without passing props,
+explicitly/Openly at every level of the component tree.-
+It is often used for global state management, such as User, theming, authentication, or language preferences.
+
+The best thing in CAPI, we don't need any third party resources, The CAPI is directly coocked in react.
+We want to create simple Global State, where we can add all of this things, is called context_API.
+
+How do we sent data into the state, & retrive the state data back from it.
+Login.jsx will be setting the data, How do we use is Hooks.
+Using useContext hooks.
+
+Key Elements of Context API:
+1. React.createContext():
+   Creates a Context object, we don't need to use jsx.
+    Ex: context/UserContext.js:-
+    import React from "react";
+    const UserContext = React.createContext();
+    export default UserContext;
+
+2. Provider: context/UserContextProvider.jsx:-
+   Create a context provider, use jsx, & we need to wrap it
+   Supplies the state and functions to the components that need access to them.
+
+3. Consumer:
+    Retrieves the data provided by the Context.
+    (This is less common now, as useContext hook is the preferred method.)   
+
+    How do we sent data into the state, & retrive the state data back from it.
+    Login.jsx will be setting the data, How do we use is Hooks. Using useContext hooks.
+    import UserContext from '../context/UserContext';
+    const {setUser} = useContext(UserContext)
+
+-------------------------------
+Login.jsx, Profile.jsx, UserContext.js, UserContextProvider.jsx, App.jsx, Login, Profile.
+------------------------------
+Components/Login.jsx:-
+  import React, { useState, useContext } from 'react'
+  import UserContext from '../context/UserContext';
+  
+  function Login() {
+      const [username, setUsername] = useState('');
+      const [password, setPassword] = useState('');
+  
+      const {setUser} = useContext(UserContext)
+  
+      const handleSubmit = (e) =>{
+          //prevent the page from refreshing, If i click the button. i will just update tthat user data.
+          e.preventDefault()
+          setUser({username, password})
+  
+      }
+  
+    return (
+      <div>
+          <h2>Login</h2>
+          <input 
+          type='text'
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+          placeholder='Username'
+          />
+          {" "}
+          <input 
+          type="password"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          placeholder='Password'
+          />
+          <button
+          onClick={handleSubmit}
+          >
+          Submit</button>
+      </div>
+    )
+  }
+  
+  export default Login
+
+components/Profile.jsx:-
+  import React, { useContext } from 'react'
+  import UserContext from '../context/UserContext'
+  
+  function Profile() {
+      const {user} = useContext(UserContext);
+      if(!user) return <h1>Not Logged In</h1>
+    return (
+      //I want to display Username
+      <h1>Profile : {user.username}</h1>
+    )
+  }
+  
+  export default Profile
+
+context/UserContext.js:-
+  import React from "react";
+  const UserContext = React.createContext();
+  export default UserContext;
+
+context/UserContextProvider:-
+  import React, {useState} from 'react';
+  import UserContext from './UserContext';
+  const UserContextProvider = ({children}) =>{
+      const [user, setUser] = useState(null); //I have this state, This data should be accesable to all the children
+      return(
+          <UserContext.Provider value={{user, setUser}}>
+              {children}
+          </UserContext.Provider>
+      )
+  }
+  
+  export default UserContextProvider;
+
+App.jsx:-
+  import { useState } from 'react'
+  import './App.css'
+  import Login from './components/Login';
+  import Profile from './components/Profile';
+  import UserContextProvider from './context/UserContextProvider';
+  
+  function App() {
+    const [count, setCount] = useState(0)
+  
+    return (
+      <UserContextProvider>
+        <h1>React Video for Context API</h1>
+        <Login />
+        <Profile />
+      </UserContextProvider>
+    )
+  }
+  
+  export default App
