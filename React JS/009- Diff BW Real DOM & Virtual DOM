@@ -16,7 +16,7 @@ Virtual DOM: The Virtual DOM, on the other hand, is a lightweight JavaScript abs
 
 2. Updation:- 
 Real DOM: If Any changes triggers/happens, an immediate update to the Real DOM.
-Virtual DOM: React updates the Virtual DOM, instead of the Real DOM, when changes occur.
+Virtual DOM: If Any changes triggers/happens, React updates the Virtual DOM, instead of the Real DOM.
 
 3. Representation:-
 Real DOM: is Not just a JavaScript representation; it’s the actual DOM structure of HTML elements.
