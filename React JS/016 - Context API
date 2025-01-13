@@ -12,6 +12,15 @@ It is often used for global state management, such as User, theming, authenticat
 The best thing in CAPI, we don't need any third party resources, The CAPI is directly coocked in react.
 We want to create simple Global State, where we can add all of this things, is called context_API.
 
+Why Should We Use Context API?
+-> When you need to pass data from a parent to a deeply nested child (e.g., from Component 1 to Component 4),-
+   and intermediate components (2 and 3) don't need the data,  passing props through every level, It becomes messy. 
+   This is called "prop drilling."
+-> Context API eliminates prop drilling, by allowing you to share data, directly with the components that need it.
+In Short:
+> Without Context: We pass data step by step, through every component (prop drilling).
+> With Context: We create a "centralized mechanizam" that any component can directly access, skipping unnecessary steps.
+
 How do we sent data into the state, & retrive the state data back from it.
 Login.jsx will be setting the data, How do we use is Hooks.
 Using useContext hooks.
