@@ -1,0 +1,83 @@
+1. Purpose
+  A) Hooks:
+  > Hooks are built-in React features, that allow you to manage local state and side effects in functional components.
+  > Examples: useState for managing local state, useEffect for side effects, useReducer for complex state logic.
+
+  B) State Management:
+  > State management is a broader concept, that managing the state of an entire application, 
+    especially global or shared state across multiple components.
+  > Examples: Context API, Redux, MobX, Zustand.
+
+2.  Scope
+   A) Hooks:
+   > Typically handle local state, within a single component.
+   > For example: useState can manage the, toggle state of a button or form inputs.
+
+   B) State Management:
+   > Typically handle global state, which is shared across multiple components.
+   > For example: user authentication data or a shopping cart shared across pages.
+
+3. Data Flow
+  A) Hooks:
+  > State managed by hooks, stays within the component and follows React’s unidirectional data flow (props down, events up).
+
+  B) State Management:
+   > Introduces a centralized mechanism, where components can read or update,-
+     shared state without passing props through each component.
+
+4. Dependencies
+  A) Hooks:
+  > Built into React, no external libraries required.
+
+  B)State Management:
+  > uses external libraries like Redux, MobX, Recoil, or Zustand for efficient management of global state.
+
+Examples:-
+  A) Hooks (Local State):
+    import React, { useState } from 'react';
+    
+    const Counter = () => {
+      const [count, setCount] = useState(0);
+    
+      return (
+        <div>
+          <p>Count: {count}</p>
+          <button onClick={() => setCount(count + 1)}>Increment</button>
+        </div>
+      );
+    };
+    
+    export default Counter;
+
+  B) State Management (Global State):
+    import React, { createContext, useContext, useState } from 'react';
+    
+    const CounterContext = createContext();
+    
+    const CounterProvider = ({ children }) => {
+      const [count, setCount] = useState(0);
+      return (
+        <CounterContext.Provider value={{ count, setCount }}>
+          {children}
+        </CounterContext.Provider>
+      );
+    };
+    
+    const Counter = () => {
+      const { count, setCount } = useContext(CounterContext);
+    
+      return (
+        <div>
+          <p>Count: {count}</p>
+          <button onClick={() => setCount(count + 1)}>Increment</button>
+        </div>
+      );
+    };
+    
+    const App = () => (
+      <CounterProvider>
+        <Counter />
+      </CounterProvider>
+    );
+    
+    export default App;
