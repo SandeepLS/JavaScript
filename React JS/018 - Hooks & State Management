@@ -4,7 +4,7 @@
   > Examples: useState for managing local state, useEffect for side effects, useReducer for complex state logic.
 
   B) State Management:
-  > State management is a broader concept, that managing the state of an entire application, 
+  > State management is a broader concept, that involves managing the state of an entire application, 
     especially global or shared state across multiple components.
   > Examples: Context API, Redux, MobX, Zustand.
 
