@@ -1,5 +1,8 @@
 State Management:-
-State management refers to the process of, managing the state of an application. 
+State management is a broader concept, that involves managing the state of an entire application,-
+especially global or shared state across multiple components.
+Examples: Context API, Redux, MobX, Zustand.
+
 In React (or any frontend framework), "state" is the data that determines,-
 how the application behaves and renders at any given time.
 
