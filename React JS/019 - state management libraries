@@ -1,0 +1,25 @@
+State management libraries used in React:
+
+1. React Context API
+  > Overview: Built into React, it helps share state across components without passing props down manually at every level.
+  > Best for: Small to medium applications where state-sharing is limited.
+  > Example Use Cases: Theme toggles, authentication state, language settings.
+
+2. Redux
+  > Overview: A popular library for managing global state using a unidirectional data flow.
+    It relies on actions, reducers, and a centralized store.
+  > Best for: Large applications with complex state requirements.
+  > Example Use Cases: E-commerce carts, complex user interactions, API-driven apps.
+  > Extensions:
+    Redux Toolkit: Simplifies Redux setup with pre-configured tools.
+    Middleware: Redux Thunk, Redux Saga.
+
+3. Zustand
+  > Overview: A small, fast, and scalable state management library with minimal boilerplate.
+  > Best for: Simple and performance-critical apps.
+  > Example Use Cases: Lightweight state management for components.
+
+4. MobX
+  > Overview: A simple and scalable state management library that uses observables for reactive state management.
+  > Best for: Applications needing real-time updates and minimal boilerplate.
+  > Example Use Cases: Dashboards, collaborative tools.
