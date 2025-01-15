@@ -1,0 +1,13 @@
+setTimeout:-
+> The setTimeout function in JavaScript, is used to execute a specified function or block of code,-
+  after a delay, measured in milliseconds. 
+> It's a part of the Web API, provided by the browser or the Node.js environment,-
+  allowing for asynchronous execution.
+
+Example:-
+  console.log("Before setTimeout");
+  setTimeout(() => {
+    console.log("Executed after 2 seconds");
+  }, 2000);
+  
+  console.log("After setTimeout");
