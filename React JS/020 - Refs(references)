@@ -1,0 +1,93 @@
+Refs (short for references):-
+It provide a way to, Accessing and Interacting with DOM elements directly,-
+using useRef or React.createRef().
+
+Example:-
+1. Manage text selection, focus, or media playback.
+2. Trigger imperative animations.
+3. Integrate with third-party DOM libraries.
+
+Refs allow us to, bypass React’s declarative approach and directly interact with a DOM node.
+
+Creating Refs:-
+1. React.createRef(): Used in class components And -
+   creates a new ref every time a class component renders.
+2. useRef(): is used in functional components (introduced with React Hooks) And -
+   maintains the same ref object across renders.
+
+useRef VS React.createRef:-
+> useRef is used in functional components and maintains the same ref object across renders.
+> React.createRef creates a new ref every time a class component renders.
+
+Examples:-
+1. Using useRef in Functional Components:
+    import React, { useRef } from "react";
+    
+    function TextInputWithFocusButton() {
+      const inputRef = useRef(null); // Create a ref
+    
+      const focusInput = () => {
+        inputRef.current.focus(); // Access the DOM node directly
+      };
+    
+      return (
+        <div>
+          <input type="text" ref={inputRef} placeholder="Click the button to focus me" />
+          <button onClick={focusInput}>Focus Input</button>
+        </div>
+      );
+    }
+    
+    export default TextInputWithFocusButton;
+
+Explanation:
+  > useRef(null) creates a mutable ref object.
+  > inputRef.current holds the DOM node of the input element.
+  > Clicking the button calls the focusInput function, which focuses the input field.
+
+--------------------------------------------------------------------
+2. Using React.createRef in Class Components:
+    import React, { Component } from "react";
+    
+    class TextInputClass extends Component {
+      constructor(props) {
+        super(props);
+        this.inputRef = React.createRef(); // Create a ref
+      }
+    
+      focusInput = () => {
+        this.inputRef.current.focus(); // Access the DOM node directly
+      };
+    
+      render() {
+        return (
+          <div>
+            <input
+              type="text"
+              ref={this.inputRef}
+              placeholder="Click the button to focus me"
+            />
+            <button onClick={this.focusInput}>Focus Input</button>
+          </div>
+        );
+      }
+    }
+    
+    export default TextInputClass;
+
+Explanation:
+  > React.createRef() initializes the ref in the constructor.
+  > this.inputRef.current is used to access the input element in the DOM.
+
+-> constructor(props):-
+What is it constructor?
+The constructor is a special method in a JavaScript class. It is called when an instance of the class is created.
+In React, the constructor is commonly used in class components, to initialize the state or create references.
+
+-> Why pass props to super(props)?
+If our component receives props from its parent, we need to pass them to super(props) to properly initialize the parent class (React.Component).
+This allows you to access this.props inside the constructor.
+
+-> this.inputRef = React.createRef();
+This line creates a ref object (inputRef) and assigns it to the component instance (this refers to the current class instance).
+
