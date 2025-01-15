@@ -1,0 +1,66 @@
+Higher-Order Components (HOCs):-
+> A function that takes a component and returns a new component, with enhanced behavior.
+> HOCs don’t modify the original component; they wrap it to provide additional behavior.
+> HOCs are commonly used for tasks like authentication, theming, or connecting to Redux.
+> The same HOC is used for multiple components (ButtonCounter and HoverCounter), making it easier to maintain and scale.
+
+Example:-
+hocWithCounter.jsx:-
+  import React,{useState} from "react";
+  
+  function hocWithCounter(WrappedComponent) {
+    return function EnhancedComponent(props) {
+      const [count, setCount] = useState(0);
+  
+      const increment = () => setCount(count + 1);
+  
+      return <WrappedComponent count={count} increment={increment} {...props} />;
+    };
+  }
+  
+  export default hocWithCounter;
+
+wrappedCounter.jsx:-
+  import React from "react";
+  import hocWithCounter from "./hocWithCounter";
+  
+  function ButtonCounter({ count, increment }) {
+    return (
+      <div>
+        <button onClick={increment}>Clicked {count} times</button>
+      </div>
+    );
+  }
+  
+  function HoverCounter({ count, increment }) {
+    return (
+      <div
+        onMouseOver={increment}
+        style={{ padding: "20px", background: "#f0f0f0" }}
+      >
+        Hovered {count} times
+      </div>
+    );
+  }
+  
+  const EnhancedButtonCounter = hocWithCounter(ButtonCounter);
+  const EnhancedHoverCounter = hocWithCounter(HoverCounter);
+  
+  export { EnhancedButtonCounter, EnhancedHoverCounter };
+
+App.jsx:-
+  import './App.css'
+  import { EnhancedButtonCounter, EnhancedHoverCounter } from './hocComponent/wrappedCounter'
+  
+  function App() {
+    return (
+      <div>
+        //HOCs */}
+        <h1>Higher-Order Component Example</h1>
+        <EnhancedButtonCounter />
+        <EnhancedHoverCounter />
+      </div>
+    )
+  }
+  
+  export default App
