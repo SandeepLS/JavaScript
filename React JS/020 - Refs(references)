@@ -1,11 +1,17 @@
 Refs (short for references):-
-It provide a way to, Accessing and Interacting with DOM elements directly,-
+useRef provide a way to, Accessing and Interacting with DOM elements directly,-
 using useRef or React.createRef().
 
 Example:-
 1. Manage text selection, focus, or media playback.
 2. Trigger imperative animations.
 3. Integrate with third-party DOM libraries.
+
+Uses in:-
+Accessing DOM Elements
+Persisting Mutable Values Without Re-Renders
+Accessing Previous State or Props
+Avoiding Repeated Function Calls
 
 Refs allow us to, bypass React’s declarative approach and directly interact with a DOM node.
 
@@ -91,3 +97,50 @@ This allows you to access this.props inside the constructor.
 -> this.inputRef = React.createRef();
 This line creates a ref object (inputRef) and assigns it to the component instance (this refers to the current class instance).
 
+----------------------------------------------------------------------------------------------
+Uses Example1:- Persisting Mutable Values Without Re-Renders:
+useRef can store mutable values that persist across renders without causing a re-render when updated.
+Example: Storing a timer ID or keeping track of previous values.
+jsx
+Copy
+Edit
+
+import React, { useRef, useEffect } from 'react';
+function Timer() {
+  const timerId = useRef(null);
+
+  const startTimer = () => {
+    timerId.current = setInterval(() => console.log('Timer running'), 1000);
+  };
+
+  const stopTimer = () => {
+    clearInterval(timerId.current);
+  };
+
+  return (
+    <div>
+      <button onClick={startTimer}>Start</button>
+      <button onClick={stopTimer}>Stop</button>
+    </div>
+  );
+}
+
+Uses Example2:- Accessing Previous State or Props
+useRef is useful to store previous state or props for comparison in functional components.
+Example: Tracking changes in state
+function Counter() {
+  const [count, setCount] = React.useState(0);
+  const prevCount = React.useRef();
+
+  useEffect(() => {
+    prevCount.current = count;
+  }, [count]);
+
+  return (
+    <div>
+      <p>Current Count: {count}</p>
+      <p>Previous Count: {prevCount.current}</p>
+      <button onClick={() => setCount(count + 1)}>Increment</button>
+    </div>
+  );
+}
