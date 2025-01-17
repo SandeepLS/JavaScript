@@ -1,0 +1,80 @@
+Controlled vs Uncontrolled Components:-
+Managing form elements (like input fields, textarea, select) with state (controlled) or without state (uncontrolled).
+
+1. Controlled Components
+  A controlled component is a form element (e.g., input, textarea, select) whose value is managed entirely by React state.
+  The component renders based on the state, and changes are handled through React's event handlers.
+  
+  Definition:
+  The component's value is controlled by state.
+  React has full control over the input's value and updates it via the onChange handler.  
+
+Example: Controlled Input
+    import React, { useState } from "react";
+    
+    function ControlledInput() {
+      const [value, setValue] = useState(""); // React state to store input value
+    
+      const handleChange = (e) => {
+        setValue(e.target.value); // Update state on input change
+      };
+    //The e.target property refers to the element that triggered the event (e.g., the <input> element).
+    
+      const handleSubmit = (e) => {
+        e.preventDefault();
+        alert(`Submitted value: ${value}`);
+      };
+    
+      return (
+        <form onSubmit={handleSubmit}>
+          <label>
+            Controlled Input:
+            <input type="text" value={value} onChange={handleChange} />
+          </label>
+          <button type="submit">Submit</button>
+        </form>
+      );
+    }
+    
+    export default ControlledInput;
+
+Key Points:
+> value is tied to React state (value={value}).
+> Changes trigger the onChange handler to update the state.
+> React fully manages the input's value.
+---------------------------------------------------------------------
+2. Uncontrolled Components
+An uncontrolled component is a form element where the DOM itself manages the value. 
+Instead of relying on React state, you use a ref to access the value when needed.
+
+Definition:
+The component's value is managed by the DOM, not React.
+React interacts with the element only when necessary (e.g., retrieving the value on form submission).
+
+Example: Uncontrolled Input
+  import React, { useRef } from "react";
+  
+  function UncontrolledInput() {
+    const inputRef = useRef(); // Create a ref to access the DOM element
+  
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      alert(`Submitted value: ${inputRef.current.value}`); // Access value via ref
+    };
+  
+    return (
+      <form onSubmit={handleSubmit}>
+        <label>
+          Uncontrolled Input:
+          <input type="text" ref={inputRef} />
+        </label>
+        <button type="submit">Submit</button>
+      </form>
+    );
+  }
+  
+  export default UncontrolledInput;
+
+Key Points:
+> value is not tied to state; React does not directly manage the input's value.
+> A ref is used to access the input's current value (inputRef.current.value).
