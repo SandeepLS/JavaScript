@@ -1,12 +1,27 @@
-/*
 Def:-
-Hooks are special functions, & let we use state and other React features in functional components, without writing a class.
-Hooks allow developers to manage component state, lifecycle events, and side effects more cleanly and concisely.
+ Hooks are built-in React features, that allow us to manage local state and side effects in functional components.
+ Examples: useState for managing local state, useEffect for managing side effects, AND useReducer for complex state logic.
 
-some commonly used React Hooks are:-
-useState(), useEffect(), useContext(), useRef(), useMemo(), useCallback()
+ Hooks allow developers to manage component state, lifecycle events, and side effects more cleanly and concisely.
 
-Ex:-
+ some commonly used React Hooks are:-
+ useState(), useEffect(), useContext(), useRef(), useMemo(), useCallback()
+
+ Hooks Are Not Used in Class Components:-
+ -> Because of, The Class Components Already Have Lifecycle Methods: like componentDidMount, componentDidUpdate, and componentWillUnmount 
+    to manage state and side effects.
+ -> Hooks Are Designed for Functional Components: like useState and useEffect.
+
+  Key Difference
+  Class Components:
+  -> Use this.state and this.setState for state management.
+  -> Use lifecycle methods for side effects and component lifecycle logic.
+  
+  Functional Components with Hooks:
+  -> Use useState for state management.
+  -> Use useEffect for managing side effects.
+
+Ex:- Using function component
 import React, { useState, useEffect } from "react";
 
 function Counter() {
@@ -28,7 +43,46 @@ function Counter() {
   );
 }
 export default Counter;
-*/
+
+OR
+
+function Counter() {
+  const [count, setCount] = React.useState(0);
+
+  React.useEffect(() => {
+    console.log("Mounted or Updated!");
+  });
+
+  return (
+    <button onClick={() => setCount(count + 1)}>
+      Count: {count}
+    </button>
+  );
+}
+----------------------------------------------------
+Ex:- Using Class Component
+import React, { Component, useEffect } from 'react'
+
+export default class HooksClass extends Component {
+    state = { count: 0 };
+
+    componentDidMount() {
+      console.log("Mounted!");
+    }
+  
+    componentDidUpdate() {
+      console.log("Updated!");
+    }
+  
+    render() {
+      return (
+        <button onClick={() => this.setState({ count: this.state.count + 1 })}>
+          Count: {this.state.count}
+        </button>
+      );
+    }
+}
+
 
 /*
 Hooks:- 
