@@ -1,8 +1,11 @@
-https://www.youtube.com/watch?v=uH-tVP8MUs8&t=6s&ab_channel=AkshaySaini
+Lexical Scope      :- Determines how the scope chain works.
+Lexical Environment:- Is a part of the execution context during runtime.
 
+
+https://www.youtube.com/watch?v=uH-tVP8MUs8&t=6s&ab_channel=AkshaySaini
 Lexical Environment:- (Note:-Remember Call Stack.)
      Wherever Execution Context is created, along with the Lexical Environment also created.
-     Lexival Environment is Local memory, plus refernce to the Lexical environment of it's parent.
+     Lexical Environment is Local memory, plus refernce to the Lexical environment of it's parent.
      Lexical term is a, Hirarchy or in a Sequence.
      Ex:- c() fun, is lexicaly sit in a() fun. OR/ c() is lexiacly inside an a().
           Then a() is lexicaly inside an Global scope.
@@ -17,3 +20,32 @@ Lexical Environment:- (Note:-Remember Call Stack.)
         a();   //10
 
      Scope Chain:- Lexical environment of it's parent, refernce to another lexical environment parent.
+
+
+https://www.youtube.com/watch?v=nypbHfbPG84&ab_channel=CodewithAhsan
+Lexical Scope:-
+Any inner function, can have access to it's outer scope variable.
+Example:-
+     //Global/outer scope
+     const userName = "Sandeep";
+     
+     //Inner Functions
+     function innerFun(){
+         console.log(`CallMe: ${userName}`)
+     }
+     innerFun();     //CallMe: Sandeep
+
+Any inner function scope variable, we can not access to it's outside of the function.
+Example:-
+     //Global/outer scope
+     const userName = "Sandeep";
+     
+     //Inner Functions
+     function innerFun(){
+         const userID = 'someID';
+         console.log(`CallMe: ${userName}`) //CallMe: Sandeep
+         console.log(`CallMe: ${userID}`); //CallMe: someID
+     }
+     
+     innerFun();
+     console.log(`CallMe: ${userID}`) //Reference error
