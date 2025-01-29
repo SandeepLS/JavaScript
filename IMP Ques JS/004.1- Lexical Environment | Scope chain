@@ -1,3 +1,5 @@
+https://www.youtube.com/watch?v=uH-tVP8MUs8&t=6s&ab_channel=AkshaySaini
+
 Lexical Environment:- (Note:-Remember Call Stack.)
      Wherever Execution Context is created, along with the Lexical Environment also created.
      Lexival Environment is Local memory, plus refernce to the Lexical environment of it's parent.
