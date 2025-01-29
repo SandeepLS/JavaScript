@@ -1,5 +1,5 @@
 A) Hosting:-first we should understand the "Execution context".
-            In the temporal ded zone, for time B.
+            In the temporal/short-term ded zone, for time B.
         Ex:-
         var a = 10; //These variable a, was attached to the Global object.
         console.log(a);
