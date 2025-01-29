@@ -1,9 +1,18 @@
-A)Scope:- is a certain region of program, where define variable exist, and can be recognize. 
-        / be on that it can not be recognize.
-        Scope is directley dependent on Lexiacl Environment.
-        Multiple scope:- Global scope, Block scope(let, const) introduction in ES6, Functional scope(var)
+A)Scope:- Means, where you can access, a specific variable or function in our code.
+        Ex:
+        function a(){
+            c();
+            function c(){
+                console.log(b);
+            }
+        }
+        var b = 10;
+        a();
 
-        var a;
+Scope is directley dependent on Lexiacl Environment.
+Multiple scope:- Global scope, Block scope(let, const) introduction in ES6, Functional scope(var)
+
+        var a;        
         var a; //(we can redecler, has many times, as you want.)
         
         let a;
@@ -21,11 +30,10 @@ A)Scope:- is a certain region of program, where define variable exist, and can b
         Variables declared with var, let and const are quite similar when declared outside a block.
         Ex:-1
         let carName = "Volvo";
-        myFunction();
-        
+        myFunction(); //volvo
         function myFunction() {
-          document.getElementById("demo").innerHTML = "I can display " + carName;
-        }
+          console.log(carName)
+        }     
 
         Ex:-2
         var a = 10;
