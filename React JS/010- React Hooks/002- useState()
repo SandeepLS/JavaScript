@@ -1,19 +1,64 @@
-/*
-The React useState Hook allows us to, track the application state in a function component.
-State generally refers to application data or properties, that need to be tracked.
-To use the useState Hook, we first need to import it into our component.
+Def:-
+useState, that allows you to add state to functional components.
+It is used to declare and manage local state variables in a functional component. 
+When the state changes, the component re-renders to reflect the updated state.
 
-Example: Initialize state at the top of the function component.
-import { useState } from "react";
-function FavoriteColor() {
-  const [color, setColor] = useState("");
+Syntax:
+const [state, setState] = useState(initialState);
+> state: The current value of the state.
+> setState: A function used to update the state.
+> initialState: The initial value of the state (can be a primitive value, object, or array).
+
+Example 1:-
+import React, { useState } from 'react';
+function Counter() {
+  // initializes a state variable 'count' with an initial value of 0.
+  const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      <p>You clicked {count} times</p>
+      {/* Update the state using the setCount function */}
+      <button onClick={() => setCount(count + 1)}>Click me</button>
+    </div>
+  );
 }
+export default Counter;
 
-Notice:- we are destructuring the returned values from useState.
-  The first value, color, is our current state.
-  The second value, setColor, is the function that is used to update our state.
-*/
+Why to Use useState:-
+> useState provides a cleaner and more concise way to manage state, compared to class components (which require this.state and this.setState).
 
+When to Use useState:-
+> Use useState when you need to manage state, that is specific to a single component (e.g., form inputs, toggles, counters).
+> For simple or moderately complex state management, useState is ideal. For more complex state logic, consider using useReducer.
+
+Example with Multiple State Variables:-
+import React, { useState } from 'react';
+function Form() {
+  const [name, setName] = useState('');
+  const [age, setAge] = useState(0);
+
+  return (
+    <div>
+      <input
+        type="text"
+        value={name}
+        onChange={(e) => setName(e.target.value)}
+        placeholder="Enter your name"
+      />
+      <input
+        type="number"
+        value={age}
+        onChange={(e) => setAge(Number(e.target.value))}
+        placeholder="Enter your age"
+      />
+      <p>Name: {name}, Age: {age}</p>
+    </div>
+  );
+}
+export default Form;
+
+---------------------------------------------------------------
 Example-1: Use the state variable in the rendered component.
   import { useState } from "react";
   import ReactDOM from "react-dom/client";
