@@ -1,6 +1,9 @@
 Def:-
  Hooks are built-in React features, that allow us to manage local state and side effects in functional components.
  Examples: useState for managing local state, useEffect for managing side effects, AND useReducer for complex state logic.
+ > useState: Manages local state in a functional component.
+ > useEffect: Handles side effects (e.g., data fetching, subscriptions, or DOM manipulations) in functional components.
+ > useReducer: Manages complex state logic, often used as an alternative to useState for more advanced use cases.
 
  Hooks allow developers to manage component state, lifecycle events, and side effects more cleanly and concisely.
 
