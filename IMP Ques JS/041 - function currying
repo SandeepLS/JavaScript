@@ -1,0 +1,30 @@
+function currying:-
+Ans: where a function that takes multiple arguments, is transformed into a series of functions, that each take a single argument. 
+
+Ex 1:
+function add(a) {
+    return function (b) {
+        return function (c) {
+            return a + b + c;
+        };
+    };
+}
+console.log(add(2)(3)(4)); // 9
+
+Ex 2: Using Arrow Functions (Shorter Version)
+const add = a => b => c => a + b + c;
+console.log(add(2)(3)(4)); // 9
+
+Why Use Currying?
+Reusability: Functions can be reused with partially applied arguments.
+Readability & Maintainability: Makes function calls cleaner and modular.
+Avoids Repetition: Useful in functional programming where functions are composed.
+
+Ex 3: Example: Partial Application using Currying
+const multiply = a => b => a * b;
+const double = multiply(2); // Partially applied function
+console.log(double(5)); // 10
+console.log(double(8)); // 16
+
+Here, double is a partially applied function that always multiplies by 2.
+
