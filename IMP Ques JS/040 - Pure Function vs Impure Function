@@ -1,0 +1,51 @@
+Pure Function vs Impure Function:-
+1.  Pure Function
+  That always returns/produce the same output, for the same input and has no side effects.
+
+  Characteristics of Pure Functions
+  > Deterministic: Always returns the same output for the same input.
+  > No Side Effects: Does not modify external variables, the DOM, or make API calls.
+  > Immutable Data: Does not change the input parameters (does not modify arrays or objects passed to it).
+
+  Ex:
+  function add(a, b) {
+      return a + b;
+  }
+  
+  console.log(add(2, 3)); // 5
+  console.log(add(2, 3)); // 5 (Same output every time)
+
+  Ex 2:
+  function multiplyByTwo(arr) {
+      return arr.map(num => num * 2);
+  }
+  console.log(multiplyByTwo([1, 2, 3])); // [2, 4, 6]
+
+
+2.  Impure Function:
+  That may returns/produce the different outputs, for the same input or has side effects.
+
+  Characteristics of Impure Functions
+  > Modifies external state: Changes global variables or data outside the function.
+  > Has Side Effects: Can modify the DOM, make API calls, or update databases.
+  > Non-Deterministic: May return different results for the same inputs.
+
+  Ex 1:
+  let count = 0;
+  function increment() {
+      count++;
+      return count;
+  }
+  console.log(increment()); // 1
+  console.log(increment()); // 2 (Different output for the same function call)
+
+  Ex 2:
+  function multiplyByTwoImpure(arr) {
+      for (let i = 0; i < arr.length; i++) {
+          arr[i] *= 2;
+      }
+      return arr;
+  }
+  let numbers = [1, 2, 3];
+  console.log(multiplyByTwoImpure(numbers)); // [2, 4, 6] (Mutates original array)
+  console.log(numbers); // [2, 4, 6] (Original array is changed)
