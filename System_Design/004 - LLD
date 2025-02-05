@@ -1,0 +1,13 @@
+System Design(high level design):-
+Someone gives a requirement, we have to design it.
+Ex: Product manager will have some requirement, This is how should function,
+And we will transfer the requirement into code.
+-
+Now idealy wt happens is, given a problem statement is always weight,
+We nevwe know, how we are going to build it, wt are the challenges associated with it, how the solution is going to scale, etc, etc...
+-
+So in that case, what are we going to do?
+so we first come up with the design. Let's evaluate what are the posible options, that i can build the system using,
+what are the trade time will take doing the system, and then we translate that design into the code.
+So that's how, we idealy approach the HLD.
+
