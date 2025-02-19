@@ -11,7 +11,7 @@
   };
 
 2/ Classes:
-  In ES6 and beyond, JavaScript introduced classes to define object blueprints.
+  In ES6 and beyond, JavaScript introduced/Implemented classes to define object blueprints.
   Although it's syntactic sugar over JavaScript's prototype-based inheritance, it gives a more familiar OOP syntax.
   Ex:
   class Car {
