@@ -1,0 +1,18 @@
+What is a Constructor in JavaScript?
+A constructor in JavaScript is a special function used to create and initialize objects. 
+It acts as a blueprint for creating multiple objects with the same properties and methods.
+
+class Person {
+    constructor(name, age) {
+        this.name = name;
+        this.age = age;
+    }
+
+    sayHello() {
+        console.log(`Hi, I'm ${this.name} and I'm ${this.age} years old.`);
+    }
+}
+
+// Creating objects using the class constructor
+const person1 = new Person("Alice", 25);
+person1.sayHello(); // Hi, I'm Alice and I'm 25 years old.
