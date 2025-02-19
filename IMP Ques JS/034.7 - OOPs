@@ -1,0 +1,10 @@
+Java follows strict OOP principles with class-based inheritance.
+JavaScript is more flexible, using prototype-based inheritance and supporting OOP with ES6 classes.
+
+While Java is a pure OOP language, JavaScript is multi-paradigm (supports OOP, functional, and procedural programming).
+
+Feature	      Java (Class-based OOP)	              JavaScript (Prototype-based OOP)
+Encapsulation	Uses access modifiers (privt, publi)	Uses closures or #private fields
+Abstraction	  Uses abstract classes and interfaces	Uses private fields and closures
+Inheritance	  Uses extends (class-based)	          Uses prototypes or extends (ES6)
+Polymorphism	Method overloading and overriding	    Mostly method overriding
