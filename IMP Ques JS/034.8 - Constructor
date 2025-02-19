@@ -5,7 +5,7 @@ It acts as a blueprint for creating multiple objects with the same properties an
 class Person {
     constructor(name, age) {
         this.name = name;
-        this.age = age;
+        this.age = age; 
     }
 
     sayHello() {
