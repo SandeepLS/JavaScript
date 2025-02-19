@@ -9,6 +9,8 @@
       console.log('Engine started');
     }
   };
+  const result = car;
+  console.log(result);
 
 2/ Classes:
   In ES6 and beyond, JavaScript introduced/Implemented classes to define object blueprints.
