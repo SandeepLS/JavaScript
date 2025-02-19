@@ -1,0 +1,47 @@
+Exception Handling:-
+An exception is an unexpected event or error, that occurs during program execution.
+Exceptions usually happen due to:
+> Invalid input (e.g., dividing by zero)
+> File not found
+> Network issues
+> Database connection failure
+
+Try-Catch Block:-
+> The try block, It contains the code that might throw an exception.
+> The catch block, handles the exception.
+Ex:
+  try {
+      let result = 10 / 0;
+      console.log(result); // Infinity (not an error in JS!)
+  } catch (error) {
+      console.log("An error occurred:", error.message);
+  }
+
+Finally Block:-
+> The finally block always executes, whether an exception occurs or not.
+> It is used for cleanup tasks like closing database connections.
+Ex:
+  try {
+      let x = y; // ReferenceError (y is not defined)
+  } catch (error) {
+      console.log("Caught error:", error.message);
+  } finally {
+      console.log("This block always executes.");
+  }
+
+Throw and Throws:-
+> throw: Used to manually throw an exception.
+> throws: Declares that a throws method, that might throw an exception.
+You can throw custom errors using throw.
+Ex:
+  function checkAge(age) {
+      if (age < 18) {
+          throw new Error("Not eligible to vote.");
+      }
+      console.log("You can vote!");
+  }
+  try {
+      checkAge(16);
+  } catch (error) {
+      console.log("Exception caught:", error.message);
+  }
