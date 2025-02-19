@@ -6,7 +6,7 @@
   
   Example (using # for private fields):
   class Car {
-    #mileage = 0;
+    #mileage = 0;  //private properties
   
     constructor(brand, model) {
       this.brand = brand;
