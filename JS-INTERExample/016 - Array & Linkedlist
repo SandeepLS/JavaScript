@@ -1,0 +1,15 @@
+Array & Linkedlist:-
+
+1. Memory Allocation
+Array: Uses contiguous memory allocation. All elements are stored in a fixed-size block of memory.
+Linked List: Uses dynamic memory allocation. Each element (node) is stored separately in memory and linked using pointers.
+
+2. When to Use What?
+Use Arrays when:
+> You need fast random access (O(1)).
+> You have a fixed number of elements.
+> You need better cache locality for performance.
+Use Linked Lists when:
+> Frequent insertions/deletions are required.
+> The number of elements is dynamic and unknown.
+> Memory reallocation overhead should be avoided
