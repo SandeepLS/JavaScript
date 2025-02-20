@@ -1,0 +1,32 @@
+stack & queue:-
+
+stack: follows the LIFO (Last In, First Out) principle, meaning the last element added is the first one to be removed.
+  Basic Operations:
+    Push → Add an element to the top.
+    Pop → Remove the top element.
+    Peek/Top → View the top element without removing it.
+    IsEmpty → Check if the stack is empty.
+  Example:
+  A stack is like a stack of plates—you add plates on top and remove from the top.
+  
+  When to Use a Stack?
+  Function calls (Recursion Stack) – Call stacks in programming (e.g., function execution in Python, Java).
+  Undo/Redo functionality – In text editors or Photoshop.
+  Backtracking algorithms – E.g., Depth-First Search (DFS), solving mazes.
+
+Queue: follows the FIFO (First In, First Out) principle, meaning the first element added is the first one removed.
+  Basic Operations:
+  Enqueue → Add an element to the back.
+  Dequeue → Remove an element from the front.
+  Front/Peek → View the front element without removing it.
+  IsEmpty → Check if the queue is empty.
+  
+  Example:
+  A queue is like a line at a ticket counter—the first person in line is served first.
+  
+  When to Use a Queue?
+  Scheduling Tasks – CPU scheduling, print job scheduling.
+  Processing Requests – Handling HTTP requests, messaging queues (RabbitMQ, Kafka).
+  Breadth-First Search (BFS) – Graph and tree traversal.
+  Handling Asynchronous Tasks – Job queues, event-driven systems.
+
