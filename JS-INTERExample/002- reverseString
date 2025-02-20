@@ -3,12 +3,23 @@ The split('') method converts the string into an array of character: ['H', 'e', 
 The reverse() method reverses the order of elements in the array: ['d', 'l', 'r', 'o', 'W', ' ', 'o', 'l', 'l', 'e', 'H'].
 Finally, the join('') method concatenates the reversed array elements back into a string: "dlroW olleH".
 */
-//Ex:
+//Ex-1:
   const originalString = "Hello World";
   const reversedString = originalString.split('').reverse().join('');
   console.log(reversedString);  // Output: "dlroW olleH"
 
+//Ex-2:
+function reverseString(str) {
+    let reversed = "";
+    for (let i = str.length - 1; i >= 0; i--) {
+        reversed += str[i];
+    }
+    return reversed;
+}
 
+const originalString = reverseString("Hello World");
+console.log(originalString)  //dlroW olleH
+--------------------------------------------------------------------------------------------------
 /*
 The split(' ') method divides the string into an array of words: ['Hello', 'World'].
 The reverse() method then rearranges this array in reverse order: ['World', 'Hello'].
